@@ -1,172 +1,239 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Star,
-  Quote,
-  ChevronLeft,
-  ChevronRight,
-  ShieldCheck,
   CheckCircle2,
   Sparkles,
+  ExternalLink,
+  MapPin,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { reviewsData } from "@/data/reviewsData";
 
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/Builder+Cambridge/@52.2104504,0.1362347,17z/data=!4m16!1m9!3m8!1s0x47d871828c55c051:0xf34b99b6b1550cac!2sBuilder+Cambridge!8m2!3d52.2104504!4d0.1388096!9m1!1b1!16s%2Fg%2F11gsn46x9s!3m5!1s0x47d871828c55c051:0xf34b99b6b1550cac!8m2!3d52.2104504!4d0.1388096!16s%2Fg%2F11gsn46x9s";
+
 export const TestimonialsSection: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [startIndex, setStartIndex] = useState(0);
+  const itemsPerPage = 3;
+  const totalReviews = reviewsData.length;
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? reviewsData.length - 1 : prev - 1));
-  };
+  const nextSlide = useCallback(() => {
+    setStartIndex((prev) => (prev + 1) % (totalReviews - itemsPerPage + 1));
+  }, [totalReviews, itemsPerPage]);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === reviewsData.length - 1 ? 0 : prev + 1));
-  };
+  const prevSlide = useCallback(() => {
+    setStartIndex((prev) =>
+      prev === 0 ? totalReviews - itemsPerPage : prev - 1
+    );
+  }, [totalReviews, itemsPerPage]);
+
+  const visibleReviews = reviewsData.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden" id="testimonials">
+    <section className="py-14 sm:py-16 lg:py-20 bg-slate-50 relative overflow-hidden" id="testimonials">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header with Trustindex Rating Badge */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#092457] text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Real Customer Feedback</span>
+        
+        {/* Compact Top Header & Live Google Rating Card */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+          <div className="space-y-2 max-w-xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-[#092457] text-[11px] font-bold uppercase tracking-wider">
+              <Sparkles className="w-3 h-3 text-blue-600" />
+              <span>Verified Google Reviews</span>
             </div>
+
             <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#092457] tracking-tight font-sans"
+              className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#092457] tracking-tight uppercase"
               style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
-              What Our Cambridge Clients Say
+              What Cambridge Clients Say
             </h2>
-            <p className="text-slate-600 text-base">
-              Verified 5-star Google reviews from homeowners and commercial property clients across Cambridge.
+
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Real 5-star feedback from local homeowners and property developers across Cambridge.
             </p>
           </div>
 
-          {/* Google Verified Card */}
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4 self-start md:self-auto">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 font-black text-xl">
-              G
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5 text-amber-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400" />
-                ))}
-                <span className="font-bold text-slate-900 text-xs ml-1">4.9 / 5.0</span>
-              </div>
-              <p className="text-xs font-semibold text-slate-500 mt-0.5">
-                33+ Verified Google Reviews
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Reviews Carousel Card */}
-        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200/80 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Column: Author Info & Rating */}
-            <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-100 pb-6 lg:pb-0 lg:pr-8 space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-slate-100 shrink-0 border-2 border-amber-400/40">
-                  <Image
-                    src={reviewsData[currentIndex].avatar}
-                    alt={reviewsData[currentIndex].author}
-                    fill
-                    className="object-cover"
+          {/* Official Google Live Card with Navigation Controls */}
+          <div className="flex items-center gap-4 self-start md:self-auto">
+            {/* Google Rating Badge */}
+            <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/90 shadow-md flex items-center gap-3.5">
+              <div className="w-10 h-10 p-2 rounded-xl bg-slate-50 border border-slate-100 shadow-xs flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6" viewBox="0 0 24 24">
+                  <path
+                    fill="#4285F4"
+                    d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"
                   />
-                </div>
-                <div>
-                  <h4 className="font-bold text-base text-[#092457]">
-                    {reviewsData[currentIndex].author}
-                  </h4>
-                  <div className="text-xs text-slate-500">{reviewsData[currentIndex].location}</div>
-                  <div className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mt-1">
-                    <CheckCircle2 className="w-3 h-3" />
-                    <span>{reviewsData[currentIndex].date}</span>
-                  </div>
-                </div>
+                  <path
+                    fill="#34A853"
+                    d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+                  />
+                </svg>
               </div>
 
-              <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                  Project Executed
-                </div>
-                <div className="text-xs font-bold text-[#092457] mt-0.5">
-                  {reviewsData[currentIndex].projectType}
-                </div>
-              </div>
-
-              <div className="flex items-center gap-1 text-amber-400">
-                {[...Array(reviewsData[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400" />
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column: Review Text Quote */}
-            <div className="lg:col-span-8 lg:pl-4 space-y-6 relative">
-              <Quote className="w-12 h-12 text-slate-100 absolute -top-4 -left-2 pointer-events-none -z-0" />
-              <div className="relative z-10 text-slate-700 text-sm sm:text-base leading-relaxed italic">
-                &ldquo;{reviewsData[currentIndex].content}&rdquo;
-              </div>
-
-              {/* Navigation Arrows */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                <div className="text-xs font-semibold text-slate-400">
-                  Review {currentIndex + 1} of {reviewsData.length}
-                </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={handlePrev}
-                    className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-[#092457] text-slate-700 hover:text-white flex items-center justify-center transition-colors"
-                    aria-label="Previous Review"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-[#092457] text-slate-700 hover:text-white flex items-center justify-center transition-colors"
-                    aria-label="Next Review"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 3 Review Summary Mini-Cards Below */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          {reviewsData.slice(1, 4).map((rev) => (
-            <div
-              key={rev.id}
-              className="bg-white rounded-2xl p-6 border border-slate-200/70 shadow-sm flex flex-col justify-between space-y-4"
-            >
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-1">
+                  <span className="text-base font-black text-slate-950">4.7</span>
                   <div className="flex text-amber-400">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-bold text-slate-400">Google Review</span>
                 </div>
-                <p className="text-xs text-slate-600 line-clamp-3 italic">
-                  &ldquo;{rev.content}&rdquo;
-                </p>
-              </div>
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#092457]">
-                <span>{rev.author}</span>
-                <span className="text-[11px] font-normal text-slate-400">{rev.location}</span>
+                <div className="text-[11px] font-bold text-slate-700">
+                  32+ Google Reviews
+                </div>
               </div>
             </div>
-          ))}
+
+            {/* Slider Navigation Arrows */}
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
+                aria-label="Previous Reviews"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
+                aria-label="Next Reviews"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
         </div>
+
+        {/* 1 Single Row of 3 Sleek Compact Cards (Fits on 1 Screen!) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          <AnimatePresence mode="popLayout">
+            {visibleReviews.map((review, index) => (
+              <motion.div
+                key={`${review.id}-${startIndex}`}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-md hover:shadow-xl hover:border-blue-400/80 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div className="space-y-3.5">
+                  {/* Reviewer Header */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0">
+                        <Image
+                          src={review.avatar}
+                          alt={review.author}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3
+                          className="text-xs sm:text-sm font-black text-[#092457]"
+                          style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+                        >
+                          {review.author}
+                        </h3>
+                        <div className="text-[10px] text-slate-500 font-medium">
+                          {review.location}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Google Icon Badge */}
+                    <div className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
+                        <path
+                          fill="#4285F4"
+                          d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"
+                        />
+                        <path
+                          fill="#34A853"
+                          d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"
+                        />
+                        <path
+                          fill="#FBBC05"
+                          d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"
+                        />
+                        <path
+                          fill="#EA4335"
+                          d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Stars Rating & Project Badge */}
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex text-amber-400">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
+                      ))}
+                    </div>
+                    <span className="px-2 py-0.5 rounded-md bg-blue-50 text-[10px] font-bold text-blue-900 border border-blue-100/80 truncate max-w-[170px]">
+                      {review.projectType}
+                    </span>
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed line-clamp-3">
+                    &ldquo;{review.content}&rdquo;
+                  </p>
+                </div>
+
+                {/* Verified Badge Footer */}
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-slate-500">
+                  <span className="flex items-center gap-1 text-emerald-600">
+                    <CheckCircle2 className="w-3 h-3" />
+                    <span>Verified Review</span>
+                  </span>
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#092457] hover:text-blue-600 flex items-center gap-1 transition-colors"
+                  >
+                    <span>Google Maps</span>
+                    <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Compact Footer Action Link */}
+        <div className="mt-8 text-center">
+          <a
+            href={GOOGLE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#092457] hover:text-blue-600 uppercase tracking-wider transition-colors py-2 px-4 rounded-xl hover:bg-slate-100"
+          >
+            <span>Read All 32+ Reviews on Google Maps</span>
+            <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
+          </a>
+        </div>
+
       </div>
     </section>
   );

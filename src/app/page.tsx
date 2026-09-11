@@ -1,69 +1,94 @@
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import { HeroSection } from "@/components/HeroSection";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { ServicesGrid } from "@/components/ServicesGrid";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { WorkflowSection } from "@/components/WorkflowSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { CambridgeAreasSection } from "@/components/CambridgeAreasSection";
+import { CostCalculator } from "@/components/CostCalculatorModal";
+import {
+  Phone,
+  Mail,
+  ShieldCheck,
+  Star,
+  Award,
+  ArrowRight,
+  Sparkles,
+  Building,
+  CheckCircle2,
+} from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div>
+      {/* 1. Hero Section with dynamic slides & badges */}
+      <HeroSection />
+
+      {/* 2. Why Choose Us (Experienced, Friendly, Skilled, Trusted) */}
+      <WhyChooseUs />
+
+      {/* 3. Master Services Grid (All 15 building services with interactive filtering) */}
+      <ServicesGrid showAll={false} limit={6} />
+
+      {/* 4. Interactive Before / After Slider */}
+      <BeforeAfterSlider />
+
+      {/* 5. 5-Stage Cambridge Project Workflow */}
+      <WorkflowSection />
+
+      {/* 6. Embedded Interactive Cost Estimator Teaser */}
+      <section className="py-20 lg:py-28 bg-slate-100 relative overflow-hidden" id="calculator">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CostCalculator isModal={false} />
+        </div>
+      </section>
+
+      {/* 7. Real 5-Star Google Testimonials */}
+      <TestimonialsSection />
+
+      {/* 8. Local Cambridge Postcode Coverage & Guarantee */}
+      <CambridgeAreasSection />
+
+      {/* 9. Final High-Conversion Quote Banner */}
+      <section className="py-16 bg-[#092457] text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <span>Ready to Start Your Build?</span>
+          </div>
+
+          <h2
+            className="text-3xl sm:text-5xl font-black text-white tracking-tight font-sans max-w-3xl mx-auto"
+            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+          >
+            Turn Your Cambridge Property Vision Into Reality
+          </h2>
+
+          <p className="text-slate-300 text-base max-w-2xl mx-auto leading-relaxed">
+            Get in touch with our friendly Cambridge team today for expert architectural guidance, itemized fixed-price quotes, and a free site survey.
           </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <Link
+              href="/contact"
+              className="px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95"
+            >
+              <span>GET A FREE QUOTE</span>
+              <ArrowRight className="w-4 h-4 text-slate-950" />
+            </Link>
+
+            <a
+              href="tel:+441223782433"
+              className="px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs tracking-wider uppercase flex items-center gap-3 transition-all active:scale-95"
+            >
+              <Phone className="w-4 h-4 text-amber-400" />
+              <span>CALL +44 1223 782433</span>
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
   );
 }

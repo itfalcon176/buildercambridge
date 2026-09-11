@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HeroSection } from "@/components/HeroSection";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { WhatWeDoSection } from "@/components/WhatWeDoSection";
-import { ServicesGrid } from "@/components/ServicesGrid";
+import { OurServicesSection } from "@/components/OurServicesSection";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { WorkflowSection } from "@/components/WorkflowSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
@@ -33,10 +33,10 @@ export default function HomePage() {
       {/* 3. What We Do (Exact Original Copy & Modern Architectural Showcase) */}
       <WhatWeDoSection />
 
-      {/* 4. Master Services Grid (All 15 building services with interactive filtering) */}
-      <ServicesGrid showAll={false} limit={6} />
+      {/* 4. Our Services (Interior Renovation, Loft Conversions, Commercial Builders) */}
+      <OurServicesSection />
 
-      {/* 4. Interactive Before / After Slider */}
+      {/* 5. Interactive Before / After Slider */}
       <BeforeAfterSlider />
 
       {/* 5. 5-Stage Cambridge Project Workflow */}

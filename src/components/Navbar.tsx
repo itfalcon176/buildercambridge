@@ -42,50 +42,25 @@ export const Navbar: React.FC = () => {
     setServicesDropdownOpen(false);
   }, [pathname]);
 
-  const serviceCategories = [
-    {
-      title: "Residential Builds",
-      icon: Home,
-      accent: "text-blue-600",
-      items: [
-        { name: "House Extensions", href: "/services/extensions-cambridge", tag: "Popular" },
-        { name: "Loft Conversions", href: "/services/loft-conversions-cambridge", tag: "High ROI" },
-        { name: "Interior Renovations", href: "/services/interior-renovation" },
-        { name: "Complete Refurbishments", href: "/services/refurbishments-cambridge" },
-      ],
-    },
-    {
-      title: "Design & Specialist",
-      icon: Sparkles,
-      accent: "text-blue-600",
-      items: [
-        { name: "Design and Build", href: "/services/design-and-build", tag: "Turnkey" },
-        { name: "New Builds & Plots", href: "/services/new-builds-cambridge" },
-        { name: "Building Regulations", href: "/services/building-regulations" },
-        { name: "Bifolding Doors & Glazing", href: "/services/bifolding-doors" },
-      ],
-    },
-    {
-      title: "Structural & Commercial",
-      icon: ShieldCheck,
-      accent: "text-indigo-600",
-      items: [
-        { name: "Commercial Fit-Outs", href: "/services/commercial-builders-cambridge" },
-        { name: "Roofing & Repairs", href: "/services/roofing" },
-        { name: "Underpinning & Beams", href: "/services/underpinning" },
-        { name: "Demolition & Clearance", href: "/services/demolition" },
-      ],
-    },
-    {
-      title: "Groundworks & Civils",
-      icon: Hammer,
-      accent: "text-emerald-600",
-      items: [
-        { name: "Groundwork & Drainage", href: "/services/drainage" },
-        { name: "Driveways & Paving", href: "/services/driveways" },
-        { name: "Kerbs & Drop Kerbs", href: "/services/kerb-and-kerb-dropping" },
-      ],
-    },
+  const exactServicesList = [
+    { name: "EXTENSIONS", href: "/services/extensions-cambridge" },
+    { name: "LOFT CONVERSIONS", href: "/services/loft-conversions-cambridge" },
+    { name: "REFURBISHMENTS", href: "/services/refurbishments-cambridge" },
+    { name: "INTERIOR RENOVATION", href: "/services/interior-renovation" },
+
+    { name: "DESIGN AND BUILD", href: "/services/design-and-build" },
+    { name: "NEW BUILDS", href: "/services/new-builds-cambridge" },
+    { name: "COMMERCIAL", href: "/services/commercial-builders-cambridge" },
+    { name: "BIFOLDING DOORS", href: "/services/bifolding-doors" },
+
+    { name: "ROOFING", href: "/services/roofing" },
+    { name: "BUILDING REGULATIONS", href: "/services/building-regulations" },
+    { name: "DEMOLITION", href: "/services/demolition" },
+    { name: "DRAINAGE", href: "/services/drainage" },
+
+    { name: "UNDERPINNING", href: "/services/underpinning" },
+    { name: "DRIVEWAYS", href: "/services/driveways" },
+    { name: "KERBS AND DROP KERBS", href: "/services/kerb-and-kerb-dropping" },
   ];
 
   const navLinks = [
@@ -198,72 +173,27 @@ export const Navbar: React.FC = () => {
                       />
                     </Link>
 
-                    {/* Floating Mega-Menu */}
+                    {/* Floating Clean 4-Column Services Grid Dropdown */}
                     <AnimatePresence>
                       {servicesDropdownOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                          initial={{ opacity: 0, y: 10, scale: 0.99 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                          transition={{ duration: 0.18, ease: "easeOut" }}
-                          className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[960px] bg-white/98 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-blue-950/20 border border-slate-200/80 p-7 z-50"
+                          exit={{ opacity: 0, y: 6, scale: 0.99 }}
+                          transition={{ duration: 0.15, ease: "easeOut" }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[860px] bg-white rounded-2xl shadow-2xl shadow-blue-950/20 border border-slate-200 p-3 z-50"
                         >
-                          <div className="grid grid-cols-4 gap-6">
-                            {serviceCategories.map((cat, idx) => {
-                              const CatIcon = cat.icon;
-                              return (
-                                <div key={idx} className="space-y-3">
-                                  <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
-                                    <CatIcon className={`w-4 h-4 ${cat.accent}`} />
-                                    <span className="text-xs font-black tracking-wider uppercase text-[#092457]">
-                                      {cat.title}
-                                    </span>
-                                  </div>
-
-                                  <div className="space-y-1">
-                                    {cat.items.map((item) => (
-                                      <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="group/item flex items-center justify-between p-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-[#092457] hover:bg-blue-50/80 transition-all"
-                                      >
-                                        <span className="group-hover/item:translate-x-1 transition-transform">
-                                          {item.name}
-                                        </span>
-                                        {item.tag ? (
-                                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-900">
-                                            {item.tag}
-                                          </span>
-                                        ) : (
-                                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 text-blue-600 transition-opacity" />
-                                        )}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-
-                          {/* Mega-Menu Bottom Banner */}
-                          <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between bg-slate-50 p-3.5 rounded-2xl">
-                            <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 rounded-lg bg-[#092457] text-white flex items-center justify-center font-black text-xs">
-                                18+
-                              </div>
-                              <div className="text-xs text-slate-600">
-                                <span className="font-bold text-[#092457]">Fixed Price Guarantee: </span>
-                                All 15 building services backed by full 10-year insurance warranty.
-                              </div>
-                            </div>
-
-                            <Link
-                              href="/services"
-                              className="inline-flex items-center gap-1.5 text-xs font-black text-[#092457] hover:text-blue-600 transition-colors"
-                            >
-                              <span>Explore All Services</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
+                          <div className="grid grid-cols-4 gap-2">
+                            {exactServicesList.map((item) => (
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                className="flex items-center justify-center p-3.5 rounded-xl text-[11px] font-extrabold tracking-wider uppercase text-slate-700 hover:text-[#092457] hover:bg-blue-50/80 border border-slate-100 hover:border-blue-200 transition-all text-center"
+                                style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
                           </div>
                         </motion.div>
                       )}
@@ -318,7 +248,7 @@ export const Navbar: React.FC = () => {
               className="p-2.5 rounded-xl bg-blue-50 text-[#092457]"
               aria-label="Call Builder Cambridge"
             >
-              <Phone className="w-4 h-4 text-amber-600" />
+              <Phone className="w-4 h-4 text-blue-600" />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -354,12 +284,12 @@ export const Navbar: React.FC = () => {
                   </Link>
 
                   {link.hasMegaMenu && (
-                    <div className="ml-4 mt-1 border-l-2 border-amber-400 pl-3 space-y-1.5 py-1">
-                      {serviceCategories.flatMap((c) => c.items).map((s) => (
+                    <div className="ml-2 mt-2 grid grid-cols-2 gap-1.5 py-1">
+                      {exactServicesList.map((s) => (
                         <Link
                           key={s.name}
                           href={s.href}
-                          className="block py-1 text-[11px] font-semibold text-slate-600 hover:text-[#092457]"
+                          className="block p-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-[10px] font-bold text-slate-700 hover:text-[#092457] text-center tracking-wide uppercase border border-slate-100"
                         >
                           {s.name}
                         </Link>

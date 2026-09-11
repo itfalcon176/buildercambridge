@@ -14,6 +14,7 @@ import {
   Phone,
   MessageSquare,
   RefreshCw,
+  RotateCw,
 } from "lucide-react";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 
@@ -30,9 +31,27 @@ export const QuoteModal: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [captchaAnswer] = useState("4");
+  const [captchaProblem, setCaptchaProblem] = useState({ num1: 2, num2: 3, answer: "5" });
   const [captchaError, setCaptchaError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const generateNewCaptcha = () => {
+    const n1 = Math.floor(Math.random() * 7) + 2; // 2 - 8
+    const n2 = Math.floor(Math.random() * 7) + 1; // 1 - 7
+    setCaptchaProblem({
+      num1: n1,
+      num2: n2,
+      answer: String(n1 + n2),
+    });
+    setFormData((prev) => ({ ...prev, captcha: "" }));
+    setCaptchaError(false);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      generateNewCaptcha();
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (defaultSubject) {
@@ -65,7 +84,7 @@ export const QuoteModal: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.captcha.trim() !== captchaAnswer) {
+    if (formData.captcha.trim() !== captchaProblem.answer) {
       setCaptchaError(true);
       return;
     }
@@ -75,6 +94,7 @@ export const QuoteModal: React.FC = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
+      generateNewCaptcha();
     }, 500);
   };
 
@@ -230,12 +250,20 @@ export const QuoteModal: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* 6. Math Captcha Security Verification */}
+                  {/* 6. Dynamic Math Captcha Security Verification */}
                   <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                     <div>
-                      <div className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                      <div className="text-xs font-bold text-slate-800 flex items-center gap-2">
                         <ShieldCheck className="w-4 h-4 text-blue-600" />
-                        <span>What is 2 + 2? *</span>
+                        <span className="tracking-wide">What is {captchaProblem.num1} + {captchaProblem.num2}? *</span>
+                        <button
+                          type="button"
+                          onClick={generateNewCaptcha}
+                          title="Generate a new question"
+                          className="text-slate-400 hover:text-blue-600 p-0.5 rounded transition-colors cursor-pointer"
+                        >
+                          <RotateCw className="w-3.5 h-3.5" />
+                        </button>
                       </div>
                       <div className="text-[10px] text-slate-500">
                         Security spam verification
@@ -254,7 +282,7 @@ export const QuoteModal: React.FC = () => {
                         placeholder="Answer"
                         className="w-24 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-mono focus:outline-none focus:border-blue-600 bg-white"
                       />
-                      {formData.captcha.trim() === captchaAnswer && (
+                      {formData.captcha.trim() === captchaProblem.answer && (
                         <span className="inline-flex items-center gap-1 text-emerald-600 text-xs font-bold">
                           <CheckCircle2 className="w-4 h-4" />
                           <span>OK</span>
@@ -264,24 +292,24 @@ export const QuoteModal: React.FC = () => {
                   </div>
                   {captchaError && (
                     <p className="text-xs text-rose-500 font-semibold">
-                      Please enter 4 to continue.
+                      Please enter {captchaProblem.answer} to continue.
                     </p>
                   )}
 
-                  {/* 7. Submit Button */}
+                  {/* 7. Deep Navy Submit Button (Zero Yellow) */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95 transition-all cursor-pointer disabled:opacity-75"
+                    className="w-full py-3.5 rounded-xl bg-[#092457] hover:bg-[#06183d] text-white font-black text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-blue-950/20 active:scale-95 transition-all cursor-pointer disabled:opacity-75"
                   >
                     {isSubmitting ? (
                       <>
-                        <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
+                        <RefreshCw className="w-4 h-4 animate-spin text-white" />
                         <span>SENDING...</span>
                       </>
                     ) : (
                       <>
-                        <Send className="w-4 h-4 text-slate-950" />
+                        <Send className="w-4 h-4 text-blue-300" />
                         <span>SUBMIT MY QUOTE REQUEST</span>
                       </>
                     )}

@@ -20,13 +20,13 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#051329] text-white pt-16 pb-12 border-t border-blue-950 relative overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Feature Strip */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pb-12 border-b border-blue-900/60">
           <div className="flex items-center gap-4 bg-blue-950/60 p-4 rounded-2xl border border-blue-900/40">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
               <Award className="w-6 h-6" />
             </div>
             <div>
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 bg-blue-950/60 p-4 rounded-2xl border border-blue-900/40">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 bg-blue-950/60 p-4 rounded-2xl border border-blue-900/40">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <div>
@@ -56,8 +56,8 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 bg-blue-950/60 p-4 rounded-2xl border border-blue-900/40">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
-              <Star className="w-6 h-6 fill-amber-400 text-amber-400" />
+            <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+              <Star className="w-6 h-6 fill-blue-400 text-blue-400" />
             </div>
             <div>
               <h4 className="font-bold text-sm text-white">4.9/5 Rating</h4>
@@ -76,12 +76,12 @@ export const Footer: React.FC = () => {
             </p>
             <div className="pt-2 space-y-2 text-sm text-slate-300">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-1" />
+                <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-1" />
                 <span>Cambridge, Cambridgeshire, United Kingdom (CB1 - CB25)</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href="tel:+441223782433" className="hover:text-amber-400 transition-colors font-medium">
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <a href="tel:+441223782433" className="hover:text-blue-300 transition-colors font-medium">
                   +44 1223 782433
                 </a>
               </div>
@@ -97,8 +97,8 @@ export const Footer: React.FC = () => {
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href="mailto:info@buildercambridge.com" className="hover:text-amber-400 transition-colors">
+                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                <a href="mailto:info@buildercambridge.com" className="hover:text-blue-300 transition-colors">
                   info@buildercambridge.com
                 </a>
               </div>
@@ -109,14 +109,14 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4 border-b border-blue-900 pb-2 flex items-center justify-between">
               <span>Popular Services</span>
-              <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span className="w-2 h-2 rounded-full bg-blue-400"></span>
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
               {servicesData.slice(0, 7).map((s) => (
                 <li key={s.id}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="hover:text-amber-400 hover:translate-x-1 inline-block transition-all"
+                    className="hover:text-blue-300 hover:translate-x-1 inline-block transition-all"
                   >
                     {s.title}
                   </Link>
@@ -129,14 +129,14 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4 border-b border-blue-900 pb-2 flex items-center justify-between">
               <span>Specialist Trades</span>
-              <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span className="w-2 h-2 rounded-full bg-blue-400"></span>
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
               {servicesData.slice(7, 14).map((s) => (
                 <li key={s.id}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="hover:text-amber-400 hover:translate-x-1 inline-block transition-all"
+                    className="hover:text-blue-300 hover:translate-x-1 inline-block transition-all"
                   >
                     {s.title}
                   </Link>
@@ -149,36 +149,36 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4 border-b border-blue-900 pb-2 flex items-center justify-between">
               <span>Quick Links</span>
-              <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span className="w-2 h-2 rounded-full bg-blue-400"></span>
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <Link href="/about" className="hover:text-amber-400 transition-colors">
+                <Link href="/about" className="hover:text-blue-300 transition-colors">
                   About Our Company
                 </Link>
               </li>
               <li>
-                <Link href="/recent-work" className="hover:text-amber-400 transition-colors">
+                <Link href="/recent-work" className="hover:text-blue-300 transition-colors">
                   Project Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-amber-400 transition-colors">
+                <Link href="/contact" className="hover:text-blue-300 transition-colors">
                   Free Site Survey & Quote
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-amber-400 transition-colors">
+                <Link href="/faq" className="hover:text-blue-300 transition-colors">
                   Frequently Asked Questions
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-amber-400 transition-colors">
+                <Link href="/blog" className="hover:text-blue-300 transition-colors">
                   Cambridge Building Guides
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-amber-400 transition-colors">
+                <Link href="/contact" className="hover:text-blue-300 transition-colors">
                   Request a Free Site Survey
                 </Link>
               </li>
@@ -187,7 +187,7 @@ export const Footer: React.FC = () => {
             <div className="mt-6 pt-4 border-t border-blue-900/60">
               <Link
                 href="/contact"
-                className="w-full py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-900/40"
               >
                 <span>GET A FREE QUOTE</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -212,7 +212,7 @@ export const Footer: React.FC = () => {
               href="https://www.facebook.com/buildercambridge.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              className="hover:text-blue-300 transition-colors"
             >
               Facebook
             </a>
@@ -220,14 +220,14 @@ export const Footer: React.FC = () => {
               href="https://www.instagram.com/buildercambridge/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              className="hover:text-blue-300 transition-colors"
             >
               Instagram
             </a>
-            <Link href="/faq" className="hover:text-amber-400 transition-colors">
+            <Link href="/faq" className="hover:text-blue-300 transition-colors">
               Privacy & Cookies
             </Link>
-            <Link href="/contact" className="hover:text-amber-400 transition-colors">
+            <Link href="/contact" className="hover:text-blue-300 transition-colors">
               Terms of Service
             </Link>
           </div>

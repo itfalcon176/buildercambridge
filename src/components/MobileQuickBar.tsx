@@ -40,7 +40,7 @@ export const MobileQuickBar: React.FC = () => {
         onClick={() => openQuoteModal()}
         className="flex-1 py-2 px-2 rounded-xl bg-[#092457] text-white text-[11px] font-bold flex flex-col items-center justify-center gap-1 active:scale-95 shadow-md cursor-pointer"
       >
-        <Send className="w-4 h-4 text-amber-400" />
+        <Send className="w-4 h-4 text-blue-300" />
         <span>Free Quote</span>
       </button>
     </div>

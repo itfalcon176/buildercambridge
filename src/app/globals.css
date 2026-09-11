@@ -1,24 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-raleway), "Raleway", system-ui, -apple-system, sans-serif;
+  --font-raleway: var(--font-raleway), "Raleway", system-ui, -apple-system, sans-serif;
+}
+
 @layer base {
   :root {
     --color-navy: #092457;
     --color-navy-dark: #051329;
     --color-navy-light: #123d8c;
-    --color-gold: #f59e0b;
-    --color-gold-dark: #d97706;
-    --color-gold-light: #fbbf24;
+    --color-blue: #2563eb;
+    --color-blue-dark: #1d4ed8;
+    --color-blue-light: #3b82f6;
   }
 
-  html {
-    scroll-behavior: smooth;
-    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
-  }
-
+  html,
   body {
+    scroll-behavior: smooth;
+    font-family: var(--font-raleway), "Raleway", system-ui, -apple-system, sans-serif;
     color: #1e293b;
     background-color: #ffffff;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, button, input, textarea, select {
+    font-family: var(--font-raleway), "Raleway", system-ui, -apple-system, sans-serif;
   }
 }
 
@@ -34,7 +41,7 @@
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #2563eb;
 }
 
 /* Glassmorphism utilities */
@@ -57,8 +64,8 @@
 }
 
 /* Glow effects */
-.glow-gold {
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+.glow-blue {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
 }
 
 .glow-navy {
@@ -74,6 +81,6 @@
 }
 
 .bg-dots-pattern {
-  background-image: radial-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
   background-size: 20px 20px;
 }

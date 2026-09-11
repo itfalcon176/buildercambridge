@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
     {
       title: "Residential Builds",
       icon: Home,
-      accent: "text-amber-500",
+      accent: "text-blue-600",
       items: [
         { name: "House Extensions", href: "/services/extensions-cambridge", tag: "Popular" },
         { name: "Loft Conversions", href: "/services/loft-conversions-cambridge", tag: "High ROI" },
@@ -104,8 +104,8 @@ export const Navbar: React.FC = () => {
       <div className="bg-[#051329] text-slate-300 text-[11px] border-b border-blue-950/60 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-1.5 text-amber-400 font-semibold">
-              <div className="flex">
+            <div className="flex items-center gap-1.5 text-blue-400 font-semibold">
+              <div className="flex text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 fill-amber-400" />
                 ))}
@@ -118,9 +118,9 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-6">
             <a
               href="mailto:info@buildercambridge.com"
-              className="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300"
+              className="hover:text-blue-300 transition-colors flex items-center gap-1.5 text-slate-300"
             >
-              <Mail className="w-3.5 h-3.5 text-amber-400" />
+              <Mail className="w-3.5 h-3.5 text-blue-400" />
               <span>info@buildercambridge.com</span>
             </a>
 
@@ -129,7 +129,7 @@ export const Navbar: React.FC = () => {
                 href="https://www.facebook.com/buildercambridge.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors"
+                className="hover:text-blue-300 transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export const Navbar: React.FC = () => {
                 href="https://www.instagram.com/buildercambridge/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors"
+                className="hover:text-blue-300 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -152,22 +152,22 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Ultra-Modern Floating / Sticky Glass Nav */}
-      <nav
+      {/* Main Glass Navigation Bar */}
+      <div
         className={`w-full transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-xl shadow-slate-900/5 py-3 border-b border-slate-200/80"
-            : "bg-white/95 backdrop-blur-md py-4 border-b border-slate-100"
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/80 py-2.5"
+            : "bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          {/* Logo */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Brand Logo */}
           <div className="shrink-0">
             <Logo variant="dark" size="md" />
           </div>
 
-          {/* Center Clean Modern Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1 bg-slate-100/70 p-1.5 rounded-2xl border border-slate-200/60 backdrop-blur-md">
+          {/* Desktop Navigation Links (Pill Style) */}
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/60">
             {navLinks.map((link) => {
               const isActive =
                 link.href === "/"
@@ -193,12 +193,12 @@ export const Navbar: React.FC = () => {
                       <span>{link.name}</span>
                       <ChevronDown
                         className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                          servicesDropdownOpen ? "rotate-180 text-amber-400" : "opacity-60"
+                          servicesDropdownOpen ? "rotate-180 text-blue-300" : "opacity-60"
                         }`}
                       />
                     </Link>
 
-                    {/* Ultra-Luxury Floating Mega-Menu */}
+                    {/* Floating Mega-Menu */}
                     <AnimatePresence>
                       {servicesDropdownOpen && (
                         <motion.div
@@ -231,11 +231,11 @@ export const Navbar: React.FC = () => {
                                           {item.name}
                                         </span>
                                         {item.tag ? (
-                                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900">
+                                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-900">
                                             {item.tag}
                                           </span>
                                         ) : (
-                                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 text-amber-500 transition-opacity" />
+                                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 text-blue-600 transition-opacity" />
                                         )}
                                       </Link>
                                     ))}
@@ -248,7 +248,7 @@ export const Navbar: React.FC = () => {
                           {/* Mega-Menu Bottom Banner */}
                           <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between bg-slate-50 p-3.5 rounded-2xl">
                             <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 rounded-lg bg-[#092457] text-amber-400 flex items-center justify-center font-black text-xs">
+                              <div className="w-8 h-8 rounded-lg bg-[#092457] text-white flex items-center justify-center font-black text-xs">
                                 18+
                               </div>
                               <div className="text-xs text-slate-600">
@@ -259,7 +259,7 @@ export const Navbar: React.FC = () => {
 
                             <Link
                               href="/services"
-                              className="inline-flex items-center gap-1.5 text-xs font-black text-[#092457] hover:text-amber-600 transition-colors"
+                              className="inline-flex items-center gap-1.5 text-xs font-black text-[#092457] hover:text-blue-600 transition-colors"
                             >
                               <span>Explore All Services</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -286,7 +286,7 @@ export const Navbar: React.FC = () => {
                 </Link>
               );
             })}
-          </div>
+          </nav>
 
           {/* Right Action Cluster */}
           <div className="hidden lg:flex items-center gap-3">
@@ -295,8 +295,8 @@ export const Navbar: React.FC = () => {
               href="tel:+441223782433"
               className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-slate-100/80 hover:bg-blue-50 border border-slate-200/80 text-xs font-bold text-[#092457] transition-all group"
             >
-              <div className="w-6 h-6 rounded-lg bg-[#092457] text-amber-400 flex items-center justify-center">
-                <Phone className="w-3 h-3" />
+              <div className="w-6 h-6 rounded-lg bg-[#092457] text-white flex items-center justify-center">
+                <Phone className="w-3 h-3 text-blue-400" />
               </div>
               <span>+44 1223 782433</span>
             </a>
@@ -304,11 +304,10 @@ export const Navbar: React.FC = () => {
             {/* Luxury Quote CTA */}
             <Link
               href="/contact"
-              className="relative group overflow-hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#092457] to-[#123d8c] hover:from-[#06183d] hover:to-[#092457] text-white font-black text-xs tracking-wider uppercase flex items-center gap-2 shadow-lg shadow-blue-950/20 active:scale-95 transition-all"
+              className="relative group overflow-hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#092457] to-[#123d8c] hover:from-[#06183d] hover:to-[#092457] text-white font-black text-xs tracking-wider uppercase flex items-center gap-2 shadow-lg shadow-blue-950/20 active:scale-95 transition-all border border-blue-400/20"
             >
               <span className="relative z-10">GET A QUOTE</span>
-              <ArrowRight className="w-3.5 h-3.5 text-amber-400 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-10 transition-opacity" />
+              <ArrowRight className="w-3.5 h-3.5 text-white relative z-10 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
@@ -375,7 +374,7 @@ export const Navbar: React.FC = () => {
                   href="tel:+441223782433"
                   className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-slate-100 text-[#092457] font-bold text-xs"
                 >
-                  <Phone className="w-4 h-4 text-amber-500" />
+                  <Phone className="w-4 h-4 text-blue-600" />
                   <span>Call Us</span>
                 </a>
                 <Link
@@ -388,7 +387,7 @@ export const Navbar: React.FC = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </div>
     </header>
   );
 };

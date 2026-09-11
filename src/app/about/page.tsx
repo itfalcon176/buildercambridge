@@ -36,7 +36,7 @@ export default function AboutPage() {
           </div>
           <h1
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             We Are BuilderCambridge.com
           </h1>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               </div>
               <h2
                 className="text-2xl sm:text-4xl font-black text-[#092457] tracking-tight font-sans"
-                style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
               >
                 A Professional Renovation & Construction Service With Real Focus On Customer Satisfaction
               </h2>

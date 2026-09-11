@@ -23,7 +23,7 @@ export default function ServicesPage() {
           </div>
           <h1
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             Our Building & Construction Services
           </h1>

@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <h1
             className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans leading-tight"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             {post.title}
           </h1>

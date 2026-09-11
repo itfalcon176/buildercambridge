@@ -37,7 +37,7 @@ export const TestimonialsSection: React.FC = () => {
             </div>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
               What Our Cambridge Clients Say
             </h2>

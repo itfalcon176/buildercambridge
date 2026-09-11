@@ -64,17 +64,17 @@ export const WhyChooseUs: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#092457] text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
             <span>Why Choose BuilderCambridge.com</span>
           </div>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#092457] tracking-tight font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight"
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
-            Built on Trust, Precision & 18 Years of Excellence
+            Why Homeowners in Cambridge Trust Us
           </h2>
-          <p className="text-slate-600 text-base leading-relaxed">
-            We take tremendous pride in our craftsmanship. Our goal is seamless project management and an extraordinary final result, regardless of scale or complexity.
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            With nearly two decades of proven building experience across Cambridge, we eliminate contractor stress with transparent communication, fixed price quotes, and master craftsmanship.
           </p>
         </div>
 
@@ -89,17 +89,20 @@ export const WhyChooseUs: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-3xl p-7 shadow-lg shadow-slate-200/50 border border-slate-100 hover:border-amber-400 hover:shadow-xl hover:-translate-y-1.5 transition-all group flex flex-col justify-between"
+                className="bg-white rounded-3xl p-7 shadow-lg shadow-slate-200/50 border border-slate-100 hover:border-blue-500 hover:shadow-xl hover:-translate-y-1.5 transition-all group flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-[#092457] text-[#092457] group-hover:text-amber-400 flex items-center justify-center transition-colors shadow-sm">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-[#092457] text-[#092457] group-hover:text-white flex items-center justify-center transition-colors shadow-sm">
                     <IconComponent className="w-7 h-7" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-[#092457] tracking-tight font-sans">
+                    <h3
+                      className="text-xl font-black text-[#092457] tracking-tight"
+                      style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+                    >
                       {pillar.title}
                     </h3>
-                    <p className="text-xs font-bold text-amber-600 uppercase tracking-wider mt-0.5">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mt-0.5">
                       {pillar.subtitle}
                     </p>
                   </div>
@@ -121,13 +124,13 @@ export const WhyChooseUs: React.FC = () => {
         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-100 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Description & Bullet Checklist */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-600 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-widest">
               <span>Comprehensive Building Solutions</span>
             </div>
 
             <h3
               className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
               Delivering Seamless Project Management From Inception to Handover
             </h3>
@@ -155,7 +158,7 @@ export const WhyChooseUs: React.FC = () => {
                 className="px-6 py-3.5 rounded-xl bg-[#092457] hover:bg-[#06183d] text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md active:scale-95"
               >
                 <span>DISCOVER OUR STORY</span>
-                <ArrowRight className="w-4 h-4 text-amber-400" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </Link>
               <Link
                 href="/recent-work"
@@ -178,7 +181,7 @@ export const WhyChooseUs: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
               <div className="absolute bottom-5 left-5 right-5 text-white">
-                <div className="text-xs font-bold text-amber-300 uppercase tracking-wider">
+                <div className="text-xs font-bold text-blue-300 uppercase tracking-wider">
                   Quality Without Compromise
                 </div>
                 <div className="text-sm font-semibold text-white mt-1">

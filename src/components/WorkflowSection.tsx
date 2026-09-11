@@ -54,13 +54,13 @@ export const WorkflowSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-400/30">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             <span>Structured & Stress-Free Process</span>
           </div>
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             How We Build Your Vision
           </h2>
@@ -76,14 +76,14 @@ export const WorkflowSection: React.FC = () => {
             return (
               <div
                 key={step.number}
-                className="bg-blue-950/60 p-6 rounded-3xl border border-blue-800/40 hover:border-amber-400/60 transition-all flex flex-col justify-between space-y-6 group hover:-translate-y-1.5"
+                className="bg-blue-950/60 p-6 rounded-3xl border border-blue-800/40 hover:border-blue-400/60 transition-all flex flex-col justify-between space-y-6 group hover:-translate-y-1.5"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-black text-amber-400 font-mono">
+                    <span className="text-2xl font-black text-blue-400 font-mono">
                       {step.number}
                     </span>
-                    <div className="w-10 h-10 rounded-xl bg-blue-900/60 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-400 flex items-center justify-center transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-blue-900/60 group-hover:bg-blue-600 group-hover:text-white text-blue-300 flex items-center justify-center transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
@@ -97,7 +97,7 @@ export const WorkflowSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-blue-900/60 flex items-center gap-1.5 text-[11px] font-bold text-amber-400">
+                <div className="pt-3 border-t border-blue-900/60 flex items-center gap-1.5 text-[11px] font-bold text-blue-300">
                   <span>Milestone Stage</span>
                 </div>
               </div>
@@ -106,21 +106,21 @@ export const WorkflowSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-3xl p-8 lg:p-10 text-slate-950 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="mt-16 bg-gradient-to-r from-blue-900 via-[#0a2f73] to-blue-950 rounded-3xl p-8 lg:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl border border-blue-700/40">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-2xl sm:text-3xl font-black font-sans tracking-tight">
               Ready to Discuss Your Project in Cambridge?
             </h3>
-            <p className="text-sm font-semibold text-slate-900 max-w-xl">
+            <p className="text-sm font-medium text-slate-200 max-w-xl">
               Book a free, no-obligation site survey and itemized feasibility estimate with our master builders.
             </p>
           </div>
           <Link
             href="/contact"
-            className="px-8 py-4 rounded-2xl bg-[#092457] hover:bg-[#051329] text-white font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95 shrink-0"
+            className="px-8 py-4 rounded-2xl bg-white hover:bg-slate-100 text-[#092457] font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95 shrink-0"
           >
             <span>BOOK FREE SITE SURVEY</span>
-            <ArrowRight className="w-4 h-4 text-amber-400" />
+            <ArrowRight className="w-4 h-4 text-[#092457]" />
           </Link>
         </div>
       </div>

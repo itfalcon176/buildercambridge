@@ -27,7 +27,7 @@ export const CambridgeAreasSection: React.FC = () => {
 
             <h2
               className="text-3xl sm:text-4xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
               Serving All Postcodes Across Cambridge & South Cambridgeshire
             </h2>

@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Raleway } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloating } from "@/components/WhatsAppFloating";
 import { MobileQuickBar } from "@/components/MobileQuickBar";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -132,14 +127,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${raleway.variable}`}>
+    <html lang="en" className={`${raleway.variable} font-sans`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased font-sans flex flex-col min-h-screen pb-16 md:pb-0">
+      <body className={`${raleway.className} antialiased flex flex-col min-h-screen pb-16 md:pb-0`}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

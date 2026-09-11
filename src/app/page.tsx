@@ -61,7 +61,7 @@ export default function HomePage() {
 
           <h2
             className="text-3xl sm:text-5xl font-black text-white tracking-tight font-sans max-w-3xl mx-auto"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             Turn Your Cambridge Property Vision Into Reality
           </h2>

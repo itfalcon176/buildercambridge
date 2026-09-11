@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </div>
             <h1
               className="text-3xl sm:text-5xl font-black tracking-tight text-white font-sans"
-              style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
               {service.title}
             </h1>
@@ -121,7 +121,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="space-y-4">
                 <h2
                   className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans"
-                  style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                  style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
                 >
                   Expert {service.title} in Cambridge
                 </h2>
@@ -153,7 +153,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="space-y-6">
                 <h3
                   className="text-2xl font-black text-[#092457] tracking-tight font-sans"
-                  style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                  style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
                 >
                   Our Proven Step-by-Step Approach
                 </h3>
@@ -182,7 +182,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <div className="space-y-6">
                   <h3
                     className="text-2xl font-black text-[#092457] tracking-tight font-sans"
-                    style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                    style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
                   >
                     Frequently Asked Questions
                   </h3>

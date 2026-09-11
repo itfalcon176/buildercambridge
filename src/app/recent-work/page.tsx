@@ -23,13 +23,13 @@ export default function RecentWorkPage() {
             <span>Verified Cambridge Projects</span>
           </div>
           <h1
-            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            className="text-4xl sm:text-6xl font-black text-white tracking-tight font-sans"
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
-            Our Recent Work
+            Recent Works & Completed Projects
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            A comprehensive gallery showcasing our on-site craftsmanship across Cambridge: from structural steel knock-throughs and extensions to luxury kitchens and groundworks.
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            A showcase of our master craftsmanship across Cambridge & South Cambridgeshire. From structural steel knock-throughs and luxury house extensions to full interior renovations.
           </p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function RecentWorkPage() {
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-14">
             <h2
               className="text-3xl sm:text-4xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
               On-Site Project Photography
             </h2>

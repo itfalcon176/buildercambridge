@@ -44,7 +44,7 @@ export default function ContactPage() {
           </div>
           <h1
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             Get in Touch & Request a Quote
           </h1>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 </div>
                 <h2
                   className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans"
-                  style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                  style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
                 >
                   We are Ready to Help Build Your Vision
                 </h2>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                     <div>
                       <h3
                         className="text-2xl font-black text-[#092457] tracking-tight font-sans"
-                        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                        style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
                       >
                         Request a Free Site Survey
                       </h3>

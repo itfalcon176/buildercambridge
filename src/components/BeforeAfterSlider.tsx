@@ -57,7 +57,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
             <h2
               className="text-3xl sm:text-4xl font-black text-white tracking-tight font-sans"
-              style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
             >
               See the Power of High-End Cambridge Craftsmanship
             </h2>

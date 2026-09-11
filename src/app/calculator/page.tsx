@@ -22,7 +22,7 @@ export default function CalculatorPage() {
           </div>
           <h1
             className="text-3xl sm:text-5xl font-black tracking-tight text-white font-sans"
-            style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
           >
             Cambridge Building Cost Calculator
           </h1>

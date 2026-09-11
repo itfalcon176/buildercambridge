@@ -8,7 +8,6 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { WorkflowSection } from "@/components/WorkflowSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { CambridgeAreasSection } from "@/components/CambridgeAreasSection";
-import { CostCalculator } from "@/components/CostCalculatorModal";
 import {
   Phone,
   Mail,
@@ -42,14 +41,7 @@ export default function HomePage() {
       {/* 5. 5-Stage Cambridge Project Workflow */}
       <WorkflowSection />
 
-      {/* 6. Embedded Interactive Cost Estimator Teaser */}
-      <section className="py-20 lg:py-28 bg-slate-100 relative overflow-hidden" id="calculator">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CostCalculator isModal={false} />
-        </div>
-      </section>
-
-      {/* 7. Real 5-Star Google Testimonials */}
+      {/* 6. Real 5-Star Google Testimonials */}
       <TestimonialsSection />
 
       {/* 8. Local Cambridge Postcode Coverage & Guarantee */}

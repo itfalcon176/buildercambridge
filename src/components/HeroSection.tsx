@@ -9,10 +9,6 @@ import {
   Phone,
 } from "lucide-react";
 
-interface HeroSectionProps {
-  onOpenCalculator?: () => void;
-}
-
 const heroSlides = [
   {
     image: "/hero slider/buildercambridge-com-house-builders-in-cambridge-building-contractors-uk.image.banner.Woblo.jpg",
@@ -42,7 +38,7 @@ const heroSlides = [
 
 const SLIDE_DURATION = 6500; // 6.5s
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenCalculator }) => {
+export const HeroSection: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const nextSlide = useCallback(() => {

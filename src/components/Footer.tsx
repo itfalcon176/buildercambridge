@@ -163,8 +163,8 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/calculator" className="hover:text-amber-400 transition-colors">
-                  Building Cost Calculator
+                <Link href="/contact" className="hover:text-amber-400 transition-colors">
+                  Free Site Survey & Quote
                 </Link>
               </li>
               <li>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageCircle, Calculator, Send } from "lucide-react";
+import { Phone, MessageCircle, Wrench, Send } from "lucide-react";
 
 export const MobileQuickBar: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ export const MobileQuickBar: React.FC = () => {
         href="tel:+441223782433"
         className="flex-1 py-2 px-2 rounded-xl bg-blue-50 text-[#092457] text-[11px] font-bold flex flex-col items-center justify-center gap-1 active:scale-95"
       >
-        <Phone className="w-4 h-4 text-amber-500" />
+        <Phone className="w-4 h-4 text-blue-600" />
         <span>Call Now</span>
       </a>
 
@@ -26,11 +26,11 @@ export const MobileQuickBar: React.FC = () => {
       </a>
 
       <Link
-        href="/calculator"
-        className="flex-1 py-2 px-2 rounded-xl bg-amber-50 text-amber-900 text-[11px] font-bold flex flex-col items-center justify-center gap-1 active:scale-95"
+        href="/services"
+        className="flex-1 py-2 px-2 rounded-xl bg-slate-100 text-slate-800 text-[11px] font-bold flex flex-col items-center justify-center gap-1 active:scale-95"
       >
-        <Calculator className="w-4 h-4 text-amber-600" />
-        <span>Estimate</span>
+        <Wrench className="w-4 h-4 text-[#092457]" />
+        <span>Services</span>
       </Link>
 
       <Link

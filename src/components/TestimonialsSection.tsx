@@ -19,20 +19,24 @@ const GOOGLE_MAPS_URL =
 
 export const TestimonialsSection: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const itemsPerPage = 3;
   const totalReviews = reviewsData.length;
 
   const nextSlide = useCallback(() => {
-    setStartIndex((prev) => (prev + 1) % (totalReviews - itemsPerPage + 1));
-  }, [totalReviews, itemsPerPage]);
+    setDirection(1);
+    setStartIndex((prev) => (prev + 1) % totalReviews);
+  }, [totalReviews]);
 
   const prevSlide = useCallback(() => {
-    setStartIndex((prev) =>
-      prev === 0 ? totalReviews - itemsPerPage : prev - 1
-    );
-  }, [totalReviews, itemsPerPage]);
+    setDirection(-1);
+    setStartIndex((prev) => (prev === 0 ? totalReviews - 1 : prev - 1));
+  }, [totalReviews]);
 
-  const visibleReviews = reviewsData.slice(startIndex, startIndex + itemsPerPage);
+  // Infinite circular slice of 3 reviews
+  const visibleReviews = Array.from({ length: itemsPerPage }).map(
+    (_, i) => reviewsData[(startIndex + i) % totalReviews]
+  );
 
   return (
     <section className="py-14 sm:py-16 lg:py-20 bg-slate-50 relative overflow-hidden" id="testimonials">
@@ -50,6 +54,9 @@ export const TestimonialsSection: React.FC = () => {
                 <Sparkles className="w-3 h-3 text-blue-600" />
                 <span>Verified Google Reviews</span>
               </div>
+              <span className="text-[11px] font-bold text-slate-500 bg-white px-2.5 py-0.5 rounded-full border border-slate-200 shadow-2xs">
+                {startIndex + 1} / {totalReviews} Reviews
+              </span>
             </div>
 
             <h2
@@ -120,15 +127,17 @@ export const TestimonialsSection: React.FC = () => {
             <div className="flex items-center gap-1.5">
               <button
                 onClick={prevSlide}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
-                aria-label="Previous Reviews"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors active:scale-95 cursor-pointer"
+                aria-label="Previous 5-star Review"
+                title="Previous 5-star Review"
               >
                 <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
-                aria-label="Next Reviews"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors active:scale-95 cursor-pointer"
+                aria-label="Next 5-star Review"
+                title="Next 5-star Review"
               >
                 <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -138,14 +147,14 @@ export const TestimonialsSection: React.FC = () => {
 
         {/* 1 Single Row of 3 Sleek Compact Cards (Fits on 1 Screen!) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="popLayout" custom={direction}>
             {visibleReviews.map((review, index) => (
               <motion.div
-                key={`${review.id}-${startIndex}`}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                key={`${review.id}-${startIndex}-${index}`}
+                initial={{ opacity: 0, x: direction * 25 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -direction * 25 }}
+                transition={{ duration: 0.28, delay: index * 0.04 }}
                 className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-md hover:shadow-xl hover:border-blue-400/80 transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="space-y-3.5">
@@ -196,11 +205,11 @@ export const TestimonialsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Stars Rating & Project Badge */}
+                  {/* 5-Star Gold Rating & Project Badge */}
                   <div className="flex items-center justify-between gap-2">
-                    <div className="flex text-amber-400">
+                    <div className="flex items-center gap-0.5 text-amber-400">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
+                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
                     <span className="px-2 py-0.5 rounded-md bg-blue-50 text-[10px] font-bold text-blue-900 border border-blue-100/80 truncate max-w-[170px]">
@@ -218,7 +227,7 @@ export const TestimonialsSection: React.FC = () => {
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-slate-500">
                   <span className="flex items-center gap-1 text-emerald-600">
                     <CheckCircle2 className="w-3 h-3" />
-                    <span>Verified Review</span>
+                    <span>Verified 5★ Review</span>
                   </span>
                   <a
                     href={GOOGLE_MAPS_URL}
@@ -235,8 +244,27 @@ export const TestimonialsSection: React.FC = () => {
           </AnimatePresence>
         </div>
 
+        {/* Carousel Pagination Dots */}
+        <div className="mt-7 flex items-center justify-center gap-1.5">
+          {Array.from({ length: totalReviews }).map((_, dotIndex) => (
+            <button
+              key={dotIndex}
+              onClick={() => {
+                setDirection(dotIndex > startIndex ? 1 : -1);
+                setStartIndex(dotIndex);
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                dotIndex === startIndex
+                  ? "w-7 bg-[#092457]"
+                  : "w-2 bg-slate-300 hover:bg-slate-400"
+              }`}
+              aria-label={`Go to review ${dotIndex + 1}`}
+            />
+          ))}
+        </div>
+
         {/* Compact Footer Action Link */}
-        <div className="mt-8 text-center">
+        <div className="mt-5 text-center">
           <a
             href={GOOGLE_MAPS_URL}
             target="_blank"

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { HeroSection } from "@/components/HeroSection";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { WhatWeDoSection } from "@/components/WhatWeDoSection";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { WorkflowSection } from "@/components/WorkflowSection";
@@ -29,7 +30,10 @@ export default function HomePage() {
       {/* 2. Why Choose Us (Experienced, Friendly, Skilled, Trusted) */}
       <WhyChooseUs />
 
-      {/* 3. Master Services Grid (All 15 building services with interactive filtering) */}
+      {/* 3. What We Do (Exact Original Copy & Modern Architectural Showcase) */}
+      <WhatWeDoSection />
+
+      {/* 4. Master Services Grid (All 15 building services with interactive filtering) */}
       <ServicesGrid showAll={false} limit={6} />
 
       {/* 4. Interactive Before / After Slider */}

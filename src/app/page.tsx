@@ -54,8 +54,8 @@ export default function HomePage() {
       {/* 9. Final High-Conversion Quote Banner */}
       <section className="py-16 bg-[#092457] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-400/30">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             <span>Ready to Start Your Build?</span>
           </div>
 
@@ -73,17 +73,17 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95"
+              className="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95"
             >
               <span>GET A FREE QUOTE</span>
-              <ArrowRight className="w-4 h-4 text-slate-950" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </Link>
 
             <a
               href="tel:+441223782433"
               className="px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs tracking-wider uppercase flex items-center gap-3 transition-all active:scale-95"
             >
-              <Phone className="w-4 h-4 text-amber-400" />
+              <Phone className="w-4 h-4 text-blue-400" />
               <span>CALL +44 1223 782433</span>
             </a>
           </div>

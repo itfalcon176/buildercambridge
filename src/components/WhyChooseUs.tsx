@@ -5,199 +5,168 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Award,
+  Building2,
   Users,
-  Hammer,
+  Wrench,
   ShieldCheck,
-  CheckCircle2,
   ArrowRight,
+  Phone,
+  CheckCircle2,
   Sparkles,
 } from "lucide-react";
 
 export const WhyChooseUs: React.FC = () => {
-  const pillars = [
+  const features = [
     {
-      icon: Award,
+      icon: Building2,
       title: "EXPERIENCED",
-      subtitle: "Established Since 2007",
-      desc: "We’ve been serving Cambridge and surrounding villages for over 18 years, building an enduring reputation for excellence and reliability.",
-      highlight: "18+ Years Serving Cambridge",
+      desc: "We've been in the industry since 2007 and we're proud of the reputation we've built.",
+      badge: "Since 2007",
     },
     {
       icon: Users,
-      title: "FRIENDLY & RELIABLE",
-      subtitle: "Customer-First Approach",
-      desc: "A friendly and approachable business. We communicate transparently every day of the build and gladly go the extra mile for our clients.",
-      highlight: "Direct Project Contact",
+      title: "FRIENDLY",
+      desc: "A friendly and reliable business, we are very approachable and will go the extra mile for our customers.",
+      badge: "Customer-First",
     },
     {
-      icon: Hammer,
-      title: "HIGHLY SKILLED",
-      subtitle: "All Trades In-House",
-      desc: "From chartered structural engineering and brickwork to certified electrical, plumbing, and bespoke joinery, our multi-trade team handles every detail.",
-      highlight: "Turnkey Project Delivery",
+      icon: Wrench,
+      title: "SKILLED",
+      desc: "We have the experience in complete home renovations and cover all trades, our team can complete any job from start to finish.",
+      badge: "All Trades Covered",
     },
     {
       icon: ShieldCheck,
-      title: "TRUSTED REPUTATION",
-      subtitle: "Word-of-Mouth Recommendations",
-      desc: "The majority of our projects come from direct personal recommendations and repeat clients across Cambridge who trust us implicitly.",
-      highlight: "4.9/5 Verified Rating",
+      title: "TRUSTED",
+      desc: "The majority of our work comes through word of mouth, we're trusted to get the job done and done well.",
+      badge: "Word of Mouth",
     },
   ];
 
-  const whatWeDoList = [
-    "Quality Workmanship and Superior Engineering Knowledge",
-    "Every Job Completed on Time and to Fixed Budget",
-    "Proven Results Setting Exceptional Cambridge Standards",
-    "Full Compliance with UK Building Control & Planning",
-    "Professional Service for Both Private Homes and Commercial Estates",
-    "10-Year Insurance-Backed Structural Guarantee",
-  ];
-
   return (
-    <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
-      {/* Decorative Grid Pattern */}
-      <div className="absolute inset-0 opacity-40 bg-grid-pattern pointer-events-none" />
+    <section className="relative py-16 sm:py-20 lg:py-28 bg-[#092457] text-white overflow-hidden">
+      {/* Background Image with Deep Blue Overlay & Subtle Parallax Feel */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/hero slider/buildercambridge-com-house-builders-in-cambridge-building-contractors-uk.image.banner-3.Woblo.jpg"
+          alt="Builder Cambridge Workmanship"
+          fill
+          className="object-cover object-center opacity-20 mix-blend-luminosity"
+          sizes="100vw"
+        />
+        {/* Modern Gradients & Radial Glow */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06183d] via-[#092457]/95 to-[#06183d]/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.15),transparent_50%)]" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#092457] text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-            <span>Why Choose BuilderCambridge.com</span>
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight"
-            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
+          
+          {/* Left Column: Heading & Branding (Guaranteed no overflow) */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 min-w-0 space-y-5 sm:space-y-6"
           >
-            Why Homeowners in Cambridge Trust Us
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            With nearly two decades of proven building experience across Cambridge, we eliminate contractor stress with transparent communication, fixed price quotes, and master craftsmanship.
-          </p>
-        </div>
-
-        {/* 4 Key Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {pillars.map((pillar, index) => {
-            const IconComponent = pillar.icon;
-            return (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-3xl p-7 shadow-lg shadow-slate-200/50 border border-slate-100 hover:border-blue-500 hover:shadow-xl hover:-translate-y-1.5 transition-all group flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-[#092457] text-[#092457] group-hover:text-white flex items-center justify-center transition-colors shadow-sm">
-                    <IconComponent className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h3
-                      className="text-xl font-black text-[#092457] tracking-tight"
-                      style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-                    >
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mt-0.5">
-                      {pillar.subtitle}
-                    </p>
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {pillar.desc}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#092457]">
-                  <span>{pillar.highlight}</span>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Dual Split: What We Do & Feature Showcase Image */}
-        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-100 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Description & Bullet Checklist */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-widest">
-              <span>Comprehensive Building Solutions</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 text-blue-300 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+              <span>Cambridge Building Contractors</span>
             </div>
 
-            <h3
-              className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-            >
-              Delivering Seamless Project Management From Inception to Handover
-            </h3>
+            <div className="space-y-1.5">
+              <span className="block text-sm sm:text-base font-extrabold text-blue-300 tracking-wider uppercase">
+                WHY CHOOSE
+              </span>
+              <h2
+                className="text-2xl sm:text-3xl lg:text-[1.85rem] xl:text-[2.2rem] font-black text-white tracking-tight leading-snug break-words"
+                style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+              >
+                BUILDERCAMBRIDGE<span className="text-blue-400">.COM</span>
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mt-2" />
+            </div>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              With a team of highly experienced and fully qualified trade professionals, we are confident and competitive working on almost any building, extension, structural alteration, or high-end decorating project.
+            <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-xl">
+              We provide premier residential and commercial construction services across Cambridge. Delivering unmatched craftsmanship, seamless project management, and complete peace of mind.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-              {whatWeDoList.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                  </div>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
-                href="/about"
-                className="px-6 py-3.5 rounded-xl bg-[#092457] hover:bg-[#06183d] text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md active:scale-95"
+                href="/contact"
+                className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs tracking-wider uppercase flex items-center gap-2 transition-all shadow-lg shadow-blue-900/40 hover:shadow-blue-600/30 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>DISCOVER OUR STORY</span>
+                <span>GET A FREE QUOTE</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </Link>
-              <Link
-                href="/recent-work"
-                className="px-6 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-xs transition-colors"
+
+              <a
+                href="tel:+441223782433"
+                className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-bold text-xs tracking-wider uppercase flex items-center gap-2 transition-all active:scale-[0.98] backdrop-blur-sm"
               >
-                View Cambridge Case Studies
-              </Link>
+                <Phone className="w-4 h-4 text-blue-400" />
+                <span>+44 1223 782433</span>
+              </a>
             </div>
-          </div>
 
-          {/* Right Column: Architectural Image & Floating Stat */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative h-[360px] sm:h-[420px] w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-              <Image
-                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80"
-                alt="Builder Cambridge Master Craftsmen at Work"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-              <div className="absolute bottom-5 left-5 right-5 text-white">
-                <div className="text-xs font-bold text-blue-300 uppercase tracking-wider">
-                  Quality Without Compromise
-                </div>
-                <div className="text-sm font-semibold text-white mt-1">
-                  Trumpington Open-Plan Kitchen & Extension Build
-                </div>
+            {/* Micro Trust Stats */}
+            <div className="pt-4 sm:pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
+              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                <span>Fixed Price Quotes</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                <span>Full UK Building Control</span>
               </div>
             </div>
+          </motion.div>
 
-            {/* Floating Mini Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-[#092457] text-white p-5 rounded-2xl shadow-xl border border-blue-900 hidden sm:flex items-center gap-4">
-              <div className="text-3xl font-black text-amber-400">100%</div>
-              <div className="text-xs font-semibold leading-tight text-slate-200">
-                Building Regulations<br />Pass Rate
-              </div>
-            </div>
+          {/* Right Column: 4 Modern Glass Cards (min-w-0 for perfect responsiveness) */}
+          <div className="lg:col-span-7 min-w-0 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            {features.map((item, index) => {
+              const IconComp = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="group relative bg-white/[0.06] hover:bg-white/[0.1] backdrop-blur-md border border-white/10 hover:border-blue-400/40 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/30 hover:-translate-y-1 flex flex-col justify-between min-w-0"
+                >
+                  {/* Subtle Card Glow on Hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+                  <div className="space-y-3.5 relative z-10 min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 p-2.5 rounded-xl bg-blue-500/15 border border-blue-400/20 text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300 shadow-sm flex items-center justify-center shrink-0">
+                        <IconComp className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </div>
+                      <span className="text-[10px] font-bold text-blue-300/80 uppercase tracking-wider px-2 py-1 rounded-md bg-white/5 border border-white/10 shrink-0">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3
+                        className="text-base sm:text-lg font-black text-white tracking-wider uppercase group-hover:text-blue-300 transition-colors"
+                        style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2 font-normal break-words">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
+
         </div>
       </div>
     </section>

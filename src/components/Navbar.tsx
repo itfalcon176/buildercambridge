@@ -93,7 +93,6 @@ export const Navbar: React.FC = () => {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services", hasMegaMenu: true },
     { name: "Recent Work", href: "/recent-work" },
-    { name: "Calculator", href: "/calculator" },
     { name: "FAQ", href: "/faq" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
@@ -114,13 +113,6 @@ export const Navbar: React.FC = () => {
               <span className="text-white ml-1">4.9/5 Rating</span>
               <span className="text-slate-400 font-normal">(33+ Google Reviews)</span>
             </div>
-
-            <span className="text-slate-500">•</span>
-
-            <span className="text-slate-300 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Covering Cambridge & South Cambridgeshire (CB1 - CB25)</span>
-            </span>
           </div>
 
           <div className="flex items-center gap-6">

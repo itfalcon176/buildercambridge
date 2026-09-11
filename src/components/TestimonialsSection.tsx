@@ -45,9 +45,11 @@ export const TestimonialsSection: React.FC = () => {
         {/* Compact Top Header & Live Google Rating Card */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
           <div className="space-y-2 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-[#092457] text-[11px] font-bold uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-blue-600" />
-              <span>Verified Google Reviews</span>
+            <div className="flex items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-[#092457] text-[11px] font-bold uppercase tracking-wider">
+                <Sparkles className="w-3 h-3 text-blue-600" />
+                <span>Verified Google Reviews</span>
+              </div>
             </div>
 
             <h2
@@ -62,12 +64,24 @@ export const TestimonialsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Official Google Live Card with Navigation Controls */}
-          <div className="flex items-center gap-4 self-start md:self-auto">
-            {/* Google Rating Badge */}
-            <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/90 shadow-md flex items-center gap-3.5">
-              <div className="w-10 h-10 p-2 rounded-xl bg-slate-50 border border-slate-100 shadow-xs flex items-center justify-center shrink-0">
-                <svg className="w-6 h-6" viewBox="0 0 24 24">
+          {/* Official Google Live Card with Builder Cambridge Logo & Navigation Controls */}
+          <div className="flex items-center gap-3 sm:gap-4 self-start md:self-auto flex-wrap sm:flex-nowrap">
+            {/* Google Rating Badge with Builder Cambridge Logo */}
+            <div className="bg-white p-3 sm:px-4 sm:py-3.5 rounded-2xl border border-slate-200/90 shadow-md flex items-center gap-3 sm:gap-3.5">
+              {/* Builder Cambridge Logo */}
+              <div className="pr-3 sm:pr-3.5 border-r border-slate-200 flex items-center shrink-0">
+                <Image
+                  src="/logo/buildercambridge.png"
+                  alt="Builder Cambridge"
+                  width={110}
+                  height={30}
+                  className="h-6 sm:h-7 w-auto object-contain"
+                />
+              </div>
+
+              {/* Google G Icon */}
+              <div className="w-8 h-8 sm:w-9 sm:h-9 p-1.5 rounded-xl bg-slate-50 border border-slate-100 shadow-xs flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5" viewBox="0 0 24 24">
                   <path
                     fill="#4285F4"
                     d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"
@@ -89,14 +103,14 @@ export const TestimonialsSection: React.FC = () => {
 
               <div>
                 <div className="flex items-center gap-1">
-                  <span className="text-base font-black text-slate-950">4.7</span>
+                  <span className="text-sm sm:text-base font-black text-slate-950">4.7</span>
                   <div className="flex text-amber-400">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
+                      <Star key={i} className="w-3 h-3 fill-amber-400" />
                     ))}
                   </div>
                 </div>
-                <div className="text-[11px] font-bold text-slate-700">
+                <div className="text-[10px] sm:text-[11px] font-bold text-slate-700">
                   32+ Google Reviews
                 </div>
               </div>
@@ -106,17 +120,17 @@ export const TestimonialsSection: React.FC = () => {
             <div className="flex items-center gap-1.5">
               <button
                 onClick={prevSlide}
-                className="w-10 h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
                 aria-label="Previous Reviews"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-10 h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white hover:bg-[#092457] text-slate-700 hover:text-white border border-slate-200 shadow-sm flex items-center justify-center transition-colors"
                 aria-label="Next Reviews"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>

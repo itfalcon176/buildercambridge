@@ -66,6 +66,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { QuoteModalProvider } from "@/context/QuoteModalContext";
+import { QuoteModal } from "@/components/QuoteModal";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -135,11 +138,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${raleway.className} antialiased flex flex-col min-h-screen pb-16 md:pb-0`}>
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFloating />
-        <MobileQuickBar />
+        <QuoteModalProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppFloating />
+          <MobileQuickBar />
+          <QuoteModal />
+        </QuoteModalProvider>
       </body>
     </html>
   );

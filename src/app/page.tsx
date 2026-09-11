@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { HeroSection } from "@/components/HeroSection";
@@ -5,22 +7,17 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { WhatWeDoSection } from "@/components/WhatWeDoSection";
 import { OurServicesSection } from "@/components/OurServicesSection";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { WorkflowSection } from "@/components/WorkflowSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { CambridgeAreasSection } from "@/components/CambridgeAreasSection";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 import {
   Phone,
-  Mail,
-  ShieldCheck,
-  Star,
-  Award,
   ArrowRight,
   Sparkles,
-  Building,
-  CheckCircle2,
 } from "lucide-react";
 
 export default function HomePage() {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <div>
       {/* 1. Hero Section with dynamic slides & badges */}
@@ -38,16 +35,10 @@ export default function HomePage() {
       {/* 5. Interactive Before / After Slider */}
       <BeforeAfterSlider />
 
-      {/* 5. 5-Stage Cambridge Project Workflow */}
-      <WorkflowSection />
-
       {/* 6. Real 5-Star Google Testimonials */}
       <TestimonialsSection />
 
-      {/* 8. Local Cambridge Postcode Coverage & Guarantee */}
-      <CambridgeAreasSection />
-
-      {/* 9. Final High-Conversion Quote Banner */}
+      {/* 7. Final High-Conversion Quote Banner */}
       <section className="py-16 bg-[#092457] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-400/30">
@@ -67,13 +58,13 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <Link
-              href="/contact"
-              className="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95"
+            <button
+              onClick={() => openQuoteModal()}
+              className="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs tracking-wider uppercase flex items-center gap-3 transition-all shadow-xl hover:scale-105 active:scale-95 cursor-pointer"
             >
               <span>GET A FREE QUOTE</span>
               <ArrowRight className="w-4 h-4 text-white" />
-            </Link>
+            </button>
 
             <a
               href="tel:+441223782433"

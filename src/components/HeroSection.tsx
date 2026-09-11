@@ -4,10 +4,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight,
-  Phone,
-} from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 const heroSlides = [
   {
@@ -39,6 +37,7 @@ const heroSlides = [
 const SLIDE_DURATION = 6500; // 6.5s
 
 export const HeroSection: React.FC = () => {
+  const { openQuoteModal } = useQuoteModal();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const nextSlide = useCallback(() => {
@@ -125,13 +124,13 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-wrap items-center gap-3.5 pt-2"
           >
-            <Link
-              href="/contact"
-              className="px-8 py-4 rounded-xl bg-[#092457] hover:bg-[#0e357d] text-white font-bold text-xs sm:text-sm tracking-wider uppercase flex items-center gap-2.5 transition-all shadow-2xl shadow-black/50 border border-blue-400/30 hover:scale-[1.02] active:scale-95 group"
+            <button
+              onClick={() => openQuoteModal()}
+              className="px-8 py-4 rounded-xl bg-[#092457] hover:bg-[#0e357d] text-white font-bold text-xs sm:text-sm tracking-wider uppercase flex items-center gap-2.5 transition-all shadow-2xl shadow-black/50 border border-blue-400/30 hover:scale-[1.02] active:scale-95 group cursor-pointer"
             >
               <span>Request a Free Quote</span>
               <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </button>
 
             <a
               href="tel:+441223782433"

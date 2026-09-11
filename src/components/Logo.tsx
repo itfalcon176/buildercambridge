@@ -14,7 +14,7 @@ export const Logo: React.FC<LogoProps> = ({
   size = "md",
 }) => {
   const isLight = variant === "light";
-  const logoSrc = isLight ? "/logo/logo side white.png" : "/logo/buildercambridge.png";
+  const logoSrc = isLight ? "/logo/logo side white.png" : "/logo/logo side  blue.png";
 
   const heightClasses = {
     sm: "h-9 w-auto",

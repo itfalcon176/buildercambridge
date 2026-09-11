@@ -78,7 +78,7 @@ export const TestimonialsSection: React.FC = () => {
               {/* Builder Cambridge Logo */}
               <div className="pr-3 sm:pr-3.5 border-r border-slate-200 flex items-center shrink-0">
                 <Image
-                  src="/logo/buildercambridge.png"
+                  src="/logo/logo side  blue.png"
                   alt="Builder Cambridge"
                   width={110}
                   height={30}

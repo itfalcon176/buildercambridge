@@ -14,8 +14,10 @@ import {
   Clock,
   Building,
 } from "lucide-react";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 export const WhatWeDoSection: React.FC = () => {
+  const { openQuoteModal } = useQuoteModal();
   const highlights = [
     {
       title: "Quality Workmanship and Superior Knowledge",
@@ -125,12 +127,12 @@ export const WhatWeDoSection: React.FC = () => {
                 <ArrowRight className="w-4 h-4 text-white" />
               </Link>
 
-              <Link
-                href="/contact"
-                className="px-7 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-[#092457] font-bold text-xs tracking-wider uppercase flex items-center gap-2.5 transition-all hover:border-blue-400 active:scale-[0.98]"
+              <button
+                onClick={() => openQuoteModal("Free Site Survey")}
+                className="px-7 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-[#092457] font-bold text-xs tracking-wider uppercase flex items-center gap-2.5 transition-all hover:border-blue-400 active:scale-[0.98] cursor-pointer"
               >
                 <span>GET A FREE SURVEY</span>
-              </Link>
+              </button>
             </div>
           </motion.div>
 

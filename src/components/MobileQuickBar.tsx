@@ -3,8 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { Phone, MessageCircle, Wrench, Send } from "lucide-react";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 export const MobileQuickBar: React.FC = () => {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2.5 px-3 md:hidden shadow-2xl flex items-center justify-around gap-2">
       <a
@@ -33,13 +36,13 @@ export const MobileQuickBar: React.FC = () => {
         <span>Services</span>
       </Link>
 
-      <Link
-        href="/contact"
-        className="flex-1 py-2 px-2 rounded-xl bg-[#092457] text-white text-[11px] font-bold flex flex-col items-center justify-center gap-1 active:scale-95 shadow-md"
+      <button
+        onClick={() => openQuoteModal()}
+        className="flex-1 py-2 px-2 rounded-xl bg-[#092457] text-white text-[11px] font-bold flex flex-col items-center justify-center gap-1 active:scale-95 shadow-md cursor-pointer"
       >
         <Send className="w-4 h-4 text-amber-400" />
         <span>Free Quote</span>
-      </Link>
+      </button>
     </div>
   );
 };

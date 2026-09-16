@@ -351,6 +351,36 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
               )}
 
+              {/* Dual Sections (e.g. Commercial Construction & Facilities Management Matching Screenshot) */}
+              {service.dualSections && service.dualSections.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-slate-100">
+                  {service.dualSections.map((sec, idx) => (
+                    <div key={idx} className="space-y-4">
+                      <div className="space-y-2">
+                        <h3
+                          className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans"
+                          style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+                        >
+                          {sec.title}
+                        </h3>
+                        <div className="w-12 h-1 bg-amber-500 rounded-full" />
+                      </div>
+
+                      <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-2xs space-y-3">
+                        <ul className="space-y-3">
+                          {sec.items.map((item, itemIdx) => (
+                            <li key={itemIdx} className="flex items-start gap-3 text-slate-800 text-xs sm:text-sm font-bold">
+                              <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0 mt-1.5" />
+                              <span className="leading-snug">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               {/* Competitive Advantage Box (when not already rendered inside customSpecificationNote) */}
               {service.competitiveAdvantage && service.customSpecificationNote?.heading !== "Is My Roof Suitable?" && (
                 <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-4">

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import {
@@ -14,8 +16,11 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { servicesData } from "@/data/servicesData";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 export const Footer: React.FC = () => {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <footer className="bg-[#051329] text-white pt-16 pb-12 border-t border-blue-950 relative overflow-hidden">
       {/* Subtle Background Glow */}
@@ -185,13 +190,14 @@ export const Footer: React.FC = () => {
             </ul>
 
             <div className="mt-6 pt-4 border-t border-blue-900/60">
-              <Link
-                href="/contact"
-                className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-900/40"
+              <button
+                type="button"
+                onClick={() => openQuoteModal("General Enquiry / Quote")}
+                className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-lg shadow-blue-900/40 cursor-pointer"
               >
                 <span>GET A FREE QUOTE</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -200,7 +206,7 @@ export const Footer: React.FC = () => {
         <div className="bg-blue-950/80 rounded-2xl p-5 border border-blue-900/60 text-xs text-slate-400 leading-relaxed text-center my-6">
           <p className="font-semibold text-slate-300 mb-1">Disclaimer:</p>
           <p>
-            BuilderCambridge.com acts solely as a booking and project coordination agent, referring highly recommended, fully vetted contractors and trade partners to our clients based on specific project requirements. All contractual agreements, timelines, and execution specifications are established directly between the client and certified trade specialists.
+            BuilderCambridge.com. acts solely as a booking agent, referring highly recommended contractors to our clients based on their specific project needs. We carefully select and connect our clients with trusted builders within the Cambridge area; however, we do not directly manage or control the work performed by these contractors. All contractual agreements, timelines, and project details are established directly between the client and the contractor. BuilderCambridge.com. is not liable for any actions, performance, or outcomes of the contractors referred. We encourage clients to conduct their own due diligence and engage in thorough discussions with contractors to ensure alignment on expectations.
           </p>
         </div>
 

@@ -90,7 +90,7 @@ export const projectsData: ProjectItem[] = [
     duration: "34 Weeks",
     budgetRange: "£420,000",
     summary: "Turnkey design and construction of an ultra-low-energy 5-bedroom family home featuring structural insulated panels (SIPs), triple-glazed timber-aluminium composite windows, solar PV array with battery storage, and mechanical ventilation (MVHR).",
-    beforeImage: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=800&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
     afterImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",

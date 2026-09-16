@@ -1,3 +1,10 @@
+export interface ExtensionTypeItem {
+  name: string;
+  badge?: string;
+  description: string;
+  features?: string[];
+}
+
 export interface ServiceItem {
   id: string;
   slug: string;
@@ -8,12 +15,37 @@ export interface ServiceItem {
   galleryImages: string[];
   features: string[];
   fullDescription: string[];
+  whyChooseUsTitle?: string;
   whyChooseUs: string[];
   processSteps: { title: string; desc: string }[];
   faqs: { question: string; answer: string }[];
   typicalTimeline: string;
   typicalCostRange: string;
   badge?: string;
+  contentHeading?: string;
+  weCoverTitle?: string;
+  weCoverIntro?: string;
+  weCoverOutro?: string;
+  weCoverBullets?: string[];
+  weCoverItems?: ExtensionTypeItem[];
+  secondaryDescription?: string[];
+  competitiveAdvantage?: {
+    heading: string;
+    text: string;
+    points: string[];
+  };
+  customSpecificationNote?: {
+    heading: string;
+    text: string;
+    secondaryText?: string;
+    points?: string[];
+  };
+  regulationsNotice?: {
+    heading: string;
+    text: string;
+    phone: string;
+    email: string;
+  };
 }
 
 export const servicesData: ServiceItem[] = [
@@ -38,9 +70,70 @@ export const servicesData: ServiceItem[] = [
       "10-Year structural guarantee on all building works",
     ],
     fullDescription: [
-      "A house extension is one of the most cost-effective and transformative ways to create additional living space in Cambridge without the upheaval and stamp duty costs of moving. Whether you are looking to create a vast open-plan kitchen and family hub, add an ensuite master bedroom, or extend for a luxury garden room, Builder Cambridge delivers turnkey solutions from initial concept to turnkey completion.",
-      "Our team of master builders, structural engineers, and project managers work closely with Cambridge City Council and South Cambridgeshire District Council planning departments to ensure smooth approvals and full compliance with UK Building Regulations.",
+      "BuilderCambridge.com believe that the space you have around your house can be the start of something totally amazing. This can be used for almost everything and anything. The House Extensions Cambridge Division have the technical knowledge and know how that can be used to fully utilise the space that is found around your house. Adding a new Cambridge House Extension is a good solution for a bigger, more modern kitchen. A House Extension can be designed to create an amazing living area to entertain and dine or perhaps even office space for a home business. The House Extension division can ensure that you get the most out of your house.",
+      "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
+      "We understand that an extension for your house can be quite versatile, this is why we have trained our team to be able to deal with any customer specification for a Home Extension in Cambridge. So we will make sure that any work that the House Extension Cambridge Division perform for you is of the highest standards and also customised to your specifications and requirements.",
     ],
+    weCoverTitle: "We cover",
+    weCoverIntro: "Our House Extensions Cambridge Division delivers all major extension configurations across Cambridge and South Cambridgeshire:",
+    weCoverItems: [
+      {
+        name: "Side Return Extension",
+        badge: "Terraced & Semi-Detached",
+        description: "Transform unused, narrow side alleyways on Victorian and Edwardian houses into expansive open-plan kitchen-diners with floor-to-ceiling glass and seamless garden integration.",
+        features: ["Unlocks dead external space", "Maximizes kitchen width", "Architectural rooflights"],
+      },
+      {
+        name: "Glass Extension",
+        badge: "Maximum Daylight",
+        description: "Contemporary structural glass boxes, ultra-slim aluminium bi-folding doors, and frameless roof lanterns that flood your home with natural light.",
+        features: ["Ultra-slim sightline aluminium", "Solar-control low-E glazing", "Flush threshold indoor-outdoor transition"],
+      },
+      {
+        name: "Single Storey Extension",
+        badge: "Most Popular",
+        description: "Our most requested Cambridge home extension. Extend outwards up to 6m to 8m under Permitted Development for spacious family living hubs.",
+        features: ["Permitted Development handling", "Open-plan structural steel RSJs", "Custom kitchen & dining layouts"],
+      },
+      {
+        name: "Double Storey Extension",
+        badge: "Maximum Space & ROI",
+        description: "Substantially expand both ground and upper floors simultaneously. Create expansive entertaining space below and master ensuite bedrooms above.",
+        features: ["Highest value addition per sq/m", "Ensuite master suites & dressing rooms", "Full structural loading calculations"],
+      },
+      {
+        name: "Over Structure Extension",
+        badge: "Zero Footprint Loss",
+        description: "Extend vertically above existing ground-floor garages or extensions with certified structural steel reinforcement without reducing garden area.",
+        features: ["Preserves full garden footprint", "Reinforced RSJ steel framework", "Creates new bedrooms or home offices"],
+      },
+    ],
+    competitiveAdvantage: {
+      heading: "Exceptional Standards in Cost Control & Planning",
+      text: "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
+      points: [
+        "Fixed-price itemized contracts with locked-in stage payments and zero hidden costs",
+        "Dedicated site managers for daily trade updates and scheduled milestone tracking",
+        "Strict UK Building Regulations and Health & Safety (CDM 2015) compliance",
+        "Over 18 years of specialized Cambridge construction and planning experience",
+      ],
+    },
+    customSpecificationNote: {
+      heading: "Customised to Your Exact Specifications",
+      text: "We understand that an extension for your house can be quite versatile, this is why we have trained our team to be able to deal with any customer specification for a Home Extension in Cambridge. So we will make sure that any work that the House Extension Cambridge Division perform for you is of the highest standards and also customised to your specifications and requirements.",
+      points: [
+        "Bespoke kitchen layouts, breakfast bars & luxury cabinetry",
+        "Hydronic & electric underfloor heating systems with smart zone controls",
+        "Structural knock-throughs & load-bearing partition removals",
+        "Hand-matched Cambridge Gault brickwork and conservation detailing",
+      ],
+    },
+    regulationsNotice: {
+      heading: "Building Regulations & Quotation Support",
+      text: "For more information about Building Regulations or to arrange a quotation call us on 01223 782 433 or email us at info@buildercambridge.com",
+      phone: "+44 1223 782433",
+      email: "info@buildercambridge.com",
+    },
     whyChooseUs: [
       "Over 18 years of local Cambridge extension building experience",
       "Dedicated site manager for daily updates and seamless workflow",
@@ -88,9 +181,57 @@ export const servicesData: ServiceItem[] = [
       "Complete Building Control sign-off for fire and structural safety",
     ],
     fullDescription: [
-      "Unlocking your loft is one of the highest return-on-investment home improvements available in Cambridge, adding up to 20-25% to your property's market valuation. Whether you live in a Victorian terrace on Mill Road, a 1930s semi in Chesterton, or a detached home in Trumpington, we custom-engineer your roof space to maximize headroom, natural light, and storage.",
-      "From steel beam insertion and floor reinforcement to fire doors, plumbing, and bespoke wardrobes built into the eaves, our craftsmen manage every detail with minimal disruption to your home below.",
+      "Loft Conversions are fast becoming the most popular of all conversions. They can add 30% of extra space to properties and can add £100,000 to the value of properties in some areas within Cambridge. On average they add around 20% to 25% and are seen as a wise investment by many home owners.",
+      "Loft Conversions can be created for many uses including a Master Suite Bedroom, Kids Room, Home Office or a Guest Room. Some homes are converted to flats and even Kitchens and Living areas can be installed within the attic.",
+      "The Loft Conversion Cambridge team can build a new Loft Conversion within a few months. They specialise in Loft Conversions only and are highly skilled at constructing new Lofts.",
+      "The Loft Conversion Cambridge team keep the mess to a minimum by accessing the Loft Conversion area from outside the roof using the scaffolding for access. They use this area for access until they fully complete the Loft Conversion and lastly install the new staircase. This method keeps dust levels low and eliminate the need to transfer tools and dirt through the property.",
     ],
+    weCoverTitle: "What does BuilderCambridge.com cover?",
+    weCoverIntro: "Loft conversions fall into one of four basic types.",
+    weCoverOutro: "Most lofts will not require planning permission but all must adhere to the current regulations set by Building Control.",
+    weCoverItems: [
+      {
+        name: "Velux",
+        badge: "Cost-Effective & Permitted",
+        description: "Retains the existing roof shape with premium Velux rooflights fitted flush into the roof slope. Ideal for conservation areas and properties with ample existing ridge height.",
+        features: ["Minimal structural changes", "Fast turnaround (4-6 weeks)", "Permitted Development compliant"],
+      },
+      {
+        name: "Dormer",
+        badge: "Most Popular & Spacious",
+        description: "A flat-roof extension projecting vertically from the sloping roof plane, delivering maximum vertical headroom, standard window installation, and expansive floor space.",
+        features: ["Maximum internal usable volume", "Full-height ceilings & vertical walls", "Accommodates luxury ensuites"],
+      },
+      {
+        name: "Mansard",
+        badge: "Classic Architectural Elegance",
+        description: "Replaces one or both roof pitches with a steep 72-degree slope and flat top roof. Provides an exceptional aesthetic that blends with historic Cambridge streetscapes.",
+        features: ["Maximum floor-to-ceiling space", "Suits period Victorian & Edwardian homes", "High property value addition"],
+      },
+      {
+        name: "Hip to Gable",
+        badge: "Semi-Detached & End-Terrace",
+        description: "Extends the sloping side 'hip' roof outwards into a vertical gable wall, unlocking substantial extra staircase headroom and interior bedroom space.",
+        features: ["Ideal for 1930s semis & chalets", "Accommodates full permanent staircase", "Combined with rear dormer for maximum space"],
+      },
+    ],
+    customSpecificationNote: {
+      heading: "Is My Roof Suitable?",
+      text: "Most roofs can be converted as long as there is sufficient head room. A minimum height of at least 2.1 meters is required from floor to roof spine. If the height is low then we can still install a Loft Conversion by lowering the ceilings below to achieve more headroom above.",
+      secondaryText: "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
+      points: [
+        "Minimum height of at least 2.1 meters required from floor to roof spine",
+        "Ceiling lowering engineering available below to achieve more headroom",
+        "Scaffolding exterior access keeping living area mess & dust to a minimum",
+        "Dedicated team constructing new lofts within a few months",
+      ],
+    },
+    regulationsNotice: {
+      heading: "Building Regulations & Quotation",
+      text: "For more information about Building Regulations or to arrange a quotation call us on 01223 782 433 or email us at info@buildercambridge.com",
+      phone: "01223 782 433",
+      email: "info@buildercambridge.com",
+    },
     whyChooseUs: [
       "Specialists in Victorian, Edwardian, and contemporary roof spaces",
       "Work executed from exterior scaffolding where possible to keep living areas clean",
@@ -116,86 +257,178 @@ export const servicesData: ServiceItem[] = [
   {
     id: "interior-renovation",
     slug: "interior-renovation",
-    title: "Interior Renovation & Bathrooms/Kitchens",
-    shortDesc: "Complete high-end interior remodelling, bespoke luxury kitchens, designer bathrooms, and structural wall removals.",
+    title: "Interior Renovation",
+    contentHeading: "INTERIOR RENOVATION",
+    shortDesc: "Complete high-end interior remodelling, bespoke luxury kitchens, designer bathrooms, and structural wall removals across Cambridge.",
     category: "Residential",
     heroImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "Load-bearing wall removals with RSJ steel beam insertion",
       "Luxury custom kitchen fitting and island breakfast bars",
       "Spa-grade bathrooms, wetrooms, and underfloor heating",
-      "Plastering, microcement, and architectural lighting",
+      "Plastering, microcement, and architectural LED lighting",
       "Hardwood, chevron parquet, and large format porcelain tiling",
+      "All installations carried out by fully trained staff",
     ],
     fullDescription: [
-      "Bring fresh elegance, open space, and modern functionality to your home with our full interior renovation services. Whether you want to reconfigure your ground floor layout into an expansive entertaining area or upgrade your bathroom to a hotel-standard sanctuary, our multi-skilled craftsmen deliver flawless finishes.",
+      "When it comes to choosing a renovator to transform the interior of your home, quality and trust should never be compromised. Working with a professional is an absolute must. With over 10 years experience and a real focus on customer satisfaction, you can rely on us for your next renovation, extension or home repair. Our installations are carried out by fully trained staff to the highest professional standards. Always on time and on budget.",
+      "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
     ],
+    whyChooseUsTitle: "WHY CHOOSE US",
     whyChooseUs: [
-      "All trades in-house: carpenters, certified electricians, Gas Safe plumbers, and tilers",
-      "Dust-suppression and careful protection of your existing furnishings",
-      "Meticulous attention to detail and sharp joinery finishes",
+      "Financial Responsibility to Our Clients",
+      "Superior Quality and Craftsmanship",
+      "Quality and Value to the Projects We Deliver",
+      "Highest Standards in Cost Control",
+      "On Time and on Budget",
+      "Real Focus on Customer Satisfaction",
     ],
+    regulationsNotice: {
+      heading: "Building Regulations & Quotation",
+      text: "For more information about Building Regulations or to arrange a quotation call us on 01223 782 433 or email us at info@buildercambridge.com",
+      phone: "01223 782 433",
+      email: "info@buildercambridge.com",
+    },
     processSteps: [
-      { title: "1. Spatial Planning", desc: "CAD layout planning and 3D visual review of your new interior." },
-      { title: "2. Demolition & Prep", desc: "Removal of outdated fittings, non-structural and load-bearing partitions with temporary propping." },
-      { title: "3. First Fix Services", desc: "Rerouting pipework, smart lighting conduits, and data cabling." },
-      { title: "4. Installation & Tiling", desc: "Cabinetry fitting, precision tiling, plumbing fixtures, and flooring." },
-      { title: "5. Decoration & Polish", desc: "Paints, sealant lines, architectural hardware, and professional sparkle clean." },
+      { title: "1. Spatial Planning & Design", desc: "Detailed CAD layout review and 3D concept planning to maximise living space and natural light." },
+      { title: "2. Demolition & Structural Prep", desc: "Careful strip-out, non-structural and load-bearing partition removals with temporary Acrow propping." },
+      { title: "3. First Fix Plumbing & Electrics", desc: "Rerouting pipework, smart LED lighting conduits, underfloor heating, and data cabling." },
+      { title: "4. Installation & Tiling", desc: "Bespoke cabinetry fitting, precision porcelain tiling, luxury sanitaryware, and flooring." },
+      { title: "5. Decoration & Sparkle Handover", desc: "Finishing coats, mastic sealants, hardware fitting, and professional sparkle clean." },
     ],
     faqs: [
       {
-        question: "Can you knock down a wall to create an open-plan living space?",
-        answer: "Yes, we specialize in structural knock-throughs. Our structural engineer specifies the correct steel RSJ, and we manage the building control notification and inspection seamlessly.",
+        question: "Can you knock down a load-bearing wall for open-plan living?",
+        answer: "Yes, we specialize in structural knock-throughs. Our structural engineer specifies the correct steel RSJ, and we manage building control notifications and sign-offs seamlessly.",
+      },
+      {
+        question: "How do you ensure projects stay on time and on budget?",
+        answer: "We provide detailed, transparent milestone schedules and fixed-price itemized quotations with zero hidden surprises before any work commences.",
+      },
+      {
+        question: "Do your staff carry certified trade credentials?",
+        answer: "All our installations are carried out by fully trained staff to the highest professional standards, including NICEIC certified electricians and Gas Safe engineers.",
       },
     ],
     typicalTimeline: "3 - 8 Weeks",
     typicalCostRange: "£15,000 - £60,000+",
+    badge: "10+ Years Experience",
   },
   {
     id: "refurbishments-cambridge",
     slug: "refurbishments-cambridge",
-    title: "Complete Refurbishments Cambridge",
-    shortDesc: "Full-property restorations and modernization for period houses, apartments, and buy-to-let investments across Cambridge.",
+    title: "Refurbishments Cambridge",
+    contentHeading: "Refurbishments Cambridge.",
+    shortDesc: "Complete house and premise refurbishments across Cambridge. From initial design and materials supply to groundwork and full finish.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
-      "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
-      "Full strip-out and structural consolidation",
-      "Complete electrical rewiring (NICEIC certified)",
-      "Central heating & heat pump system installations",
-      "Period sash window restoration & double glazing upgrades",
-      "Damp proofing, re-plastering, and insulation upgrades",
+      "Initial Design, spatial planning & 3D concept visualization",
+      "Planning and supply of materials with zero middleman markups",
+      "Foundations, groundwork & structural load-bearing alterations",
+      "Kitchen, bathroom, and entire premises transformations",
+      "Tailored to every inch and centimetre of your specifications",
+      "100% customer satisfaction & peace of mind guarantee",
     ],
     fullDescription: [
-      "From dilapidated Victorian villas to dated 1970s residences, we breathe new life into older properties. Our full refurbishment service restores historic architectural charm while integrating 21st-century energy efficiency, smart climate control, and luxury finishes.",
+      "At BuilderCambridge.com we are constantly offering our clients a wide range of Refurbishments in Cambridge. Our builders in Cambridge have a wide range of knowledge when it comes down to refurbishing your house, this knowledge has increased greatly for every consecutive year that we have been up and running.",
+      "At BuilderCambridge.com we believe that the space inside your premise is just the start of everything and anything. Our Builders have a vast amount of knowledge when it comes down to turning all of the empty space inside your house into a room which can be used and enjoyed for many hours, not only this but it will also add a great deal of value to your house.",
+      "We feel that refurbishments are the best way for any house owner to add a large amount of value towards their property while still being able to enjoy the extra space provided.",
+      "If they are required to do so then our BuilderCambridge.com will be able to talk you through the entire process of your refurbishment from the start to the finish of the project.",
+      "Since we can take on a project from start to finish and complete it to the very high standards that we set here, this complete service allows us to be the perfect company for all of our clients who need many different tasks performed. We eliminate the process of finding a middle man for certain tasks and this makes sure that our clients do not have to go and  sub contract other tradesmen for tasks that we can perform for your kitchen in Cambridge.",
+      "Due to the large amount of experience that our BuilderCambridge.com have acquired over the years we can tailor all of our work and projects from the initial design and concept all the way to the installation and completion of the work. We will not allow for any centimetre or inch of space to go to waste when refurbishing  your home in Cambridge.",
+      "We strive to make sure that the clients we perform work on have complete peace of mind before we completely wrap up any work. If at any point during the work or initial design and concept you are not completely happy then please make sure to talk to one of our technicians as they will make to use their vast amount of knowledge to help answer that question so that you can achieve 100% customer satisfaction and have complete peace of mind. This kind of work ethic has given us a great stream of recommendations and referrals from the Cambridge area.",
     ],
+    weCoverTitle: "Here is a list of what we will cover in a refurbishments Cambridge service:",
+    weCoverBullets: [
+      "Initial Design.",
+      "Planning and Supply of Materials.",
+      "Foundations and Groundwork.",
+    ],
+    weCoverItems: [
+      {
+        name: "Initial Design",
+        badge: "Concept & Architecture",
+        description: "Complete spatial planning, 3D concept designs, and architectural layout specifications. We tailor every inch and centimetre so that not a single bit of space goes to waste.",
+        features: [
+          "Architectural space planning & room conversion",
+          "Concept development & layout optimization",
+          "Full pre-construction client design consultations",
+        ],
+      },
+      {
+        name: "Planning and Supply of Materials",
+        badge: "Turnkey Procurement",
+        description: "Complete end-to-end planning and direct trade supply of all construction materials, luxury fixtures, and kitchen/interior fittings with no middleman markups.",
+        features: [
+          "Direct wholesale material procurement",
+          "Eliminates finding middle men or sub-contractors",
+          "Full trade coordination from start to finish",
+        ],
+      },
+      {
+        name: "Foundations and Groundwork",
+        badge: "Structural Integrity",
+        description: "Sub-structure repairs, underpinning, solid screed flooring, and structural load-bearing knock-throughs executed to strict Cambridge building control standards.",
+        features: [
+          "Sub-base ground preparation & screeding",
+          "Load-bearing wall removals & steel RSJ installation",
+          "100% Building Regulations sign-off",
+        ],
+      },
+    ],
+    secondaryDescription: [
+      "We like to know that we look after our customers and we do this by making sure that our company can provide all of the services that you would ever need for a refurbishment. This helps us to save our clients a lot of time and money as we can completely cater for all of your needs when it comes down to having a refurbishments.",
+      "The team of expert Builders who works with us can tailor any job that they perform to the exact needs of a client and can also tailor every inch and centimetre to the exact specifications of a client. All of these small tweaks and changes helps us to give our customers the best in refurbishments in Cambridge.",
+      "We always pride our company on making sure that our customers achieve complete peace of mind before we completely wrap up any of the jobs that we do. If one of our clients has a query or question about any work that we do then please make sure to ask one of our technicians as they will be more than happy to give you complete peace of mind and 100% customer satisfaction. This type of work ethic has greatly helped our company over the last few years as we have received a wide range of successful and profitable stream of recommendations from our highly valued customers.",
+      "If you feel like enquiring about a new refurbishments in Cambridge then please make sure to contact us and we will arrange it so that one of our technicians visits your location and gives you a free no obligation quote which you can then review to your own liking and then contact us whenever it suits you best.",
+    ],
+    regulationsNotice: {
+      heading: "Building Regulations & Quotation",
+      text: "For more information about Building Regulations or to arrange a quotation call us on 01223 782 433 or email us at info@buildercambridge.com",
+      phone: "01223 782 433",
+      email: "info@buildercambridge.com",
+    },
     whyChooseUs: [
-      "Proven track record working with Cambridge heritage and conservation guidelines",
-      "One single accountable contractor managing all aspects of the build",
-      "Rigorous timeline tracking to meet move-in or rental deadlines",
+      "Comprehensive end-to-end service with zero need for middle men or external sub-contractors",
+      "Tailor every inch and centimetre of space to your exact personal specifications",
+      "Free no-obligation on-site surveys and detailed transparent quotation",
+      "100% customer satisfaction and complete peace of mind work ethic",
     ],
     processSteps: [
-      { title: "1. Full Survey", desc: "Condition survey identifying structural defects, damp, plumbing, and electrical integrity." },
-      { title: "2. Strip-back", desc: "Safe removal of redundant materials and deep structural repair." },
-      { title: "3. Infrastructure Replacement", desc: "New wiring, new copper/PEX pipework, screeding, and thermal insulation." },
-      { title: "4. Plaster & Joinery", desc: "Skim plastering, skirtings, architraves, doors, and custom cabinetry." },
-      { title: "5. Final Handover", desc: "Comprehensive testing, certificates package, and key handover." },
+      { title: "1. Initial Design & Space Planning", desc: "We evaluate your property layout, listening to your exact specifications to ensure not a single centimetre goes to waste." },
+      { title: "2. Planning & Materials Procurement", desc: "Direct trade sourcing and coordination of all premium building materials, fixtures, and fittings at wholesale rates." },
+      { title: "3. Foundations & Groundwork", desc: "Sub-floor preparation, underpinning, load-bearing partition knock-throughs, and structural steel reinforcement." },
+      { title: "4. Turnkey Installation & Trades", desc: "In-house joinery, plumbing, NICEIC electricals, plastering, kitchen cabinetry, and tiling without any middle men." },
+      { title: "5. Sign-off & Peace of Mind Handover", desc: "Comprehensive quality checks, Building Regulations certification, and complete client satisfaction sign-off." },
     ],
     faqs: [
       {
-        question: "Can I live in the house during a full refurbishment?",
-        answer: "For full-house strip outs and rewires, we usually recommend arranging alternative accommodation for a smoother, faster build timeline.",
+        question: "What does your Cambridge refurbishment service cover?",
+        answer: "We cover every phase of property refurbishments: initial spatial design, planning and wholesale supply of materials, groundwork and structural knock-throughs, kitchen and bathroom installations, electrical rewiring, plumbing, and pristine decorative finishes.",
+      },
+      {
+        question: "Do I need to hire separate tradesmen or middle men?",
+        answer: "No. Since we manage projects from start to finish, we eliminate the need for middle men or third-party sub-contractors. This ensures faster timelines, better communication, and cost savings passed directly to you.",
+      },
+      {
+        question: "How do I arrange a quotation for my refurbishment in Cambridge?",
+        answer: "Simply contact us on 01223 782 433 or email info@buildercambridge.com. We will arrange for one of our technicians to visit your location and provide a free, no-obligation quote.",
       },
     ],
-    typicalTimeline: "8 - 18 Weeks",
-    typicalCostRange: "£40,000 - £150,000+",
+    typicalTimeline: "6 - 14 Weeks",
+    typicalCostRange: "£25,000 - £90,000+",
+    badge: "Full Turnkey",
   },
   {
     id: "new-builds-cambridge",
@@ -446,9 +679,10 @@ export const servicesData: ServiceItem[] = [
     title: "Underpinning & Structural Stabilization",
     shortDesc: "Specialist foundation reinforcement, mass concrete underpinning, and subsidence repairs for Cambridge properties.",
     category: "Structural",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "Traditional mass concrete bay underpinning",
@@ -526,8 +760,9 @@ export const servicesData: ServiceItem[] = [
     title: "Groundwork & Drainage Solutions",
     shortDesc: "Comprehensive foul and surface water drainage, soakaways, CCTV drain surveys, pump stations, and sewer connections.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
+      "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
@@ -566,9 +801,10 @@ export const servicesData: ServiceItem[] = [
     title: "Driveways & Premium Paving",
     shortDesc: "Bespoke block paving, resin bound stone, porcelain patios, natural sandstone, and tarmac driveways.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1584463699039-4458d697858c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "SUDS-compliant permeable block paving and gravel grids",
@@ -606,9 +842,10 @@ export const servicesData: ServiceItem[] = [
     title: "Kerbs & Drop Kerb Approved Works",
     shortDesc: "Cambridgeshire County Council approved vehicle crossover installations and drop kerb civil works.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
-      "https://images.unsplash.com/photo-1584463699039-4458d697858c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "Cambridgeshire County Council Section 184 permit compliance",

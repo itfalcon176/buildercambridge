@@ -704,26 +704,25 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
 
   return (
     <div className="w-full">
-      {/* Full Photo Masonry Grid - Displays all photos without cropping and without text overlay */}
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
+      {/* Photo Grid - Aligned in uniform rows so every row and the bottom of the section ends on a single straight horizontal line */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map((photo, index) => (
           <div
             key={photo.id}
             onClick={() => openLightbox(index)}
-            className="break-inside-avoid mb-4 rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-xl border border-slate-200/80 cursor-pointer transition-all duration-300 hover:-translate-y-1 group relative"
+            className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-xl border border-slate-200/80 cursor-pointer transition-all duration-300 hover:-translate-y-1"
           >
-            {/* Full Natural Image - No Cropping */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={photo.src}
               alt={photo.title}
               loading={index < 8 ? "eager" : "lazy"}
-              className="w-full h-auto block rounded-2xl group-hover:scale-[1.02] transition-transform duration-300 ease-out"
+              className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-out"
             />
 
             {/* Subtle Zoom Icon on Hover Only */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none rounded-2xl flex items-center justify-center">
-              <div className="w-10 h-10 rounded-full bg-white/85 backdrop-blur-md text-slate-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors pointer-events-none rounded-2xl flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                 <Maximize2 className="w-5 h-5" />
               </div>
             </div>

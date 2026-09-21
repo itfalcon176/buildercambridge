@@ -176,7 +176,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
                         <span className="px-3 py-1 rounded-lg bg-slate-950/70 backdrop-blur-md font-medium border border-white/10">
-                          Block Paving &amp; Paving Stones
+                          {service.title} • Cambridge
                         </span>
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                         >
                           <Image
                             src={img}
-                            alt={`${service.title} paving showcase ${idx + 2}`}
+                            alt={`${service.title} showcase ${idx + 2}`}
                             fill
                             className="object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
                             sizes="(max-width: 768px) 100vw, 33vw"
@@ -197,7 +197,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
                             <span className="px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold">
-                              Completed Cambridge Driveway
+                              Completed Project
                             </span>
                           </div>
                         </div>

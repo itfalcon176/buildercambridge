@@ -1142,10 +1142,9 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Kerbs and Drop Kerbs",
     shortDesc: "A dropped kerb provides access from the public highway to a domestic property. In order to have a dropped kerb installed to access the public highway, you must seek consent from the County Council.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/WhatsApp-Image-2020-05-26-at-3.10.15-PM-1-1024x771.jpeg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80",
+      "/services-images/WhatsApp-Image-2020-05-26-at-3.10.15-PM-1024x400.jpeg",
     ],
     features: [
       "Cambridgeshire County Council Section 184 permit compliance",

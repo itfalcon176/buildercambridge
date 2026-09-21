@@ -348,7 +348,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Refurbishments Cambridge.",
     shortDesc: "Complete house and premise refurbishments across Cambridge. From initial design and materials supply to groundwork and full finish.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/Cambridge-refurbishment.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",

@@ -1,7 +1,11 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { RecentWorksGallery } from "@/components/RecentWorksGallery";
+import {
+  ProjectGallery,
+  supportingPillarPhotos,
+  extensionPhotos,
+} from "@/components/RecentWorksGallery";
 import {
   Sparkles,
   Phone,
@@ -13,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Removing Supporting Piller & Recent Projects - Builder Cambridge",
+  title: "Removing Supporting Piller & Extensions Recent Projects - Builder Cambridge",
   description:
     "Explore our complete photo portfolio of real building work across Cambridge: load-bearing supporting pillar removals, RSJ steel installations, house extensions, brick restorations, and garden landscaping.",
 };
@@ -73,13 +77,33 @@ export default function RecentWorkPage() {
             </h2>
           </div>
 
-          {/* Interactive Full Gallery Component */}
-          <RecentWorksGallery />
+          {/* Interactive Full Gallery Component for Supporting Pillar */}
+          <ProjectGallery photos={supportingPillarPhotos} />
 
         </div>
       </section>
 
-      {/* 3. Bottom Direct Call to Action */}
+      {/* 3. Extensions Section */}
+      <section className="py-14 lg:py-20 bg-white border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Extensions Heading */}
+          <div className="mb-10 text-center sm:text-left">
+            <h2
+              className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+            >
+              Extensions
+            </h2>
+          </div>
+
+          {/* Interactive Full Gallery Component for Extensions */}
+          <ProjectGallery photos={extensionPhotos} />
+
+        </div>
+      </section>
+
+      {/* 4. Bottom Direct Call to Action */}
       <section className="py-16 bg-[#092457] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h3

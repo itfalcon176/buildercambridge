@@ -15,215 +15,510 @@ export interface GalleryPhoto {
   title: string;
 }
 
-export const galleryPhotos: GalleryPhoto[] = [
-  // 1. Supporting Pillar Removal Sequence
+export const supportingPillarPhotos: GalleryPhoto[] = [
   {
-    id: "sp-1",
-    src: "/recent-work/supporting%20piller/80297626-CD17-4AB8-897D-93743F81D2A2.jpeg",
-    title: "Supporting Pillar Removal 1",
+    "id": "sp-1",
+    "src": "/recent-work/supporting%20piller/5AA98740-F151-4D95-A063-6CFFB0F0054C.jpeg",
+    "title": "Supporting Pillar Removal 1"
   },
   {
-    id: "sp-2",
-    src: "/recent-work/supporting%20piller/5AA98740-F151-4D95-A063-6CFFB0F0054C.jpeg",
-    title: "Supporting Pillar Removal 2",
+    "id": "sp-2",
+    "src": "/recent-work/supporting%20piller/80297626-CD17-4AB8-897D-93743F81D2A2.jpeg",
+    "title": "Supporting Pillar Removal 2"
   },
   {
-    id: "sp-3",
-    src: "/recent-work/supporting%20piller/AB96450B-D648-4214-812E-811DACAC819D.jpeg",
-    title: "Supporting Pillar Removal 3",
+    "id": "sp-3",
+    "src": "/recent-work/supporting%20piller/9586EF43-F294-4876-92B8-83014407C645.jpeg",
+    "title": "Supporting Pillar Removal 3"
   },
   {
-    id: "sp-4",
-    src: "/recent-work/supporting%20piller/9586EF43-F294-4876-92B8-83014407C645.jpeg",
-    title: "Supporting Pillar Removal 4",
+    "id": "sp-4",
+    "src": "/recent-work/supporting%20piller/AB96450B-D648-4214-812E-811DACAC819D.jpeg",
+    "title": "Supporting Pillar Removal 4"
   },
   {
-    id: "sp-5",
-    src: "/recent-work/supporting%20piller/D2914ACD-CB2D-4026-AB99-E1D98DA690C8.jpeg",
-    title: "Supporting Pillar Removal 5",
-  },
-
-  // 2. Extensions, Brickwork & Groundworks
-  {
-    id: "ext-1",
-    src: "/recent-work/supporting%20piller/home-extension.jpg",
-    title: "House Extension 1",
+    "id": "sp-5",
+    "src": "/recent-work/supporting%20piller/D2914ACD-CB2D-4026-AB99-E1D98DA690C8.jpeg",
+    "title": "Supporting Pillar Removal 5"
   },
   {
-    id: "ext-2",
-    src: "/recent-work/supporting%20piller/rcent2-8.jpeg",
-    title: "House Extension 2",
+    "id": "sp-6",
+    "src": "/recent-work/supporting%20piller/camblandscap-1.jpeg",
+    "title": "Supporting Pillar Removal 6"
   },
   {
-    id: "ext-3",
-    src: "/recent-work/supporting%20piller/rcent2-1.jpeg",
-    title: "Groundworks 1",
+    "id": "sp-7",
+    "src": "/recent-work/supporting%20piller/camblandscap-10.jpeg",
+    "title": "Supporting Pillar Removal 7"
   },
   {
-    id: "ext-4",
-    src: "/recent-work/supporting%20piller/rcent2-2.jpeg",
-    title: "Groundworks 2",
+    "id": "sp-8",
+    "src": "/recent-work/supporting%20piller/camblandscap-11.jpeg",
+    "title": "Supporting Pillar Removal 8"
   },
   {
-    id: "ext-5",
-    src: "/recent-work/supporting%20piller/rcent2-3.jpeg",
-    title: "Groundworks 3",
+    "id": "sp-9",
+    "src": "/recent-work/supporting%20piller/camblandscap-12.jpeg",
+    "title": "Supporting Pillar Removal 9"
   },
   {
-    id: "ext-6",
-    src: "/recent-work/supporting%20piller/rcent2-4.jpeg",
-    title: "Groundworks 4",
+    "id": "sp-10",
+    "src": "/recent-work/supporting%20piller/camblandscap-13.jpeg",
+    "title": "Supporting Pillar Removal 10"
   },
   {
-    id: "ext-7",
-    src: "/recent-work/supporting%20piller/rcent2-5.jpeg",
-    title: "Groundworks 5",
+    "id": "sp-11",
+    "src": "/recent-work/supporting%20piller/camblandscap-14.jpeg",
+    "title": "Supporting Pillar Removal 11"
   },
   {
-    id: "ext-8",
-    src: "/recent-work/supporting%20piller/rcent2-6.jpeg",
-    title: "Groundworks 6",
+    "id": "sp-12",
+    "src": "/recent-work/supporting%20piller/camblandscap-15.jpeg",
+    "title": "Supporting Pillar Removal 12"
   },
   {
-    id: "ext-9",
-    src: "/recent-work/supporting%20piller/rcent2-7.jpeg",
-    title: "Groundworks 7",
+    "id": "sp-13",
+    "src": "/recent-work/supporting%20piller/camblandscap-16.jpeg",
+    "title": "Supporting Pillar Removal 13"
   },
   {
-    id: "rw-1",
-    src: "/recent-work/supporting%20piller/recentworks-1.jpeg",
-    title: "Brickwork & Fireplace",
+    "id": "sp-14",
+    "src": "/recent-work/supporting%20piller/camblandscap-17.jpeg",
+    "title": "Supporting Pillar Removal 14"
   },
   {
-    id: "rw-2",
-    src: "/recent-work/supporting%20piller/recentworks-2.jpeg",
-    title: "Recent Work 2",
+    "id": "sp-15",
+    "src": "/recent-work/supporting%20piller/camblandscap-18.jpeg",
+    "title": "Supporting Pillar Removal 15"
   },
   {
-    id: "rw-3",
-    src: "/recent-work/supporting%20piller/recentworks-3.jpeg",
-    title: "Recent Work 3",
+    "id": "sp-16",
+    "src": "/recent-work/supporting%20piller/camblandscap-19.jpeg",
+    "title": "Supporting Pillar Removal 16"
   },
   {
-    id: "rw-4",
-    src: "/recent-work/supporting%20piller/recentworks-4.jpeg",
-    title: "Recent Work 4",
+    "id": "sp-17",
+    "src": "/recent-work/supporting%20piller/camblandscap-2.jpeg",
+    "title": "Supporting Pillar Removal 17"
   },
   {
-    id: "rw-5",
-    src: "/recent-work/supporting%20piller/recentworks-5.jpeg",
-    title: "Recent Work 5",
+    "id": "sp-18",
+    "src": "/recent-work/supporting%20piller/camblandscap-3.jpeg",
+    "title": "Supporting Pillar Removal 18"
   },
   {
-    id: "rw-6",
-    src: "/recent-work/supporting%20piller/recentworks-6.jpeg",
-    title: "Recent Work 6",
+    "id": "sp-19",
+    "src": "/recent-work/supporting%20piller/camblandscap-4.jpeg",
+    "title": "Supporting Pillar Removal 19"
   },
   {
-    id: "rw-7",
-    src: "/recent-work/supporting%20piller/recentworks-7.jpeg",
-    title: "Recent Work 7",
-  },
-
-  // 3. Landscaping & Exterior Projects
-  {
-    id: "land-1",
-    src: "/recent-work/supporting%20piller/camblandscap-1.jpeg",
-    title: "Cambridge Landscaping 1",
+    "id": "sp-20",
+    "src": "/recent-work/supporting%20piller/camblandscap-5.jpeg",
+    "title": "Supporting Pillar Removal 20"
   },
   {
-    id: "land-2",
-    src: "/recent-work/supporting%20piller/camblandscap-2.jpeg",
-    title: "Cambridge Landscaping 2",
+    "id": "sp-21",
+    "src": "/recent-work/supporting%20piller/camblandscap-6.jpeg",
+    "title": "Supporting Pillar Removal 21"
   },
   {
-    id: "land-3",
-    src: "/recent-work/supporting%20piller/camblandscap-3.jpeg",
-    title: "Cambridge Landscaping 3",
+    "id": "sp-22",
+    "src": "/recent-work/supporting%20piller/camblandscap-7.jpeg",
+    "title": "Supporting Pillar Removal 22"
   },
   {
-    id: "land-4",
-    src: "/recent-work/supporting%20piller/camblandscap-4.jpeg",
-    title: "Cambridge Landscaping 4",
+    "id": "sp-23",
+    "src": "/recent-work/supporting%20piller/camblandscap-8.jpeg",
+    "title": "Supporting Pillar Removal 23"
   },
   {
-    id: "land-5",
-    src: "/recent-work/supporting%20piller/camblandscap-5.jpeg",
-    title: "Cambridge Landscaping 5",
+    "id": "sp-24",
+    "src": "/recent-work/supporting%20piller/camblandscap-9.jpeg",
+    "title": "Supporting Pillar Removal 24"
   },
   {
-    id: "land-6",
-    src: "/recent-work/supporting%20piller/camblandscap-6.jpeg",
-    title: "Cambridge Landscaping 6",
+    "id": "sp-25",
+    "src": "/recent-work/supporting%20piller/home-extension.jpg",
+    "title": "Supporting Pillar Removal 25"
   },
   {
-    id: "land-7",
-    src: "/recent-work/supporting%20piller/camblandscap-7.jpeg",
-    title: "Cambridge Landscaping 7",
+    "id": "sp-26",
+    "src": "/recent-work/supporting%20piller/rcent2-1.jpeg",
+    "title": "Supporting Pillar Removal 26"
   },
   {
-    id: "land-8",
-    src: "/recent-work/supporting%20piller/camblandscap-8.jpeg",
-    title: "Cambridge Landscaping 8",
+    "id": "sp-27",
+    "src": "/recent-work/supporting%20piller/rcent2-2.jpeg",
+    "title": "Supporting Pillar Removal 27"
   },
   {
-    id: "land-9",
-    src: "/recent-work/supporting%20piller/camblandscap-9.jpeg",
-    title: "Cambridge Landscaping 9",
+    "id": "sp-28",
+    "src": "/recent-work/supporting%20piller/rcent2-3.jpeg",
+    "title": "Supporting Pillar Removal 28"
   },
   {
-    id: "land-10",
-    src: "/recent-work/supporting%20piller/camblandscap-10.jpeg",
-    title: "Cambridge Landscaping 10",
+    "id": "sp-29",
+    "src": "/recent-work/supporting%20piller/rcent2-4.jpeg",
+    "title": "Supporting Pillar Removal 29"
   },
   {
-    id: "land-11",
-    src: "/recent-work/supporting%20piller/camblandscap-11.jpeg",
-    title: "Cambridge Landscaping 11",
+    "id": "sp-30",
+    "src": "/recent-work/supporting%20piller/rcent2-5.jpeg",
+    "title": "Supporting Pillar Removal 30"
   },
   {
-    id: "land-12",
-    src: "/recent-work/supporting%20piller/camblandscap-12.jpeg",
-    title: "Cambridge Landscaping 12",
+    "id": "sp-31",
+    "src": "/recent-work/supporting%20piller/rcent2-6.jpeg",
+    "title": "Supporting Pillar Removal 31"
   },
   {
-    id: "land-13",
-    src: "/recent-work/supporting%20piller/camblandscap-13.jpeg",
-    title: "Cambridge Landscaping 13",
+    "id": "sp-32",
+    "src": "/recent-work/supporting%20piller/rcent2-7.jpeg",
+    "title": "Supporting Pillar Removal 32"
   },
   {
-    id: "land-14",
-    src: "/recent-work/supporting%20piller/camblandscap-14.jpeg",
-    title: "Cambridge Landscaping 14",
+    "id": "sp-33",
+    "src": "/recent-work/supporting%20piller/rcent2-8.jpeg",
+    "title": "Supporting Pillar Removal 33"
   },
   {
-    id: "land-15",
-    src: "/recent-work/supporting%20piller/camblandscap-15.jpeg",
-    title: "Cambridge Landscaping 15",
+    "id": "sp-34",
+    "src": "/recent-work/supporting%20piller/recentworks-1.jpeg",
+    "title": "Supporting Pillar Removal 34"
   },
   {
-    id: "land-16",
-    src: "/recent-work/supporting%20piller/camblandscap-16.jpeg",
-    title: "Cambridge Landscaping 16",
+    "id": "sp-35",
+    "src": "/recent-work/supporting%20piller/recentworks-2.jpeg",
+    "title": "Supporting Pillar Removal 35"
   },
   {
-    id: "land-17",
-    src: "/recent-work/supporting%20piller/camblandscap-17.jpeg",
-    title: "Cambridge Landscaping 17",
+    "id": "sp-36",
+    "src": "/recent-work/supporting%20piller/recentworks-3.jpeg",
+    "title": "Supporting Pillar Removal 36"
   },
   {
-    id: "land-18",
-    src: "/recent-work/supporting%20piller/camblandscap-18.jpeg",
-    title: "Cambridge Landscaping 18",
+    "id": "sp-37",
+    "src": "/recent-work/supporting%20piller/recentworks-4.jpeg",
+    "title": "Supporting Pillar Removal 37"
   },
   {
-    id: "land-19",
-    src: "/recent-work/supporting%20piller/camblandscap-19.jpeg",
-    title: "Cambridge Landscaping 19",
+    "id": "sp-38",
+    "src": "/recent-work/supporting%20piller/recentworks-5.jpeg",
+    "title": "Supporting Pillar Removal 38"
   },
+  {
+    "id": "sp-39",
+    "src": "/recent-work/supporting%20piller/recentworks-6.jpeg",
+    "title": "Supporting Pillar Removal 39"
+  },
+  {
+    "id": "sp-40",
+    "src": "/recent-work/supporting%20piller/recentworks-7.jpeg",
+    "title": "Supporting Pillar Removal 40"
+  }
 ];
 
-export const RecentWorksGallery: React.FC = () => {
+export const extensionPhotos: GalleryPhoto[] = [
+  {
+    "id": "ext-1",
+    "src": "/recent-work/extentions/2692286B-ACEB-4640-B63C-DAF481C5BEFD-e1571656943358.jpg",
+    "title": "House Extension Project 1"
+  },
+  {
+    "id": "ext-2",
+    "src": "/recent-work/extentions/4D4EAB8D-08C7-410F-8B07-5C56DC49D1B2.jpg",
+    "title": "House Extension Project 2"
+  },
+  {
+    "id": "ext-3",
+    "src": "/recent-work/extentions/5B75216E-F74D-491D-98C5-0649F77D1F49-e1571656439386.jpg",
+    "title": "House Extension Project 3"
+  },
+  {
+    "id": "ext-4",
+    "src": "/recent-work/extentions/IMG_0148.jpg",
+    "title": "House Extension Project 4"
+  },
+  {
+    "id": "ext-5",
+    "src": "/recent-work/extentions/IMG_0150.jpg",
+    "title": "House Extension Project 5"
+  },
+  {
+    "id": "ext-6",
+    "src": "/recent-work/extentions/IMG_0152.jpg",
+    "title": "House Extension Project 6"
+  },
+  {
+    "id": "ext-7",
+    "src": "/recent-work/extentions/IMG_0237.jpg",
+    "title": "House Extension Project 7"
+  },
+  {
+    "id": "ext-8",
+    "src": "/recent-work/extentions/IMG_0239.jpg",
+    "title": "House Extension Project 8"
+  },
+  {
+    "id": "ext-9",
+    "src": "/recent-work/extentions/IMG_0307.jpg",
+    "title": "House Extension Project 9"
+  },
+  {
+    "id": "ext-10",
+    "src": "/recent-work/extentions/IMG_0350.jpg",
+    "title": "House Extension Project 10"
+  },
+  {
+    "id": "ext-11",
+    "src": "/recent-work/extentions/IMG_0351.jpg",
+    "title": "House Extension Project 11"
+  },
+  {
+    "id": "ext-12",
+    "src": "/recent-work/extentions/IMG_0784-e1571656415793.jpg",
+    "title": "House Extension Project 12"
+  },
+  {
+    "id": "ext-13",
+    "src": "/recent-work/extentions/IMG_0785.jpg",
+    "title": "House Extension Project 13"
+  },
+  {
+    "id": "ext-14",
+    "src": "/recent-work/extentions/IMG_0786.jpg",
+    "title": "House Extension Project 14"
+  },
+  {
+    "id": "ext-15",
+    "src": "/recent-work/extentions/IMG_0820.jpg",
+    "title": "House Extension Project 15"
+  },
+  {
+    "id": "ext-16",
+    "src": "/recent-work/extentions/IMG_0827.jpg",
+    "title": "House Extension Project 16"
+  },
+  {
+    "id": "ext-17",
+    "src": "/recent-work/extentions/IMG_0833-e1571656377740.jpg",
+    "title": "House Extension Project 17"
+  },
+  {
+    "id": "ext-18",
+    "src": "/recent-work/extentions/IMG_0845-e1571656172325.jpg",
+    "title": "House Extension Project 18"
+  },
+  {
+    "id": "ext-19",
+    "src": "/recent-work/extentions/IMG_0871.jpg",
+    "title": "House Extension Project 19"
+  },
+  {
+    "id": "ext-20",
+    "src": "/recent-work/extentions/IMG_0885.jpg",
+    "title": "House Extension Project 20"
+  },
+  {
+    "id": "ext-21",
+    "src": "/recent-work/extentions/IMG_0887.jpg",
+    "title": "House Extension Project 21"
+  },
+  {
+    "id": "ext-22",
+    "src": "/recent-work/extentions/IMG_0890.jpg",
+    "title": "House Extension Project 22"
+  },
+  {
+    "id": "ext-23",
+    "src": "/recent-work/extentions/IMG_0897.jpg",
+    "title": "House Extension Project 23"
+  },
+  {
+    "id": "ext-24",
+    "src": "/recent-work/extentions/IMG_0954.jpg",
+    "title": "House Extension Project 24"
+  },
+  {
+    "id": "ext-25",
+    "src": "/recent-work/extentions/IMG_1112.jpg",
+    "title": "House Extension Project 25"
+  },
+  {
+    "id": "ext-26",
+    "src": "/recent-work/extentions/IMG_1160.jpg",
+    "title": "House Extension Project 26"
+  },
+  {
+    "id": "ext-27",
+    "src": "/recent-work/extentions/PHOTO-2019-12-05-20-47-28-2.jpg",
+    "title": "House Extension Project 27"
+  },
+  {
+    "id": "ext-28",
+    "src": "/recent-work/extentions/PHOTO-2019-12-05-20-47-28.jpg",
+    "title": "House Extension Project 28"
+  },
+  {
+    "id": "ext-29",
+    "src": "/recent-work/extentions/PHOTO-2019-12-05-20-47-29-2.jpg",
+    "title": "House Extension Project 29"
+  },
+  {
+    "id": "ext-30",
+    "src": "/recent-work/extentions/PHOTO-2019-12-05-20-47-29-3.jpg",
+    "title": "House Extension Project 30"
+  },
+  {
+    "id": "ext-31",
+    "src": "/recent-work/extentions/PHOTO-2019-12-05-20-47-29.jpg",
+    "title": "House Extension Project 31"
+  },
+  {
+    "id": "ext-32",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM.jpeg",
+    "title": "House Extension Project 32"
+  },
+  {
+    "id": "ext-33",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM1.jpeg",
+    "title": "House Extension Project 33"
+  },
+  {
+    "id": "ext-34",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM10.jpeg",
+    "title": "House Extension Project 34"
+  },
+  {
+    "id": "ext-35",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM11.jpeg",
+    "title": "House Extension Project 35"
+  },
+  {
+    "id": "ext-36",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM12.jpeg",
+    "title": "House Extension Project 36"
+  },
+  {
+    "id": "ext-37",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM13.jpeg",
+    "title": "House Extension Project 37"
+  },
+  {
+    "id": "ext-38",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM14.jpeg",
+    "title": "House Extension Project 38"
+  },
+  {
+    "id": "ext-39",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM15.jpeg",
+    "title": "House Extension Project 39"
+  },
+  {
+    "id": "ext-40",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM16.jpeg",
+    "title": "House Extension Project 40"
+  },
+  {
+    "id": "ext-41",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM17.jpeg",
+    "title": "House Extension Project 41"
+  },
+  {
+    "id": "ext-42",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM18.jpeg",
+    "title": "House Extension Project 42"
+  },
+  {
+    "id": "ext-43",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM2.jpeg",
+    "title": "House Extension Project 43"
+  },
+  {
+    "id": "ext-44",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM3.jpeg",
+    "title": "House Extension Project 44"
+  },
+  {
+    "id": "ext-45",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM4.jpeg",
+    "title": "House Extension Project 45"
+  },
+  {
+    "id": "ext-46",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM5.jpeg",
+    "title": "House Extension Project 46"
+  },
+  {
+    "id": "ext-47",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM6.jpeg",
+    "title": "House Extension Project 47"
+  },
+  {
+    "id": "ext-48",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM7.jpeg",
+    "title": "House Extension Project 48"
+  },
+  {
+    "id": "ext-49",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM8.jpeg",
+    "title": "House Extension Project 49"
+  },
+  {
+    "id": "ext-50",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.35-AM9.jpeg",
+    "title": "House Extension Project 50"
+  },
+  {
+    "id": "ext-51",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM.jpeg",
+    "title": "House Extension Project 51"
+  },
+  {
+    "id": "ext-52",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM1.jpeg",
+    "title": "House Extension Project 52"
+  },
+  {
+    "id": "ext-53",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM2.jpeg",
+    "title": "House Extension Project 53"
+  },
+  {
+    "id": "ext-54",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM3.jpeg",
+    "title": "House Extension Project 54"
+  },
+  {
+    "id": "ext-55",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM4.jpeg",
+    "title": "House Extension Project 55"
+  },
+  {
+    "id": "ext-56",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM5.jpeg",
+    "title": "House Extension Project 56"
+  },
+  {
+    "id": "ext-57",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM6.jpeg",
+    "title": "House Extension Project 57"
+  },
+  {
+    "id": "ext-58",
+    "src": "/recent-work/extentions/WhatsApp-Image-2022-08-29-at-10.11.36-AM7.jpeg",
+    "title": "House Extension Project 58"
+  }
+];
+
+// For backwards compatibility
+export const galleryPhotos: GalleryPhoto[] = supportingPillarPhotos;
+
+interface ProjectGalleryProps {
+  photos?: GalleryPhoto[];
+}
+
+export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = galleryPhotos }) => {
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
@@ -236,15 +531,15 @@ export const RecentWorksGallery: React.FC = () => {
 
   const nextPhoto = useCallback(() => {
     if (selectedPhotoIndex === null) return;
-    setSelectedPhotoIndex((prev) => ((prev ?? 0) + 1) % galleryPhotos.length);
-  }, [selectedPhotoIndex]);
+    setSelectedPhotoIndex((prev) => ((prev ?? 0) + 1) % photos.length);
+  }, [selectedPhotoIndex, photos.length]);
 
   const prevPhoto = useCallback(() => {
     if (selectedPhotoIndex === null) return;
     setSelectedPhotoIndex(
-      (prev) => ((prev ?? 0) - 1 + galleryPhotos.length) % galleryPhotos.length
+      (prev) => ((prev ?? 0) - 1 + photos.length) % photos.length
     );
-  }, [selectedPhotoIndex]);
+  }, [selectedPhotoIndex, photos.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -261,9 +556,9 @@ export const RecentWorksGallery: React.FC = () => {
 
   return (
     <div className="w-full">
-      {/* Full Photo Masonry Grid - Displays all 40 photos without cropping and without text overlay */}
+      {/* Full Photo Masonry Grid - Displays all photos without cropping and without text overlay */}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
-        {galleryPhotos.map((photo, index) => (
+        {photos.map((photo, index) => (
           <div
             key={photo.id}
             onClick={() => openLightbox(index)}
@@ -290,7 +585,7 @@ export const RecentWorksGallery: React.FC = () => {
 
       {/* Interactive Fullscreen Lightbox Modal */}
       <AnimatePresence>
-        {selectedPhotoIndex !== null && galleryPhotos[selectedPhotoIndex] && (
+        {selectedPhotoIndex !== null && photos[selectedPhotoIndex] && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -341,15 +636,15 @@ export const RecentWorksGallery: React.FC = () => {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={galleryPhotos[selectedPhotoIndex].src}
-                alt={galleryPhotos[selectedPhotoIndex].title}
+                src={photos[selectedPhotoIndex].src}
+                alt={photos[selectedPhotoIndex].title}
                 className="max-h-[85vh] max-w-full w-auto h-auto object-contain rounded-xl shadow-2xl"
               />
             </div>
 
             {/* Photo Counter */}
             <div className="text-white/75 text-xs font-semibold mt-3">
-              {selectedPhotoIndex + 1} / {galleryPhotos.length}
+              {selectedPhotoIndex + 1} / {photos.length}
             </div>
           </motion.div>
         )}
@@ -357,3 +652,5 @@ export const RecentWorksGallery: React.FC = () => {
     </div>
   );
 };
+
+export const RecentWorksGallery = ProjectGallery;

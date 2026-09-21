@@ -50,10 +50,6 @@ export const TestimonialsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
           <div className="space-y-2 max-w-xl">
             <div className="flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-[#092457] text-[11px] font-bold uppercase tracking-wider">
-                <Sparkles className="w-3 h-3 text-blue-600" />
-                <span>Verified Google Reviews</span>
-              </div>
               <span className="text-[11px] font-bold text-slate-500 bg-white px-2.5 py-0.5 rounded-full border border-slate-200 shadow-2xs">
                 {startIndex + 1} / {totalReviews} Reviews
               </span>

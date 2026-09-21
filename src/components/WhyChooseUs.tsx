@@ -71,11 +71,6 @@ export const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-5 min-w-0 space-y-5 sm:space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 text-blue-300 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-              <span>Cambridge Building Contractors</span>
-            </div>
-
             <div className="space-y-1.5">
               <span className="block text-sm sm:text-base font-extrabold text-blue-300 tracking-wider uppercase">
                 WHY CHOOSE

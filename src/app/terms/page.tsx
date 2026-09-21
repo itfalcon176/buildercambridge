@@ -13,7 +13,6 @@ import {
   Mail,
   ArrowRight,
   Clock,
-  Sparkles,
   HelpCircle,
 } from "lucide-react";
 
@@ -38,11 +37,6 @@ export default function TermsOfServicePage() {
       <section className="bg-[#092457] text-white py-14 lg:py-18 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
-            <Scale className="w-4 h-4 text-amber-400" />
-            <span>Contractual &amp; User Agreement</span>
-          </div>
-
           <h1
             className="text-3xl sm:text-5xl font-black tracking-tight text-white font-sans"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

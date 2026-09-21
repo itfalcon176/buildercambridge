@@ -10,7 +10,6 @@ import {
   Clock,
   ShieldCheck,
   ArrowRight,
-  Sparkles,
   Phone,
   HelpCircle,
   Award,
@@ -96,11 +95,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider border border-white/15">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>{service.category} Building Specialist • Cambridge</span>
-            </div>
-
             <h1
               className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-sans leading-tight"
               style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
@@ -466,9 +460,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                         className="p-7 sm:p-8 rounded-3xl bg-[#092457] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 my-6"
                       >
                         <div className="space-y-2 text-center sm:text-left">
-                          <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30 inline-block">
-                            Direct Contact &amp; Fast Response
-                          </span>
                           <h3 className="text-xl sm:text-2xl font-black font-sans">
                             {sec.heading}
                           </h3>
@@ -678,9 +669,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {service.regulationsNotice && (
                 <div className="p-7 sm:p-8 rounded-3xl bg-[#092457] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
                   <div className="space-y-2 text-center sm:text-left">
-                    <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30 inline-block">
-                      Building Regulations & Feasibility
-                    </span>
                     <h3 className="text-xl sm:text-2xl font-black font-sans">
                       {service.regulationsNotice.heading}
                     </h3>

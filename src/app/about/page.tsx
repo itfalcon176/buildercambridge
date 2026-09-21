@@ -1,6 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import { Sparkles } from "lucide-react";
 import { AboutHeroSection } from "@/components/AboutHeroSection";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 
@@ -17,10 +16,6 @@ export default function AboutPage() {
       <section className="bg-[#051329] text-white py-12 lg:py-16 border-b border-blue-950 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span>Master Craftsmen Since 2007</span>
-          </div>
           <h1
             className="text-3xl sm:text-5xl font-black tracking-tight text-white font-sans uppercase"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

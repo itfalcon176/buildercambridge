@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { RecentWorksTabbedGallery } from "@/components/RecentWorksGallery";
 import {
-  Sparkles,
   Phone,
   ArrowRight,
   ShieldCheck,
@@ -25,11 +24,6 @@ export default function RecentWorkPage() {
       <section className="bg-[#092457] text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Verified Cambridge Projects &amp; Case Studies</span>
-          </div>
-
           <h1
             className="text-4xl sm:text-6xl font-black text-white tracking-tight font-sans"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

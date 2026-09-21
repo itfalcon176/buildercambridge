@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   ArrowRight,
   ArrowLeft,
-  Sparkles,
   Layers,
   Home,
   Check,
@@ -353,11 +352,6 @@ export const CostCalculator: React.FC<CostCalculatorProps> = ({ isModal = false,
         >
           {/* Estimated Ballpark Display */}
           <div className="bg-[#092457] text-white p-6 sm:p-8 rounded-3xl text-center space-y-3 relative overflow-hidden">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Estimated Investment Range</span>
-            </div>
-
             <div className="text-3xl sm:text-5xl font-black text-amber-400 font-sans tracking-tight">
               {formatCurrency(estimatedMin)} - {formatCurrency(estimatedMax)}
             </div>

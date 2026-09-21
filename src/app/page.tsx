@@ -12,7 +12,6 @@ import { useQuoteModal } from "@/context/QuoteModalContext";
 import {
   Phone,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -41,11 +40,6 @@ export default function HomePage() {
       {/* 7. Final High-Conversion Quote Banner */}
       <section className="py-16 bg-[#092457] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span>Ready to Start Your Build?</span>
-          </div>
-
           <h2
             className="text-3xl sm:text-5xl font-black text-white tracking-tight font-sans max-w-3xl mx-auto"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

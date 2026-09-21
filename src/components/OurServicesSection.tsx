@@ -62,11 +62,6 @@ export const OurServicesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#092457] text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-            <span>Master Building & Renovations</span>
-          </div>
-
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#092457] tracking-tight uppercase"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

@@ -914,11 +914,6 @@ export const RecentWorksTabbedGallery: React.FC = () => {
       {/* 2. Modern Category Header with Live Indicator */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-slate-200/80">
         <div className="space-y-2 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[#092457] text-xs font-bold uppercase tracking-wider">
-            <CurrentIcon className="w-3.5 h-3.5 text-amber-500" />
-            <span>Category Portfolio</span>
-          </div>
-
           <h2
             className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

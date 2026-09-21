@@ -14,7 +14,6 @@ import {
   FileText,
   MessageSquare,
   ArrowRight,
-  Sparkles,
   Check,
   Shield,
   Award,
@@ -91,11 +90,6 @@ export default function ContactPage() {
 
               {/* Header Info */}
               <div className="relative z-10 space-y-3.5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-[11px] font-extrabold uppercase tracking-widest">
-                  <Sparkles className="w-3.5 h-3.5 text-blue-300" />
-                  <span>Direct Contact Information</span>
-                </div>
-
                 <h1
                   className="text-2xl sm:text-3xl lg:text-[32px] font-black tracking-tight text-white uppercase leading-[1.15]"
                   style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

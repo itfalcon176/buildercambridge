@@ -77,11 +77,6 @@ export default function BlogIndexPage() {
       <section className="bg-[#092457] text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Cambridge Construction &amp; Architecture Journal</span>
-          </div>
-
           <h1
             className="text-4xl sm:text-6xl font-black tracking-tight text-white font-sans"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
@@ -408,9 +403,6 @@ export default function BlogIndexPage() {
           <div className="mt-16 bg-gradient-to-br from-[#092457] to-[#0d367d] text-white p-8 sm:p-12 rounded-3xl border border-blue-900/40 text-center space-y-6 shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
             <div className="relative z-10 max-w-2xl mx-auto space-y-3">
-              <span className="px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30 inline-block">
-                Free Site Feasibility Study
-              </span>
               <h3
                 className="text-2xl sm:text-4xl font-black tracking-tight"
                 style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

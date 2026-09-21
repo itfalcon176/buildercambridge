@@ -24,10 +24,7 @@ export const ServiceQuoteTrigger: React.FC<ServiceQuoteTriggerProps> = ({
     return (
       <div className="bg-[#092457] text-white p-7 rounded-3xl shadow-xl border border-blue-900/60 space-y-6 sticky top-28">
         <div>
-          <span className="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-bold uppercase tracking-wider border border-amber-400/30">
-            Free Feasibility Advice
-          </span>
-          <h3 className="text-xl font-black text-white font-sans mt-3">
+          <h3 className="text-xl font-black text-white font-sans">
             Get an Exact Quote for {serviceTitle.replace(" Cambridge", "")}
           </h3>
           <p className="text-xs text-slate-300 mt-2 leading-relaxed">

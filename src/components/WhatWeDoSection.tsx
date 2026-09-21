@@ -58,12 +58,6 @@ export const WhatWeDoSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Header Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider border border-blue-100">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>Full-Spectrum Building & Renovations</span>
-            </div>
-
             {/* Title with Modern Architectural Underline */}
             <div>
               <h2

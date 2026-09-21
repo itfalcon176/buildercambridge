@@ -133,10 +133,6 @@ export const QuoteModal: React.FC = () => {
               <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
               
               <div className="space-y-1 relative z-10">
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-bold uppercase tracking-wider border border-blue-400/30">
-                  <Sparkles className="w-3 h-3 text-blue-400" />
-                  <span>Free Fixed-Price Estimate</span>
-                </div>
                 <h2
                   className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase"
                   style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

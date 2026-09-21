@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import {
-  Sparkles,
   Phone,
   ArrowRight,
   ShieldCheck,
@@ -77,12 +76,6 @@ export default function ServicesPage() {
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider border border-white/15">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>15 Specialized Building Services</span>
-          </div>
-
           {/* Heading */}
           <h1
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-sans max-w-4xl mx-auto leading-tight"
@@ -225,9 +218,6 @@ export default function ServicesPage() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="space-y-3 text-center lg:text-left relative z-10 max-w-xl">
-              <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30 inline-block">
-                Complimentary Site Feasibility
-              </span>
               <h3
                 className="text-2xl sm:text-3xl font-black font-sans tracking-tight"
                 style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

@@ -111,12 +111,6 @@ export const AboutHeroSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Top Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>Bespoke Residential & Commercial Contractors</span>
-            </div>
-
             {/* Header */}
             <div className="space-y-2">
               <h2

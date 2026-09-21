@@ -17,7 +17,6 @@ import {
   Clock,
   User,
   ShieldCheck,
-  Sparkles,
   Eye,
 } from "lucide-react";
 
@@ -83,11 +82,6 @@ export const BlogArticleClient: React.FC<BlogArticleClientProps> = ({
 
         {/* Article Header */}
         <div className="max-w-4xl space-y-4 mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-[#092457] text-xs font-bold uppercase tracking-wider border border-blue-200/60">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>{post.category}</span>
-          </div>
-
           <h1
             className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans leading-tight"
             style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
@@ -186,10 +180,6 @@ export const BlogArticleClient: React.FC<BlogArticleClientProps> = ({
 
             {/* Key Takeaways Callout Card */}
             <div className="mt-8 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white space-y-4 shadow-xl border border-slate-800">
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-4 h-4" />
-                <span>Cambridge Master Builder Advice</span>
-              </div>
               <h3
                 className="text-xl sm:text-2xl font-black"
                 style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
@@ -328,9 +318,6 @@ export const BlogArticleClient: React.FC<BlogArticleClientProps> = ({
               <div className="p-6 sm:p-8 rounded-3xl bg-[#092457] text-white space-y-5 shadow-xl border border-blue-900/40 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
                 <div className="relative z-10 space-y-2">
-                  <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30 inline-block">
-                    Free Consultation
-                  </span>
                   <h3
                     className="text-xl sm:text-2xl font-black tracking-tight"
                     style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

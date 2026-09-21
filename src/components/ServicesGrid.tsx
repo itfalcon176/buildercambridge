@@ -84,10 +84,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
         {/* Optional Section Header */}
         {!hideHeader && (
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#092457] text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>Full-Scope Construction Expertise</span>
-            </div>
             <h2
               className="text-3xl sm:text-4xl font-black text-[#092457] tracking-tight font-sans"
               style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}

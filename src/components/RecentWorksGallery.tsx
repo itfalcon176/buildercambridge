@@ -7,6 +7,11 @@ import {
   ChevronLeft,
   ChevronRight,
   Maximize2,
+  Hammer,
+  Building2,
+  ChefHat,
+  Eye,
+  Sparkles,
 } from "lucide-react";
 
 export interface GalleryPhoto {
@@ -704,26 +709,40 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
 
   return (
     <div className="w-full">
-      {/* Photo Grid - Aligned in uniform rows so every row and the bottom of the section ends on a single straight horizontal line */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {/* Modern Photo Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
         {photos.map((photo, index) => (
           <div
             key={photo.id}
             onClick={() => openLightbox(index)}
-            className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-xl border border-slate-200/80 cursor-pointer transition-all duration-300 hover:-translate-y-1"
+            className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-900/5 shadow-sm hover:shadow-2xl border border-slate-200/90 cursor-pointer transition-all duration-500 hover:-translate-y-1.5"
           >
+            {/* Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={photo.src}
               alt={photo.title}
               loading={index < 8 ? "eager" : "lazy"}
-              className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-out"
+              className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Subtle Zoom Icon on Hover Only */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors pointer-events-none rounded-2xl flex items-center justify-center">
-              <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md text-slate-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
-                <Maximize2 className="w-5 h-5" />
+            {/* Corner Project Index */}
+            <div className="absolute top-3 left-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <span className="px-2 py-0.5 rounded-md bg-black/55 backdrop-blur-md text-[11px] font-mono text-white/95 border border-white/15 shadow-sm">
+                #{String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+
+            {/* Modern Glassmorphic Hover Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 rounded-2xl pointer-events-none">
+              <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-between">
+                <span className="text-white text-xs font-bold tracking-wide flex items-center gap-1.5 drop-shadow-md">
+                  <Eye className="w-3.5 h-3.5 text-amber-400" />
+                  <span>View Full Photo</span>
+                </span>
+                <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center border border-white/30 shadow-md">
+                  <Maximize2 className="w-4 h-4" />
+                </div>
               </div>
             </div>
           </div>
@@ -737,20 +756,25 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-6"
             onClick={closeLightbox}
           >
-            {/* Close Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                closeLightbox();
-              }}
-              className="absolute top-5 right-5 z-50 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
-              aria-label="Close Lightbox"
-            >
-              <X className="w-6 h-6" />
-            </button>
+            {/* Top Toolbar */}
+            <div className="absolute top-4 inset-x-4 sm:inset-x-8 z-50 flex items-center justify-between pointer-events-none">
+              <div className="pointer-events-auto bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 text-white text-xs font-semibold">
+                Photo {selectedPhotoIndex + 1} of {photos.length}
+              </div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeLightbox();
+                }}
+                className="pointer-events-auto w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Close Lightbox"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
             {/* Previous Button */}
             <button
@@ -758,7 +782,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
                 e.stopPropagation();
                 prevPhoto();
               }}
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/25 border border-white/15 text-white flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Previous Photo"
             >
               <ChevronLeft className="w-7 h-7" />
@@ -770,7 +794,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
                 e.stopPropagation();
                 nextPhoto();
               }}
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/25 border border-white/15 text-white flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Next Photo"
             >
               <ChevronRight className="w-7 h-7" />
@@ -778,20 +802,15 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
 
             {/* Photo Container */}
             <div
-              className="relative max-w-5xl max-h-[85vh] w-full flex items-center justify-center"
+              className="relative max-w-5xl max-h-[82vh] w-full flex items-center justify-center p-2"
               onClick={(e) => e.stopPropagation()}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photos[selectedPhotoIndex].src}
                 alt={photos[selectedPhotoIndex].title}
-                className="max-h-[85vh] max-w-full w-auto h-auto object-contain rounded-xl shadow-2xl"
+                className="max-h-[82vh] max-w-full w-auto h-auto object-contain rounded-2xl shadow-2xl border border-white/10"
               />
-            </div>
-
-            {/* Photo Counter */}
-            <div className="text-white/75 text-xs font-semibold mt-3">
-              {selectedPhotoIndex + 1} / {photos.length}
             </div>
           </motion.div>
         )}
@@ -811,82 +830,121 @@ export const RecentWorksTabbedGallery: React.FC = () => {
     {
       id: "supporting-pillar" as TabCategory,
       name: "Removing Supporting Piller",
+      icon: Hammer,
       count: supportingPillarPhotos.length,
       photos: supportingPillarPhotos,
+      accentColor: "text-amber-400",
       tagline: "Structural load-bearing pillar removal, temporary acrow prop installations, and RSJ steel beam insertion across Cambridge properties.",
     },
     {
       id: "extensions" as TabCategory,
       name: "Extensions",
+      icon: Building2,
       count: extensionPhotos.length,
       photos: extensionPhotos,
-      tagline: "Single & double-storey house extensions, bespoke rear extensions, exterior brickwork, and structural alterations.",
+      accentColor: "text-sky-400",
+      tagline: "Single & double-storey house extensions, bespoke rear kitchen extensions, exterior brickwork, and structural alterations.",
     },
     {
       id: "kitchen" as TabCategory,
       name: "Kitchen",
+      icon: ChefHat,
       count: kitchenPhotos.length,
       photos: kitchenPhotos,
+      accentColor: "text-emerald-400",
       tagline: "Open-plan kitchen transformations, structural knock-throughs, custom breakfast bars, and luxury kitchen renovations.",
     },
   ];
 
   const currentTab = tabs.find((t) => t.id === activeTab) || tabs[0];
+  const CurrentIcon = currentTab.icon;
 
   return (
-    <div className="w-full space-y-10">
-      {/* 3 Tabs Switcher */}
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`group relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-3 shadow-sm active:scale-95 cursor-pointer ${
-                isActive
-                  ? "bg-[#092457] text-white shadow-lg shadow-[#092457]/25 border-2 border-[#092457]"
-                  : "bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100/90 border-2 border-slate-200/90"
-              }`}
-            >
-              <span style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}>
-                {tab.name}
-              </span>
-              <span
-                className={`px-2.5 py-0.5 rounded-full text-xs font-black transition-colors ${
-                  isActive
-                    ? "bg-amber-400 text-slate-950"
-                    : "bg-slate-100 text-slate-600 group-hover:bg-slate-200"
+    <div className="w-full space-y-8 sm:space-y-10">
+      {/* 1. Ultra Modern Segmented Control Dock */}
+      <div className="flex justify-center">
+        <div className="p-1.5 sm:p-2 rounded-2xl sm:rounded-full bg-slate-200/60 backdrop-blur-xl border border-slate-200/90 shadow-[0_4px_25px_-5px_rgba(9,36,87,0.07)] flex flex-wrap sm:flex-nowrap items-center justify-center gap-1.5 sm:gap-2 max-w-full">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            const Icon = tab.icon;
+
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`relative px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl sm:rounded-full font-bold text-xs sm:text-sm tracking-wide transition-colors duration-200 flex items-center gap-2.5 cursor-pointer select-none active:scale-[0.98] ${
+                  isActive ? "text-white" : "text-slate-600 hover:text-slate-950 hover:bg-white/50"
                 }`}
               >
-                {tab.count}
-              </span>
-            </button>
-          );
-        })}
+                {/* Framer Motion Animated Active Pill */}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-gradient-to-r from-[#092457] via-[#0b2b68] to-[#123982] rounded-xl sm:rounded-full shadow-lg shadow-[#092457]/30 border border-blue-900/30"
+                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
+                  />
+                )}
+
+                {/* Tab Label & Icon */}
+                <span className="relative z-10 flex items-center gap-2.5">
+                  <Icon
+                    className={`w-4 h-4 transition-colors ${
+                      isActive ? tab.accentColor : "text-slate-400"
+                    }`}
+                  />
+                  <span style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}>
+                    {tab.name}
+                  </span>
+                  <span
+                    className={`px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold transition-all ${
+                      isActive
+                        ? "bg-white/20 text-white border border-white/20 shadow-inner"
+                        : "bg-slate-300/60 text-slate-700"
+                    }`}
+                  >
+                    {tab.count}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Active Tab Heading & Subtitle */}
-      <div className="text-center sm:text-left pt-2 pb-2">
-        <h2
-          className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
-          style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-        >
-          {currentTab.name}
-        </h2>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-3xl">
-          {currentTab.tagline}
-        </p>
+      {/* 2. Modern Category Header with Live Indicator */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-slate-200/80">
+        <div className="space-y-2 text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[#092457] text-xs font-bold uppercase tracking-wider">
+            <CurrentIcon className="w-3.5 h-3.5 text-amber-500" />
+            <span>Category Portfolio</span>
+          </div>
+
+          <h2
+            className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
+            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+          >
+            {currentTab.name}
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl leading-relaxed">
+            {currentTab.tagline}
+          </p>
+        </div>
+
+        {/* Live Project Count Indicator */}
+        <div className="flex items-center justify-center md:justify-end gap-2 text-xs font-semibold text-slate-500 shrink-0 bg-white px-3.5 py-2 rounded-xl border border-slate-200/70 shadow-xs">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>{currentTab.count} Completed Projects in Cambridge</span>
+        </div>
       </div>
 
-      {/* Photo Grid for Active Tab */}
+      {/* 3. Photo Grid for Active Tab with Smooth Animation */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.28, ease: "easeOut" }}
         >
           <ProjectGallery photos={currentTab.photos} />
         </motion.div>

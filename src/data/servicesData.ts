@@ -283,7 +283,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "INTERIOR RENOVATION",
     shortDesc: "Complete high-end interior remodelling, bespoke luxury kitchens, designer bathrooms, and structural wall removals across Cambridge.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/house-renovation.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
@@ -459,7 +459,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "New Builds Cambridge",
     shortDesc: "Comprehensive turnkey new build homes and residential construction across Cambridge. From initial design to full finish and landscaping.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/new-builds-cambridge.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
@@ -589,7 +589,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Commercial Builders Cambridge",
     shortDesc: "Specialist domestic and commercial builders in Cambridge. From steel frame buildings and office refurbishments to complete facilities management.",
     category: "Commercial",
-    heroImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/commerical-builds-1024x684.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
@@ -681,7 +681,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "DESIGN AND BUILD",
     shortDesc: "End-to-end architectural design, planning permissions, cost engineering, and master construction under one seamless contract.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/image_021.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
@@ -745,7 +745,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "ROOFING",
     shortDesc: "Specialist slate and tile roofing in Cambridge. Natural, artificial and zinc slate, durable clay and concrete tiles installed to BS 5534 standards.",
     category: "Structural",
-    heroImage: "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/roofing-work-5.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
@@ -856,7 +856,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "BIFOLDING DOORS",
     shortDesc: "Leading installers of made-to-measure aluminium and engineered timber bifolding doors in Cambridge with over 200 colours and a full 10-year guarantee.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/Heron-BiFold014-1-1024x682.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
@@ -924,11 +924,8 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Underpinning Cambridge",
     shortDesc: "Underpinning is when extra support is provided underneath a structure due to subsidence to counter sinking or pre-emptively protect adjacent construction.",
     category: "Structural",
-    heroImage: "/images/underpinning-excavation.jpg",
-    galleryImages: [
-      "/images/underpinning-excavation.jpg",
-      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
-    ],
+    heroImage: "/services-images/underpinning.jpg",
+    galleryImages: [],
     fullDescription: [
       "Underpinning is when extra support is provided underneath a structure due to subsidence. This can be to directly counter subsidence where the building or structure is actually sinking, or it can be done pre-emptively if other construction works are taking place which may directly affect the structure",
       "We offer a full design and construction package for underpinning of subsidence affected properties from design and construction of piles through to design and construction of reinforced concrete rafts / needles. In every case we will offer a cost effective solution designed to support the area to be underpinned.",
@@ -951,7 +948,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Demolition Cambridge",
     shortDesc: "Comprehensive building demolition process, building and structural surveying, removal of hazardous materials, and engineered demolition plans in Cambridge.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/demolition-cambridge.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
@@ -1034,7 +1031,7 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Drainage",
     shortDesc: "BuilderCambridge.com offer drain installations carried out by fully trained engineers who will take the time to advise you on the best installation method for your property and requirements.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/drainage-cambridge.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
@@ -1103,10 +1100,9 @@ export const servicesData: ServiceItem[] = [
     contentHeading: "Driveways",
     shortDesc: "A driveway is much more than just a practical, off-street place to park your car. An attractive, modern driveway can create a strong first impression. It also has the potential to increase the value of your home – especially if parking space is at a premium where you live.",
     category: "Groundworks",
-    heroImage: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/WhatsApp-Image-2020-05-26-at-3.10.14-PM.jpeg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80",
+      "/services-images/WhatsApp-Image-2020-05-26-at-3.10.14-PM-1.jpeg",
     ],
     features: [
       "SUDS-compliant permeable block paving and gravel grids",

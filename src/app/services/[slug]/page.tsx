@@ -162,25 +162,68 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               
               {/* Featured Showcase Photography */}
               <div className="space-y-4">
-                <div className="relative h-[340px] sm:h-[480px] w-full rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group">
-                  <Image
-                    src={service.heroImage}
-                    alt={service.title}
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
-                    sizes="(max-width: 1024px) 100vw, 66vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                    <span className="px-3 py-1 rounded-lg bg-slate-950/70 backdrop-blur-md font-medium border border-white/10">
-                      Bespoke Master Construction • Cambridge & South Cambridgeshire
-                    </span>
-                    <span className="hidden sm:inline-block px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold">
-                      100% Council Compliant
-                    </span>
+                {service.galleryImages && service.galleryImages.some((img) => img.startsWith("/services-images")) ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="relative h-[260px] sm:h-[340px] w-full rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group">
+                      <Image
+                        src={service.heroImage}
+                        alt={`${service.title} paving showcase 1`}
+                        fill
+                        priority
+                        className="object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                        <span className="px-3 py-1 rounded-lg bg-slate-950/70 backdrop-blur-md font-medium border border-white/10">
+                          Block Paving &amp; Paving Stones
+                        </span>
+                      </div>
+                    </div>
+                    {service.galleryImages
+                      .filter((img) => img.startsWith("/services-images"))
+                      .map((img, idx) => (
+                        <div
+                          key={idx}
+                          className="relative h-[260px] sm:h-[340px] w-full rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group"
+                        >
+                          <Image
+                            src={img}
+                            alt={`${service.title} paving showcase ${idx + 2}`}
+                            fill
+                            className="object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                            <span className="px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold">
+                              Completed Cambridge Driveway
+                            </span>
+                          </div>
+                        </div>
+                      ))}
                   </div>
-                </div>
+                ) : (
+                  <div className="relative h-[340px] sm:h-[480px] w-full rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group">
+                    <Image
+                      src={service.heroImage}
+                      alt={service.title}
+                      fill
+                      priority
+                      className="object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 1024px) 100vw, 66vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                      <span className="px-3 py-1 rounded-lg bg-slate-950/70 backdrop-blur-md font-medium border border-white/10">
+                        Bespoke Master Construction • Cambridge &amp; South Cambridgeshire
+                      </span>
+                      <span className="hidden sm:inline-block px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold">
+                        100% Council Compliant
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Main Heading & Content Exactly Matching Screenshot */}

@@ -213,13 +213,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </h2>
                 <div className="w-16 h-1 bg-amber-500 rounded-full" />
 
-                <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-                  {service.fullDescription.map((paragraph, i) => (
-                    <p key={i} className="leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+                {service.fullDescription && service.fullDescription.length > 0 && (
+                  <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+                    {service.fullDescription.map((paragraph, i) => (
+                      <p key={i} className="leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* If "Is My Roof Suitable?" exists, render it directly after the intro paragraphs (as in screenshot) */}
@@ -431,8 +433,104 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
               )}
 
+              {/* Custom Editorial Sections Matching Exact Screenshot Structure */}
+              {service.customSections && service.customSections.length > 0 && (
+                <div className="space-y-8 pt-6 border-t border-slate-100">
+                  {service.customSections.map((sec, idx) => (
+                    sec.isCallout ? (
+                      <div
+                        key={idx}
+                        className="p-7 sm:p-8 rounded-3xl bg-[#092457] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 my-6"
+                      >
+                        <div className="space-y-2 text-center sm:text-left">
+                          <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30 inline-block">
+                            Direct Contact &amp; Fast Response
+                          </span>
+                          <h3 className="text-xl sm:text-2xl font-black font-sans">
+                            {sec.heading}
+                          </h3>
+                          <p className="text-slate-300 text-xs sm:text-sm max-w-md leading-relaxed">
+                            {sec.text}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+                          <ServiceQuoteTrigger
+                            serviceTitle={service.title}
+                            variant="primary"
+                            label="ARRANGE QUOTATION"
+                          />
+                          <a
+                            href={`tel:${(sec.calloutPhone || "01223 782433").replace(/\s+/g, "")}`}
+                            className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs flex items-center gap-2 transition-all"
+                          >
+                            <Phone className="w-4 h-4 text-amber-400" />
+                            <span>{sec.calloutPhone || "01223 782 433"}</span>
+                          </a>
+                        </div>
+                      </div>
+                    ) : (
+                      <div key={idx} className="space-y-3">
+                      {sec.heading && (
+                        <div className="space-y-2">
+                          <h3
+                            className="text-xl sm:text-2xl font-black text-[#092457] tracking-tight font-sans"
+                            style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+                          >
+                            {sec.heading}
+                          </h3>
+                          <div className="w-12 h-1 bg-amber-500 rounded-full" />
+                        </div>
+                      )}
+
+                      {sec.intro && (
+                        <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                          {sec.intro}
+                        </p>
+                      )}
+
+                      {sec.text && (
+                        <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                          {sec.text}
+                        </p>
+                      )}
+
+                      {sec.paragraphs && sec.paragraphs.length > 0 && (
+                        <div className="space-y-3">
+                          {sec.paragraphs.map((p, pIdx) => (
+                            <p key={pIdx} className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                              {p}
+                            </p>
+                          ))}
+                        </div>
+                      )}
+
+                      {sec.bullets && sec.bullets.length > 0 && (
+                        <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-2xs space-y-2.5">
+                          <ul className="space-y-2.5">
+                            {sec.bullets.map((bullet, bIdx) => (
+                              <li key={bIdx} className="flex items-start gap-3 text-slate-800 text-xs sm:text-sm font-semibold">
+                                <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0 mt-1.5" />
+                                <span className="leading-snug">{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {sec.secondaryText && (
+                        <p className="text-slate-700 text-sm sm:text-base leading-relaxed pt-1">
+                          {sec.secondaryText}
+                        </p>
+                      )}
+                    </div>
+                    )
+                  ))}
+                </div>
+              )}
+
               {/* Why Choose Us Section Exactly Matching Screenshot */}
-              {service.whyChooseUs && service.whyChooseUs.length > 0 && (
+              {(((service.whyChooseUs && service.whyChooseUs.length > 0)) || (service.whyChooseUsCards && service.whyChooseUsCards.length > 0)) && (
                 <div className="space-y-4 pt-6 border-t border-slate-100">
                   <div className="space-y-2">
                     <h3
@@ -442,19 +540,71 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       {service.whyChooseUsTitle || "WHY CHOOSE US"}
                     </h3>
                     <div className="w-12 h-1 bg-amber-500 rounded-full" />
+                    {service.whyChooseUsIntro && (
+                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed pt-1">
+                        {service.whyChooseUsIntro}
+                      </p>
+                    )}
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                    {service.whyChooseUs.map((point, idx) => (
-                      <div
-                        key={idx}
-                        className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/90 hover:bg-white hover:border-blue-200 hover:shadow-xs transition-all flex items-center gap-3.5 group"
-                      >
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/15 text-emerald-600 flex items-center justify-center shrink-0">
-                          <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                  {/* If structured cards exist (e.g. Flexibility, Experience, Peace of mind, Quality guaranteed) */}
+                  {service.whyChooseUsCards && service.whyChooseUsCards.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                      {service.whyChooseUsCards.map((card, idx) => (
+                        <div
+                          key={idx}
+                          className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/90 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all space-y-2 group"
+                        >
+                          <div className="flex items-center justify-between">
+                            <h4 className="text-base font-bold text-[#092457] font-sans group-hover:text-blue-700 transition-colors">
+                              {card.title}
+                            </h4>
+                            {card.badge && (
+                              <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold">
+                                {card.badge}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            {card.description}
+                          </p>
                         </div>
-                        <span className="text-xs sm:text-sm font-bold text-slate-800 font-sans group-hover:text-[#092457] transition-colors">
-                          {point}
+                      ))}
+                    </div>
+                  )}
+
+                  {service.whyChooseUs && service.whyChooseUs.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                      {service.whyChooseUs.map((point, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/90 hover:bg-white hover:border-blue-200 hover:shadow-xs transition-all flex items-center gap-3.5 group"
+                        >
+                          <div className="w-6 h-6 rounded-full bg-emerald-500/15 text-emerald-600 flex items-center justify-center shrink-0">
+                            <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                          </div>
+                          <span className="text-xs sm:text-sm font-bold text-slate-800 font-sans group-hover:text-[#092457] transition-colors">
+                            {point}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* 7. Key Features Checklist */}
+              {service.features && service.features.length > 0 && (
+                <div className="bg-slate-50/70 p-7 rounded-3xl border border-slate-200/80 space-y-4">
+                  <h3 className="text-lg font-bold text-[#092457] font-sans">
+                    Included Within Our {service.title} Specifications:
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    {service.features.map((feat, i) => (
+                      <div key={i} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm font-semibold text-slate-700">
+                          {feat}
                         </span>
                       </div>
                     ))}
@@ -462,59 +612,44 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
               )}
 
-              {/* 7. Key Features Checklist */}
-              <div className="bg-slate-50/70 p-7 rounded-3xl border border-slate-200/80 space-y-4">
-                <h3 className="text-lg font-bold text-[#092457] font-sans">
-                  Included Within Our {service.title} Specifications:
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  {service.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm font-semibold text-slate-700">
-                        {feat}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* 8. Step by Step Process Program */}
-              <div className="space-y-6 pt-2">
-                <div>
-                  <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-                    Structured Build Roadmap
-                  </span>
-                  <h3
-                    className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans mt-1"
-                    style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-                  >
-                    Our 5-Stage Delivery Program
-                  </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm mt-1">
-                    How we take your project smoothly from preliminary site survey to final handover.
-                  </p>
-                </div>
-
-                <div className="space-y-3.5">
-                  {service.processSteps.map((step, idx) => (
-                    <div
-                      key={idx}
-                      className="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-slate-300 transition-all flex items-start gap-4"
+              {service.processSteps && service.processSteps.length > 0 && (
+                <div className="space-y-6 pt-2">
+                  <div>
+                    <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+                      Structured Build Roadmap
+                    </span>
+                    <h3
+                      className="text-2xl sm:text-3xl font-black text-[#092457] tracking-tight font-sans mt-1"
+                      style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
                     >
-                      <div className="w-8 h-8 rounded-xl bg-[#092457] text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                        {idx + 1}
+                      Our 5-Stage Delivery Program
+                    </h3>
+                    <p className="text-slate-600 text-xs sm:text-sm mt-1">
+                      How we take your project smoothly from preliminary site survey to final handover.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3.5">
+                    {service.processSteps.map((step, idx) => (
+                      <div
+                        key={idx}
+                        className="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-slate-300 transition-all flex items-start gap-4"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-[#092457] text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                          {idx + 1}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-sm text-[#092457] font-sans">{step.title}</h4>
+                          <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                            {step.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-bold text-sm text-[#092457] font-sans">{step.title}</h4>
-                        <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* 9. Building Regulations Notice & Direct Quote Callout (Exact Copy from Screenshot) */}
               {service.regulationsNotice && (
@@ -549,7 +684,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               )}
 
               {/* 10. FAQs */}
-              {service.faqs.length > 0 && (
+              {service.faqs && service.faqs.length > 0 && (
                 <div className="space-y-6 pt-4 border-t border-slate-100">
                   <div>
                     <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">

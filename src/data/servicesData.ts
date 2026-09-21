@@ -5,6 +5,17 @@ export interface ExtensionTypeItem {
   features?: string[];
 }
 
+export interface CustomContentSection {
+  heading?: string;
+  intro?: string;
+  bullets?: string[];
+  text?: string;
+  secondaryText?: string;
+  paragraphs?: string[];
+  isCallout?: boolean;
+  calloutPhone?: string;
+}
+
 export interface ServiceItem {
   id: string;
   slug: string;
@@ -13,12 +24,18 @@ export interface ServiceItem {
   category: "Residential" | "Structural" | "Commercial" | "Groundworks";
   heroImage: string;
   galleryImages: string[];
-  features: string[];
+  features?: string[];
   fullDescription: string[];
   whyChooseUsTitle?: string;
-  whyChooseUs: string[];
-  processSteps: { title: string; desc: string }[];
-  faqs: { question: string; answer: string }[];
+  whyChooseUsIntro?: string;
+  whyChooseUsCards?: {
+    title: string;
+    description: string;
+    badge?: string;
+  }[];
+  whyChooseUs?: string[];
+  processSteps?: { title: string; desc: string }[];
+  faqs?: { question: string; answer: string }[];
   typicalTimeline: string;
   typicalCostRange: string;
   badge?: string;
@@ -50,6 +67,7 @@ export interface ServiceItem {
     phone: string;
     email: string;
   };
+  customSections?: CustomContentSection[];
 }
 
 export const servicesData: ServiceItem[] = [
@@ -723,245 +741,360 @@ export const servicesData: ServiceItem[] = [
   {
     id: "roofing",
     slug: "roofing",
-    title: "Roofing & Structural Repairs",
-    shortDesc: "Specialist pitched slate and tile roofing, modern EPDM/GRP flat roofs, chimney repairs, and leadwork.",
+    title: "Roofing",
+    contentHeading: "ROOFING",
+    shortDesc: "Specialist slate and tile roofing in Cambridge. Natural, artificial and zinc slate, durable clay and concrete tiles installed to BS 5534 standards.",
     category: "Structural",
     heroImage: "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
     ],
-    features: [
-      "Natural Welsh and Spanish slate, clay and concrete tile roofing",
-      "Seamless EPDM rubber and GRP fibreglass flat roof systems (25-yr life expectancy)",
-      "Traditional lead flashing, valleys, and chimney re-pointing",
-      "Fascias, soffits, guttering, and breathable membrane installation",
-      "Emergency roof leak repairs and storm damage restoration",
-    ],
     fullDescription: [
-      "Your roof is your property's first defense against the British weather. Builder Cambridge delivers master roofing services for both historic Cambridge properties requiring heritage-matched slate and contemporary architectural flat roofs. All our new roofs come backed with full insurance-backed guarantees.",
+      "Slate is a durable material that's been used to build roofs for hundreds of years. It comes in three varieties – natural, artificial and zinc – and offers an authentic and beautiful roofing solution, especially for traditionally styled homes.",
+      "Nowadays, tiles have been created with similar properties that make them almost as hardwearing and long-lasting. These are produced from either concrete or clay, and are more suited to modern houses, as they're available in an array of styles and colours.",
+      "Both of these are popular options for roofing today. And there are plenty of fantastic reasons why:",
     ],
-    whyChooseUs: [
-      "Experienced with historic Cambridge heritage roofing requirements",
-      "High-performance breathable roofing membranes and insulation upgrades",
-      "Neat, safe scaffolding and meticulous waste disposal",
-    ],
-    processSteps: [
-      { title: "1. Roof Inspection", desc: "Detailed drone or physical inspection assessing battens, felt, and tiles." },
-      { title: "2. Stripping & Prep", desc: "Safe removal of old materials, installation of new high-grade breathable underlay." },
-      { title: "3. Battens & Slating", desc: "Treated timber battens and precision tile/slate fixing with stainless nails." },
-      { title: "4. Leadwork & Ridge", desc: "Code 4/5 lead flashing and dry ridge / mortar bedded ridge tiles." },
-    ],
-    faqs: [
+    customSections: [
       {
-        question: "How long does a new pitched roof last?",
-        answer: "A properly installed slate or tile roof with modern breathable membrane will easily protect your home for 50 to 80+ years.",
+        heading: "Durability",
+        text: "Did you know that slate roofs can last up to 150 years, and a tile roof can do so for 50 to 70? This is impressive, considering the usual lifespan of a roof is 20 to 30 years.",
+      },
+      {
+        heading: "Long-term value",
+        paragraphs: [
+          "This durability means that despite requiring a slightly larger initial investment, a slate or tile roof will always prove greater value in the long term.",
+          "Slate is mainly grey in colour but available in a variety of shades, textures and patterns, while tile comes in a wide range of designs and colours. We also offer several different fixing methods for each, to suit any roof. That means yours will be as stunning as it is sturdy.",
+          "Not only is slate and tile roofing one of the most fire-resistant options that exists, but it also has environmental benefits. In fact, natural slate creates the lowest environmental impact and carbon footprint of all roofing materials.",
+        ],
+      },
+      {
+        heading: "What do we offer?",
+        text: "To give you plenty of choice, we offer a wide variety of slate and tile roofing options, installed by our dedicated team.",
+        secondaryText: "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
       },
     ],
+    whyChooseUsTitle: "WHY CHOOSE US",
+    whyChooseUsCards: [
+      {
+        title: "Flexibility",
+        description: "Whatever your type of roof, whatever your style and whatever your budget, we're able to source the most appropriate slate, tiles and fittings to meet your unique requirements.",
+      },
+      {
+        title: "Experience",
+        description: "We have over 10 years' experience in fitting slate and tile roofs, but still follow all recommendations offered by today's leading manufacturers – using best practice and the best products.",
+      },
+      {
+        title: "Peace of mind",
+        description: "We don't just install roofs. We help you consider planning restrictions, aesthetic requirements, site exposure, roof pitch and cost – so you can have confidence your chosen slate or tile roof is the perfect fit for you.",
+      },
+      {
+        title: "Quality, guaranteed",
+        description: "All our slate and tile roofs are installed in accordance with the BS 5534 Slating & Tiling regulation.",
+      },
+    ],
+    whyChooseUs: [
+      "Financial Responsibility to Our Clients",
+      "Superior Quality and Craftsmanship",
+      "Quality and Value to the Projects We Deliver",
+      "Highest Standards in Cost Control",
+      "On Time and on Budget",
+      "Real Focus on Customer Satisfaction",
+    ],
     typicalTimeline: "1 - 3 Weeks",
-    typicalCostRange: "£6,000 - £25,000+",
+    typicalCostRange: "Survey Dependent",
   },
   {
     id: "building-regulations",
     slug: "building-regulations",
-    title: "Building Regulations & Planning Approvals",
-    shortDesc: "Expert navigation of UK Building Regulations, Cambridge planning applications, lawful development certificates, and structural sign-offs.",
+    title: "Building Regulations",
+    contentHeading: "Building Regulations",
+    shortDesc: "Building Regulations are in place to ensure that whatever is built is done so safely and properly across Cambridge.",
     category: "Structural",
-    heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
-    ],
-    features: [
-      "Full Building Regulations plan checks and approvals",
-      "Structural calculations (beams, lintels, foundations, roof trusses)",
-      "Part L thermal efficiency, Part P electrical, and Part B fire compliance",
-      "Party Wall surveyor coordination and notice drafting",
-      "Liaison with Cambridge City Council & approved inspectors",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
     ],
     fullDescription: [
-      "Every major building project in the UK must adhere to strict Building Regulations covering structural stability, fire safety, drainage, ventilation, and energy conservation. Builder Cambridge handles the entire compliance cycle, arranging site inspections at key milestones and securing your formal Completion Certificate.",
+      "Building Regulations are in place to ensure that whatever is built is done so safely and properly. Each council has its own team of Building Control officers who come out and inspect that everything is in order during construction.",
+      "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
     ],
-    whyChooseUs: [
-      "Zero failed inspections track record across Cambridge authorities",
-      "Chartered structural engineering partnerships",
-      "Guaranteed legally sound documentation for future property resale",
-    ],
-    processSteps: [
-      { title: "1. Specification Review", desc: "Translating architectural plans into detailed building regulation specifications." },
-      { title: "2. Structural Sign-Off", desc: "Chartered engineer signs off load-bearing calculations." },
-      { title: "3. Application Filing", desc: "Submitting Full Plans application or Building Notice." },
-      { title: "4. Milestone Inspections", desc: "Arranging inspector visits for foundations, steelwork, insulation, and drains." },
-      { title: "5. Certificate Delivery", desc: "Securing final Building Control Completion Certificate." },
-    ],
-    faqs: [
+    customSections: [
       {
-        question: "Why is a Building Regulations Completion Certificate essential?",
-        answer: "When you eventually sell or remortgage your home, solicitors require this certificate as proof that structural alterations were executed lawfully and safely.",
+        heading: "What does Building Regulations cover?",
+        bullets: [
+          "Structural Supports",
+          "Health and Safety",
+          "Fire Prevention and Fire Safety",
+          "Ventilation",
+          "Drainage and Waste Disposal",
+          "Energy Conservation",
+          "Energy Conservation",
+          "Electrical and Gas Safety",
+          "Workmanship and Materials",
+        ],
+        text: "A Building Control Officer oversees the construction of a project and makes sure that all the current Building Regulation Guidelines are followed correctly, a fee is payable to your local council in respect of the services they provide during inspections.",
+        secondaryText: "Building Regulations are what guarantee safety and correctness in construction.",
       },
     ],
-    typicalTimeline: "3 - 6 Weeks (Approvals)",
-    typicalCostRange: "Included with full builds / Standalone available",
+    regulationsNotice: {
+      heading: "Building Regulations & Quotation",
+      text: "For more information about Building Regulations or to arrange a quotation call us on 01223 782 433 or email us at info@buildercambridge.com",
+      phone: "01223 782 433",
+      email: "info@buildercambridge.com",
+    },
+    typicalTimeline: "Project Dependent",
+    typicalCostRange: "Council Fee Dependent",
   },
   {
     id: "bifolding-doors",
     slug: "bifolding-doors",
-    title: "Bifolding Doors & Architectural Glazing",
-    shortDesc: "Ultra-slim aluminium bifolding doors, Crittall-style steel screens, roof lanterns, and large format sliding glass doors.",
+    title: "Bifolding Doors",
+    contentHeading: "BIFOLDING DOORS",
+    shortDesc: "Leading installers of made-to-measure aluminium and engineered timber bifolding doors in Cambridge with over 200 colours and a full 10-year guarantee.",
     category: "Residential",
     heroImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
-      "Thermally broken aluminium frames with low U-values",
-      "Flush threshold options for seamless indoor-outdoor transition",
-      "Multi-point high security locking systems (PAS 24 / Secured by Design)",
-      "Solar control double and triple glazing",
-      "Custom RAL colours (Anthracite Grey, Matt Black, Heritage Bronze)",
+      "Made to measure in the UK to your personal specification",
+      "Ultra-slim sight lines with over 200 RAL colours & gloss levels",
+      "Engineered timber range available in softwood, hardwood or oak",
+      "Fully compliant with current UK building regulations",
+      "Comprehensive full 10-year guarantee included",
+      "Multi-point PAS 24 security locking & thermal break technology",
     ],
     fullDescription: [
-      "Connect your interior living room or kitchen directly to your garden with bespoke architectural glazing. Our precision-engineered aluminium bifolding and sliding doors flood your home with natural light, offering effortless glide operation and superb thermal insulation year-round.",
+      "BuilderCambridge.com are leading installers of aluminium bifolding doors. Our aluminium bifold doors are made to measure in the UK. All our aluminium bifold doors are manufactured to your personal specification so you can be assured that they meet your own personal requirements. Available with slim sight lines and in over 200 colours and various gloss levels you can personalise your doors to compliment your project.",
+      "We also supply a timber range of folding sliding doors that are manufactured from engineered timbers in softwood, hardwood or oak. Also available in a variety of finishes from a selection of stains and again from the extensive colour range.",
+      "Our bifolding doors of course fully comply with current building regulations and come with a full 10 year guarantee.",
+      "BuilderCambridge.com has proven results for setting exceptional standards in cost control, planning, scheduling and project safety. We have the experience that gives us a competitive advantage over others in our field.",
     ],
+    whyChooseUsTitle: "WHY CHOOSE US",
+    whyChooseUsIntro: "BuilderCambridge.com are leading installers of aluminium bifolding doors. Our aluminium bifold doors are made to measure in the UK.",
     whyChooseUs: [
-      "Precision laser surveying ensures millimetre-perfect fit",
-      "Complete structural opening preparation and steel lintel installation included",
-      "10-Year guarantee on mechanisms, glass, and powder coating",
+      "Financial Responsibility to Our Clients",
+      "Superior Quality and Craftsmanship",
+      "Quality and Value to the Projects We Deliver",
+      "Highest Standards in Cost Control",
+      "On Time and on Budget",
+      "Real Focus on Customer Satisfaction",
     ],
+    regulationsNotice: {
+      heading: "Building Regulations & Quotation",
+      text: "For more information about Building Regulations or to arrange a quotation call us on 01223 782 433 or email us at info@buildercambridge.com",
+      phone: "01223 782 433",
+      email: "info@buildercambridge.com",
+    },
     processSteps: [
-      { title: "1. Survey & Opening Prep", desc: "Exact laser measuring and structural opening modification." },
-      { title: "2. Custom Manufacture", desc: "Precision fabrication to your chosen RAL color and panel configuration." },
-      { title: "3. Professional Fitting", desc: "Laser levelled installation, thermal perimeter sealing, and drainage setup." },
-      { title: "4. Testing & Sign-off", desc: "Smooth roller adjustment, lock testing, and glass cleaning." },
+      { title: "1. Precision Site Survey", desc: "Laser measurement of structural opening, floor levels, and structural lintel assessment." },
+      { title: "2. UK Custom Manufacture", desc: "Bespoke fabrication in your choice of aluminium or engineered timber with custom RAL colors." },
+      { title: "3. Structural Opening Prep", desc: "Installation of steel RSJ lintels or opening expansion where required to building standards." },
+      { title: "4. Professional Installation", desc: "Laser-levelled track fitting, flush threshold alignment, and weatherproof thermal perimeter sealing." },
+      { title: "5. Testing & 10-Year Guarantee", desc: "Full glide roller calibration, multi-point locking sign-off, and handover with 10-year warranty." },
     ],
     faqs: [
       {
-        question: "Are aluminium bifold doors energy efficient?",
-        answer: "Yes, our bifolding doors feature advanced polyamide thermal breaks and argon-filled Low-E glass, achieving U-values as low as 1.2 W/m²K, well exceeding current building regulations.",
+        question: "Are your bifolding doors made in the UK?",
+        answer: "Yes, all our aluminium and timber bifolding doors are precision made-to-measure right here in the UK to your exact personal specifications.",
+      },
+      {
+        question: "What guarantee do your bifold doors come with?",
+        answer: "All our bifolding door installations comply fully with current Building Regulations and come with a full 10-year guarantee covering mechanisms, profiles, and glazing.",
+      },
+      {
+        question: "Can I choose custom colours or timber finishes?",
+        answer: "Yes. Our aluminium range is available in over 200 RAL colours and gloss levels, while our engineered timber range is offered in softwood, hardwood, or oak with custom stains.",
       },
     ],
     typicalTimeline: "1 - 3 Days (Installation)",
-    typicalCostRange: "£3,500 - £12,000+",
+    typicalCostRange: "£3,200 - £11,500+",
+    badge: "10-Year Guarantee",
   },
   {
     id: "underpinning",
     slug: "underpinning",
-    title: "Underpinning & Structural Stabilization",
-    shortDesc: "Specialist foundation reinforcement, mass concrete underpinning, and subsidence repairs for Cambridge properties.",
+    title: "Underpinning Cambridge",
+    contentHeading: "Underpinning Cambridge",
+    shortDesc: "Underpinning is when extra support is provided underneath a structure due to subsidence to counter sinking or pre-emptively protect adjacent construction.",
     category: "Structural",
-    heroImage: "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/images/underpinning-excavation.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80",
-    ],
-    features: [
-      "Traditional mass concrete bay underpinning",
-      "Beam and base foundation reinforcement",
-      "Subsidence crack stitching and helical tie-bars",
-      "Basement deepening and headroom creation",
-      "Certified structural engineer inspections throughout",
+      "/images/underpinning-excavation.jpg",
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
     ],
     fullDescription: [
-      "Clay soil shrinkage and historic foundation movements are well known across parts of Cambridgeshire. When foundations shift or when you plan to add substantial additional storeys, our underpinning experts safely deepen and stabilize your property's load paths without risking structural damage.",
+      "Underpinning is when extra support is provided underneath a structure due to subsidence. This can be to directly counter subsidence where the building or structure is actually sinking, or it can be done pre-emptively if other construction works are taking place which may directly affect the structure",
+      "We offer a full design and construction package for underpinning of subsidence affected properties from design and construction of piles through to design and construction of reinforced concrete rafts / needles. In every case we will offer a cost effective solution designed to support the area to be underpinned.",
     ],
-    whyChooseUs: [
-      "Over 18 years experience handling complex Cambridge soil conditions",
-      "Sequential bay excavation to maintain absolute building stability",
-      "Insurance approved structural warranties provided",
-    ],
-    processSteps: [
-      { title: "1. Geotechnical & Structural Survey", desc: "Soil test pits and engineer foundation assessment." },
-      { title: "2. Sequential Bay Digging", desc: "Excavating alternate numbered pins to avoid undermining the structure." },
-      { title: "3. High-Strength Concrete Pour", desc: "Pouring C35 concrete bases up to within 75mm of existing footings." },
-      { title: "4. Non-Shrink Dry Packing", desc: "Ramming high-strength non-shrink mortar into the gap for 100% load transfer." },
-    ],
-    faqs: [
+    customSections: [
       {
-        question: "How do I know if my property needs underpinning?",
-        answer: "Diagonal cracks wider than 3mm around windows/doors, sticking doors, or sloping floors may indicate foundation settlement. We can carry out an initial site appraisal.",
+        isCallout: true,
+        heading: "Contact us today on 01223 782433",
+        text: "Pick up the phone today to speak to one of our helpful advisors and arrange a same day site visit within Cambridge.",
+        calloutPhone: "01223 782 433",
       },
     ],
-    typicalTimeline: "2 - 6 Weeks",
-    typicalCostRange: "Structural Survey Dependent",
+    typicalTimeline: "Project Dependent",
+    typicalCostRange: "Survey Dependent",
   },
   {
     id: "demolition",
     slug: "demolition",
-    title: "Demolition & Site Clearance",
-    shortDesc: "Safe, controlled residential and light commercial demolition, internal soft-strips, and recycled aggregate site preparation.",
+    title: "Demolition Cambridge",
+    contentHeading: "Demolition Cambridge",
+    shortDesc: "Comprehensive building demolition process, building and structural surveying, removal of hazardous materials, and engineered demolition plans in Cambridge.",
     category: "Groundworks",
     heroImage: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
     ],
-    features: [
-      "Controlled mechanical and manual building demolition",
-      "Internal soft strip-out of redundant fixtures and partitions",
-      "Asbestos surveys and licensed removal coordination",
-      "Site levelling, concrete crushing, and muck-away services",
-      "Dust and vibration monitoring for neighboring protection",
-    ],
-    fullDescription: [
-      "Whether clearing a dilapidated bungalow to prepare for a multi-million-pound replacement dwelling or safely taking down an old garage and outbuildings, Builder Cambridge executes demolition with military precision, safety, and thorough recycling practices.",
-    ],
-    whyChooseUs: [
-      "Full Section 80/81 Cambridge Council demolition notices handled",
-      "Over 92% of demolition materials sorted and recycled locally",
-      "Comprehensive public liability cover for adjacent structures",
-    ],
-    processSteps: [
-      { title: "1. Utility Disconnections", desc: "Safe capping and certification of gas, water, and electric feeds." },
-      { title: "2. Environmental Checks", desc: "Asbestos surveys and ecological/bat checks where required." },
-      { title: "3. Controlled Demolition", desc: "Systematic top-down demolition using precision plant." },
-      { title: "4. Clearance & Grading", desc: "Muck-away removal, ground crushing, and ready-to-build site handover." },
-    ],
-    faqs: [
+    fullDescription: [],
+    customSections: [
       {
-        question: "Do you handle council demolition notices?",
-        answer: "Yes, we file all required Section 81 notices with the local authority and inform neighboring properties before site commencement.",
+        heading: "Building Demolition Process",
+        intro: "Different steps are involved in the process of demolition of building structures which are:",
+        bullets: [
+          "Surveying",
+          "Removal of hazardous materials",
+          "Preparation of plan",
+          "Safety measures",
+        ],
+      },
+      {
+        heading: "Surveying of Buildings for Demolition",
+        intro: "Surveying means study of different parameters of the structure and its surroundings. There are two types of surveying are mainly conducted. They are",
+        bullets: [
+          "Building surveying",
+          "Structural surveying",
+        ],
+      },
+      {
+        heading: "1. Building Surveying",
+        intro: "In survey of buildings for demolition, following process are carried out:",
+        bullets: [
+          "Types of construction material used",
+          "Usage of building prior and present during demolition.",
+          "The presence of wastewater, hazardous materials, matters arising from toxic chemicals, flammable or explosive and radioactive materials, etc.",
+          "Drainage conditions and possible problems on water pollution, flooding and erosion.",
+          "Shared facilities with adjoining building, including common staircases, partition walls.",
+          "Adjoining pedestrian and vehicular traffic conditions",
+          "The sensitivity of neighborhood with respect to noise, dust, vibration and traffic impact.",
+        ],
+      },
+      {
+        heading: "2. Structural Surveying",
+        intro: "In structural survey, following process are involved in demolition:",
+        bullets: [
+          "The method of construction",
+          "The structural system and structural conditions of basements, underground tanks or underground vaults.",
+          "The original structural system employed in the design.",
+          "The condition of the building.",
+        ],
+      },
+      {
+        heading: "Removal of Hazardous Materials",
+        text: "If hazardous materials like asbestos minerals, petroleum contamination, and radioactive metals are found in the investigation of site for demolition. Specialized personals are called for the removal of the hazardous materials from the site prior to the demolition of structure.",
+      },
+      {
+        heading: "Preparation of Demolition Plan for Structures:",
+        intro: "A detailed demolition plan is made which illustrates the different process involved and they are:",
+        bullets: [
+          "The location of the building to be demolished.",
+          "The distances from the building to be demolished to its adjacent buildings, streets, structures and significant street furniture.",
+          "The structural support systems of the building.",
+          "A plan showing the procedure for the demolition of the building; detailed sequence of demolishing structural members; and the method of demolition to be adopted.",
+          "A plan showing all precautionary measures for the protection of the public including hoardings, covered walkways, catch platforms, catch fans, scaffolding, protective screens and safety nets.",
+          "Method of handling demolished building debris.",
+          "Time required for the complete demolition process etc.",
+        ],
       },
     ],
-    typicalTimeline: "1 - 3 Weeks",
-    typicalCostRange: "£5,000 - £30,000+",
+    regulationsNotice: {
+      heading: "Contact us today on 01223 782433",
+      text: "Pick up the phone today to speak to one of our helpful advisors and arrange a same day site visit within Cambridge.",
+      phone: "01223 782 433",
+      email: "info@buildercambridge.com",
+    },
+    typicalTimeline: "Project Dependent",
+    typicalCostRange: "Survey Dependent",
   },
   {
     id: "drainage",
     slug: "drainage",
-    title: "Groundwork & Drainage Solutions",
-    shortDesc: "Comprehensive foul and surface water drainage, soakaways, CCTV drain surveys, pump stations, and sewer connections.",
+    title: "Drainage",
+    contentHeading: "Drainage",
+    shortDesc: "BuilderCambridge.com offer drain installations carried out by fully trained engineers who will take the time to advise you on the best installation method for your property and requirements.",
     category: "Groundworks",
     heroImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
       "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
     ],
-    features: [
-      "New foul and surface water pipework installations",
-      "High-capacity attenuation crate soakaway systems",
-      "Anglian Water Section 106 sewer connections",
-      "CCTV camera surveys and drain unblocking/relining",
-      "Aco channel drains and linear driveway water management",
-    ],
     fullDescription: [
-      "Proper water management is critical for preventing damp, subsidence, and foundation damage. Builder Cambridge installs robust, modern drainage systems for extensions, new builds, and problem-prone existing properties across Cambridgeshire.",
+      "BuilderCambridge.com offer drain installations carried out by fully trained engineers who will take the time to advise you on the best installation method for your property and requirements. Our professional drain installers know all there is to know about the positioning of drains, planning permission requirements, building regulations and effective drain installations.",
     ],
-    whyChooseUs: [
-      "Anglian Water approved connection practices",
-      "CCTV diagnostic camera reports provided with every drainage job",
-      "Laser-graded falls ensuring zero standing water or back-ups",
-    ],
-    processSteps: [
-      { title: "1. Hydraulic Assessment", desc: "Calculating surface run-off and foul loading requirements." },
-      { title: "2. Trenching & Pipe Laying", desc: "Excavating trenches, pea shingle bedding, and laser-guided pipe gradients." },
-      { title: "3. Inspection Chambers", desc: "Installing modern polypropylene manholes and rodding access points." },
-      { title: "4. Testing & Sign-off", desc: "Air and water pressure testing to confirm 100% airtight seals." },
-    ],
-    faqs: [
+    customSections: [
       {
-        question: "Can you connect our new extension to the main sewer?",
-        answer: "Yes, we manage Section 106 applications with Anglian Water and install fully compliant inspection chambers and non-return valves.",
+        heading: "About Drain Installation with BuilderCambridge.com",
+        text: "If you are looking for one of the best drain installers in the UK, then you've come to the right place. Here at BuilderCambridge.com, we provide a variety of drain services to customers throughout the UK and we are leaders in drainage and watermains, priding ourselves on unrivalled customer service and professional and effective solutions.",
+      },
+      {
+        isCallout: true,
+        heading: "Contact us today on 01223 782433",
+        text: "Pick up the phone today to speak to one of our helpful advisors and arrange a same day site visit within Cambridge.",
+        calloutPhone: "01223 782 433",
+      },
+      {
+        heading: "We offer the following services:",
+        bullets: [
+          "Blocked drain",
+          "Drain installations",
+          "Drain clearance",
+          "Drain repair",
+          "Grease traps",
+          "Gully sucking",
+          "High pressure jetting",
+          "Main sewer connections",
+          "Structural lining",
+          "Private systems",
+          "CCTV surveys",
+          "Groundworks",
+          "Pumps",
+          "Watermains",
+        ],
+        secondaryText: "If you require any of the services listed above, or you would simply like to ask for further information, please do not hesitate to call our friendly team today. We would be more than happy to answer any questions you may have and advise you on the best drainage solution for your requirements.",
+      },
+      {
+        heading: "Effective and Professional Drain Installations",
+        text: "Here at BuilderCambridge.com, we offer drain installations to all our customers. Our drain installations are carried out by our fully trained and experienced professionals. This means you can rest assured that your drain installation is being completed effectively by a specialist, saving you time, money and stress. At BuilderCambridge.com, we use the latest drain installation technology to help install our drains and we also offer maintenance, repair and replacement services to all our customers who request them. So, if you require drain installation services, look no further than BuilderCambridge.com! We have the professionals, the products and the cost solutions to provide you with unbeatable drain installations that are effective, long-lasting and reasonably priced.",
+      },
+      {
+        heading: "Commercial Drain Installation",
+        text: "BuilderCambridge.com provide drain installations for commercial properties, offering customers cost-effective solutions to their drain installation needs. We even carry out thorough CCTV drain surveys to ensure minimal disruption to your business and members of staff. If you require drain installation for your commercial property, ASL Drainage are here for you. We provide a drain installation service that is minimally disruptive and highly effective.",
+      },
+      {
+        heading: "Domestic Drain Installation",
+        paragraphs: [
+          "BuilderCambridge.com know how important drain installation is for domestic properties. Correct drain installation will ensure all waste from your property is removed effectively, safely and hygienically. When it comes to domestic drain installation, we would encourage our customers to call us and have a professional carry out the installation. Often, customers may try to install drains themselves without realising there are procedures that must be undertaken, planning permission requests made, and health and safety regulations followed.",
+          "At BuilderCambridge.com, we work hard to install your new drain as quickly as possible and with minimal disruption to your family or home. Our professionals install a variety of domestic drains, including connections to public sewers and land drainage. Whatever kind of drain installation you require, call BuilderCambridge.com today, we have the solution for you!",
+        ],
+      },
+      {
+        heading: "Drain Installation Testing",
+        text: "Once we have successfully installed your new drain, we test the pipework by flushing water through to determine all connections are watertight. If there are any problems that arise during the testing period, we will take the time to rectify the problem. We don't leave until we are sure your pipe installation is fully functional, and you are happy with the services we have provided.",
       },
     ],
-    typicalTimeline: "3 - 7 Days",
-    typicalCostRange: "£2,500 - £12,000+",
+    typicalTimeline: "Project Dependent",
+    typicalCostRange: "Survey Dependent",
   },
   {
     id: "driveways",

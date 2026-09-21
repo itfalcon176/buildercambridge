@@ -65,7 +65,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
       const inTitle = service.title.toLowerCase().includes(q);
       const inDesc = service.shortDesc.toLowerCase().includes(q);
       const inCategory = service.category.toLowerCase().includes(q);
-      const inFeatures = service.features.some((f) =>
+      const inFeatures = (service.features || []).some((f) =>
         f.toLowerCase().includes(q)
       );
 
@@ -266,14 +266,16 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                     </p>
 
                     {/* 3 Key Highlights */}
-                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
-                      {service.features.slice(0, 3).map((feat, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs text-slate-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
-                          <span className="truncate">{feat}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {service.features && service.features.length > 0 && (
+                      <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                        {service.features.slice(0, 3).map((feat, i) => (
+                          <div key={i} className="flex items-center gap-2 text-xs text-slate-600">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
+                            <span className="truncate">{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 

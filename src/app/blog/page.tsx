@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Phone,
   MessageSquareText,
+  Eye,
 } from "lucide-react";
 
 export default function BlogIndexPage() {
@@ -206,6 +207,10 @@ export default function BlogIndexPage() {
                         {featuredPost.category}
                       </span>
                     </div>
+                    <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#092457]/90 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-md">
+                      <Eye className="w-3.5 h-3.5 text-amber-400" />
+                      <span>{featuredPost.views.toLocaleString()} views</span>
+                    </div>
                   </div>
 
                   <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between space-y-6">
@@ -219,6 +224,11 @@ export default function BlogIndexPage() {
                         <div className="flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5 text-blue-500" />
                           <span>{featuredPost.readTime}</span>
+                        </div>
+                        <span>•</span>
+                        <div className="flex items-center gap-1.5 text-slate-700 font-bold">
+                          <Eye className="w-3.5 h-3.5 text-amber-500" />
+                          <span>{featuredPost.views.toLocaleString()} views</span>
                         </div>
                       </div>
 
@@ -298,11 +308,15 @@ export default function BlogIndexPage() {
                         {post.category}
                       </span>
                     </div>
+                    <div className="absolute top-3.5 right-3.5 z-10 px-2.5 py-1 rounded-full bg-[#092457]/85 backdrop-blur-md text-white text-[11px] font-mono font-bold flex items-center gap-1.5 border border-white/20 shadow-md">
+                      <Eye className="w-3 h-3 text-amber-400" />
+                      <span>{post.views.toLocaleString()}</span>
+                    </div>
                   </div>
 
                   {/* Article Info */}
                   <div className="p-6 space-y-3">
-                    <div className="flex items-center gap-3 text-xs font-semibold text-slate-400">
+                    <div className="flex items-center gap-2.5 sm:gap-3 text-xs font-semibold text-slate-400">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-3 h-3 text-amber-500" />
                         <span>{post.date}</span>
@@ -311,6 +325,11 @@ export default function BlogIndexPage() {
                       <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3 text-blue-500" />
                         <span>{post.readTime}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1 text-slate-600 font-semibold">
+                        <Eye className="w-3 h-3 text-amber-500" />
+                        <span>{post.views.toLocaleString()}</span>
                       </div>
                     </div>
 

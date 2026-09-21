@@ -230,10 +230,10 @@ export const Footer: React.FC = () => {
             >
               Instagram
             </a>
-            <Link href="/faq" className="hover:text-blue-300 transition-colors">
+            <Link href="/privacy-policy" className="hover:text-blue-300 transition-colors">
               Privacy & Cookies
             </Link>
-            <Link href="/contact" className="hover:text-blue-300 transition-colors">
+            <Link href="/terms" className="hover:text-blue-300 transition-colors">
               Terms of Service
             </Link>
           </div>

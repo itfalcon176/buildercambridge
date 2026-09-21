@@ -801,3 +801,96 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ photos = gallery
 };
 
 export const RecentWorksGallery = ProjectGallery;
+
+export type TabCategory = "supporting-pillar" | "extensions" | "kitchen";
+
+export const RecentWorksTabbedGallery: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<TabCategory>("supporting-pillar");
+
+  const tabs = [
+    {
+      id: "supporting-pillar" as TabCategory,
+      name: "Removing Supporting Piller",
+      count: supportingPillarPhotos.length,
+      photos: supportingPillarPhotos,
+      tagline: "Structural load-bearing pillar removal, temporary acrow prop installations, and RSJ steel beam insertion across Cambridge properties.",
+    },
+    {
+      id: "extensions" as TabCategory,
+      name: "Extensions",
+      count: extensionPhotos.length,
+      photos: extensionPhotos,
+      tagline: "Single & double-storey house extensions, bespoke rear extensions, exterior brickwork, and structural alterations.",
+    },
+    {
+      id: "kitchen" as TabCategory,
+      name: "Kitchen",
+      count: kitchenPhotos.length,
+      photos: kitchenPhotos,
+      tagline: "Open-plan kitchen transformations, structural knock-throughs, custom breakfast bars, and luxury kitchen renovations.",
+    },
+  ];
+
+  const currentTab = tabs.find((t) => t.id === activeTab) || tabs[0];
+
+  return (
+    <div className="w-full space-y-10">
+      {/* 3 Tabs Switcher */}
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`group relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-3 shadow-sm active:scale-95 cursor-pointer ${
+                isActive
+                  ? "bg-[#092457] text-white shadow-lg shadow-[#092457]/25 border-2 border-[#092457]"
+                  : "bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100/90 border-2 border-slate-200/90"
+              }`}
+            >
+              <span style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}>
+                {tab.name}
+              </span>
+              <span
+                className={`px-2.5 py-0.5 rounded-full text-xs font-black transition-colors ${
+                  isActive
+                    ? "bg-amber-400 text-slate-950"
+                    : "bg-slate-100 text-slate-600 group-hover:bg-slate-200"
+                }`}
+              >
+                {tab.count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Active Tab Heading & Subtitle */}
+      <div className="text-center sm:text-left pt-2 pb-2">
+        <h2
+          className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
+          style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+        >
+          {currentTab.name}
+        </h2>
+        <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-3xl">
+          {currentTab.tagline}
+        </p>
+      </div>
+
+      {/* Photo Grid for Active Tab */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
+          <ProjectGallery photos={currentTab.photos} />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+};

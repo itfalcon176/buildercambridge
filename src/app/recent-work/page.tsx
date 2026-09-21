@@ -1,12 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  ProjectGallery,
-  supportingPillarPhotos,
-  extensionPhotos,
-  kitchenPhotos,
-} from "@/components/RecentWorksGallery";
+import { RecentWorksTabbedGallery } from "@/components/RecentWorksGallery";
 import {
   Sparkles,
   Phone,
@@ -64,63 +59,10 @@ export default function RecentWorkPage() {
         </div>
       </section>
 
-      {/* 2. Removing Supporting Piller Section */}
-      <section className="py-14 lg:py-20 bg-slate-50 border-b border-slate-200/80">
+      {/* 2. Interactive 3-Tab Gallery Section */}
+      <section className="py-12 lg:py-16 bg-slate-50 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Main Requested Heading */}
-          <div className="mb-10 text-center sm:text-left">
-            <h2
-              className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-            >
-              Removing Supporting Piller
-            </h2>
-          </div>
-
-          {/* Interactive Full Gallery Component for Supporting Pillar */}
-          <ProjectGallery photos={supportingPillarPhotos} />
-
-        </div>
-      </section>
-
-      {/* 3. Extensions Section */}
-      <section className="py-14 lg:py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Extensions Heading */}
-          <div className="mb-10 text-center sm:text-left">
-            <h2
-              className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-            >
-              Extensions
-            </h2>
-          </div>
-
-          {/* Interactive Full Gallery Component for Extensions */}
-          <ProjectGallery photos={extensionPhotos} />
-
-        </div>
-      </section>
-
-      {/* 4. Kitchen Section */}
-      <section className="py-14 lg:py-20 bg-slate-50 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Kitchen Heading */}
-          <div className="mb-10 text-center sm:text-left">
-            <h2
-              className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
-              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
-            >
-              Kitchen
-            </h2>
-          </div>
-
-          {/* Interactive Full Gallery Component for Kitchen */}
-          <ProjectGallery photos={kitchenPhotos} />
-
+          <RecentWorksTabbedGallery />
         </div>
       </section>
 

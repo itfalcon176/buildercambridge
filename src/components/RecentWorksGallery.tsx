@@ -511,6 +511,154 @@ export const extensionPhotos: GalleryPhoto[] = [
   }
 ];
 
+export const kitchenPhotos: GalleryPhoto[] = [
+  {
+    "id": "kitchen-1",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0001.jpg",
+    "title": "Kitchen Renovation 1"
+  },
+  {
+    "id": "kitchen-2",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0002.jpg",
+    "title": "Kitchen Renovation 2"
+  },
+  {
+    "id": "kitchen-3",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0003.jpg",
+    "title": "Kitchen Renovation 3"
+  },
+  {
+    "id": "kitchen-4",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0004.jpg",
+    "title": "Kitchen Renovation 4"
+  },
+  {
+    "id": "kitchen-5",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0005.jpg",
+    "title": "Kitchen Renovation 5"
+  },
+  {
+    "id": "kitchen-6",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0006.jpg",
+    "title": "Kitchen Renovation 6"
+  },
+  {
+    "id": "kitchen-7",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0007.jpg",
+    "title": "Kitchen Renovation 7"
+  },
+  {
+    "id": "kitchen-8",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0008.jpg",
+    "title": "Kitchen Renovation 8"
+  },
+  {
+    "id": "kitchen-9",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0010.jpg",
+    "title": "Kitchen Renovation 9"
+  },
+  {
+    "id": "kitchen-10",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0011.jpg",
+    "title": "Kitchen Renovation 10"
+  },
+  {
+    "id": "kitchen-11",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0012.jpg",
+    "title": "Kitchen Renovation 11"
+  },
+  {
+    "id": "kitchen-12",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0013.jpg",
+    "title": "Kitchen Renovation 12"
+  },
+  {
+    "id": "kitchen-13",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0014.jpg",
+    "title": "Kitchen Renovation 13"
+  },
+  {
+    "id": "kitchen-14",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0017.jpg",
+    "title": "Kitchen Renovation 14"
+  },
+  {
+    "id": "kitchen-15",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0018.jpg",
+    "title": "Kitchen Renovation 15"
+  },
+  {
+    "id": "kitchen-16",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0019.jpg",
+    "title": "Kitchen Renovation 16"
+  },
+  {
+    "id": "kitchen-17",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0020.jpg",
+    "title": "Kitchen Renovation 17"
+  },
+  {
+    "id": "kitchen-18",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0021.jpg",
+    "title": "Kitchen Renovation 18"
+  },
+  {
+    "id": "kitchen-19",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0022.jpg",
+    "title": "Kitchen Renovation 19"
+  },
+  {
+    "id": "kitchen-20",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0023.jpg",
+    "title": "Kitchen Renovation 20"
+  },
+  {
+    "id": "kitchen-21",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0024.jpg",
+    "title": "Kitchen Renovation 21"
+  },
+  {
+    "id": "kitchen-22",
+    "src": "/recent-work/kitchen/IMG-20200909-WA0025.jpg",
+    "title": "Kitchen Renovation 22"
+  },
+  {
+    "id": "kitchen-23",
+    "src": "/recent-work/kitchen/IMG_1247.jpg",
+    "title": "Kitchen Renovation 23"
+  },
+  {
+    "id": "kitchen-24",
+    "src": "/recent-work/kitchen/IMG_1248.jpg",
+    "title": "Kitchen Renovation 24"
+  },
+  {
+    "id": "kitchen-25",
+    "src": "/recent-work/kitchen/IMG_1249.jpg",
+    "title": "Kitchen Renovation 25"
+  },
+  {
+    "id": "kitchen-26",
+    "src": "/recent-work/kitchen/IMG_1679.jpg",
+    "title": "Kitchen Renovation 26"
+  },
+  {
+    "id": "kitchen-27",
+    "src": "/recent-work/kitchen/IMG_1680.jpg",
+    "title": "Kitchen Renovation 27"
+  },
+  {
+    "id": "kitchen-28",
+    "src": "/recent-work/kitchen/IMG_1681.jpg",
+    "title": "Kitchen Renovation 28"
+  },
+  {
+    "id": "kitchen-29",
+    "src": "/recent-work/kitchen/IMG_1682.jpg",
+    "title": "Kitchen Renovation 29"
+  }
+];
+
 // For backwards compatibility
 export const galleryPhotos: GalleryPhoto[] = supportingPillarPhotos;
 

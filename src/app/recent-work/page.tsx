@@ -5,6 +5,7 @@ import {
   ProjectGallery,
   supportingPillarPhotos,
   extensionPhotos,
+  kitchenPhotos,
 } from "@/components/RecentWorksGallery";
 import {
   Sparkles,
@@ -17,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Removing Supporting Piller & Extensions Recent Projects - Builder Cambridge",
+  title: "Removing Supporting Piller, Extensions & Kitchen Projects - Builder Cambridge",
   description:
-    "Explore our complete photo portfolio of real building work across Cambridge: load-bearing supporting pillar removals, RSJ steel installations, house extensions, brick restorations, and garden landscaping.",
+    "Explore our complete photo portfolio of real building work across Cambridge: load-bearing supporting pillar removals, RSJ steel installations, house extensions, kitchen renovations, brick restorations, and garden landscaping.",
 };
 
 export default function RecentWorkPage() {
@@ -42,7 +43,7 @@ export default function RecentWorkPage() {
           </h1>
 
           <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            A photographic showcase of our master building work across Cambridge. From complex structural load-bearing pillar removals and RSJ steel beam installations to bespoke house extensions, chimney restorations, and exterior landscaping.
+            A photographic showcase of our master building work across Cambridge. From complex structural load-bearing pillar removals and RSJ steel beam installations to bespoke house extensions, luxury kitchen renovations, and exterior landscaping.
           </p>
 
           {/* Quick Specs Pill Strip */}
@@ -103,7 +104,27 @@ export default function RecentWorkPage() {
         </div>
       </section>
 
-      {/* 4. Bottom Direct Call to Action */}
+      {/* 4. Kitchen Section */}
+      <section className="py-14 lg:py-20 bg-slate-50 border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Kitchen Heading */}
+          <div className="mb-10 text-center sm:text-left">
+            <h2
+              className="text-3xl sm:text-5xl font-black text-[#092457] tracking-tight font-sans"
+              style={{ fontFamily: "var(--font-raleway), 'Raleway', sans-serif" }}
+            >
+              Kitchen
+            </h2>
+          </div>
+
+          {/* Interactive Full Gallery Component for Kitchen */}
+          <ProjectGallery photos={kitchenPhotos} />
+
+        </div>
+      </section>
+
+      {/* 5. Bottom Direct Call to Action */}
       <section className="py-16 bg-[#092457] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h3

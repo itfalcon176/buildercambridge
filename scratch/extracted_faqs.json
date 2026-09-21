@@ -1,0 +1,586 @@
+[
+  {
+    "q": "What services does BuilderCambridge.com offer?",
+    "a": "We offer a range of building services, including new home construction, renovations, extensions, commercial building projects, and bespoke carpentry.Toggle content goes here, click edit button to change this text."
+  },
+  {
+    "q": "Do you provide free estimates?",
+    "a": "Yes, we offer free, no-obligation estimates after an initial consultation to understand your project requirements."
+  },
+  {
+    "q": "How long does a typical home extension project take?",
+    "a": "The duration varies based on complexity and size, but a typical home extension may take 3-6 months."
+  },
+  {
+    "q": "Are you licensed and insured?",
+    "a": "Yes, BuilderCambridge.com is fully licensed and insured, ensuring all work is conducted professionally and safely."
+  },
+  {
+    "q": "Can you work with my architect&#039;s plans?",
+    "a": "Absolutely, we frequently collaborate with architects and can work with their plans to bring your vision to life."
+  },
+  {
+    "q": "How do you ensure construction quality?",
+    "a": "We use high-quality materials, adhere to industry standards, and have quality checks at various stages of the project."
+  },
+  {
+    "q": "Can you build eco-friendly homes?",
+    "a": "Certainly, we specialize in eco-friendly constructions and can incorporate sustainable practices and materials."
+  },
+  {
+    "q": "How are project costs determined?",
+    "a": "Costs are based on project size, materials used, labor, and any special requirements. We provide detailed quotes to avoid surprises."
+  },
+  {
+    "q": "Can you renovate listed buildings?",
+    "a": "Yes, we have experience in renovating listed buildings, ensuring all work complies with regulations."
+  },
+  {
+    "q": "How do you manage construction waste?",
+    "a": "We prioritize recycling and responsible disposal of construction waste, adhering to environmental guidelines."
+  },
+  {
+    "q": "Can you work within my budget?",
+    "a": "We strive to work within client budgets, offering solutions and alternatives that align with your financial plans."
+  },
+  {
+    "q": "How is communication handled during the project?",
+    "a": "We maintain regular communication through site meetings, emails, and phone calls to keep you updated."
+  },
+  {
+    "q": "Do you offer warranty on your work?",
+    "a": "Yes, we provide a warranty on our workmanship to give you peace of mind."
+  },
+  {
+    "q": "Can you incorporate smart home technology?",
+    "a": "Definitely, we can integrate smart home technology into your building project."
+  },
+  {
+    "q": "How do I start a project with BuilderCambridge.com?",
+    "a": "Contact us via phone or email to schedule an initial consultation to discuss your project."
+  },
+  {
+    "q": "Do you provide landscaping services?",
+    "a": "We collaborate with landscaping specialists to offer comprehensive landscaping solutions for your project."
+  },
+  {
+    "q": "Can you assist with interior design?",
+    "a": "While our primary focus is construction, we can recommend trusted interior designers who we collaborate with."
+  },
+  {
+    "q": "What areas do you serve in and around Cambridge?",
+    "a": "We serve the entire Cambridge area and surrounding regions. Contact us to confirm if we cover your specific location."
+  },
+  {
+    "q": "How environmentally friendly are your building practices?",
+    "a": "We use sustainable materials, energy-efficient designs, and environmentally conscious construction methods."
+  },
+  {
+    "q": "Can you work on heritage properties?",
+    "a": "Yes, we have experience working on heritage properties, respecting their historical significance while updating them for modern use."
+  },
+  {
+    "q": "Do you provide electrical and plumbing services?",
+    "a": "Yes, we have qualified electricians and plumbers to handle all electrical and plumbing needs in our projects."
+  },
+  {
+    "q": "How do you ensure safety on the construction site?",
+    "a": "Safety is our top priority. We adhere to strict safety protocols, regular training, and use of safety equipment on all sites."
+  },
+  {
+    "q": "Do you offer loft conversion services?",
+    "a": "Yes, we specialize in loft conversions, transforming your loft space into a functional and attractive area."
+  },
+  {
+    "q": "Can you provide references from previous clients?",
+    "a": "Yes, we can provide references from past clients to help you gauge our work quality and client satisfaction."
+  },
+  {
+    "q": "How do you handle changes or variations in the project?",
+    "a": "We are flexible and accommodate changes with clear communication and adjustment in plans and costs as needed."
+  },
+  {
+    "q": "Do you have experience with energy-efficient buildings?",
+    "a": "Yes, we have experience in constructing energy-efficient buildings with a focus on sustainability."
+  },
+  {
+    "q": "Do you do kitchen renovations?",
+    "a": "Yes, we provide complete kitchen renovation services, from design to installation."
+  },
+  {
+    "q": "Can you build wheelchair-accessible homes?",
+    "a": "Absolutely, we can design and construct homes that are wheelchair-accessible and cater to specific needs."
+  },
+  {
+    "q": "How frequently will I receive updates on the project&#039;s progress?",
+    "a": "We provide regular updates at agreed intervals, and you can always contact us for any immediate concerns."
+  },
+  {
+    "q": "What makes BuilderCambridge.com different from other builders?",
+    "a": "Our commitment to quality, customer-focused approach, and our extensive experience in a range of building projects set us apart."
+  },
+  {
+    "q": "How do you stay updated with the latest building trends?",
+    "a": "We regularly attend industry seminars and stay informed on the latest trends and technologies in construction."
+  },
+  {
+    "q": "Can you assist with open-plan layouts?",
+    "a": "Certainly, we have extensive experience in creating open-plan layouts that are both functional and aesthetically pleasing."
+  },
+  {
+    "q": "Do you handle all aspects of a construction project?",
+    "a": "Yes, we handle all aspects from start to finish, including design, construction, and finishing touches."
+  },
+  {
+    "q": "How do I schedule a site visit?",
+    "a": "You can schedule a site visit by contacting us via phone or email, and we'll arrange a convenient time."
+  },
+  {
+    "q": "Do you offer bathroom remodeling services?",
+    "a": "Yes, we specialize in bathroom remodeling, providing modern and functional bathroom solutions."
+  },
+  {
+    "q": "Can you advise on how to maximize my space?",
+    "a": "Yes, our team can provide innovative solutions to maximize and efficiently use your available space."
+  },
+  {
+    "q": "How can I be sure my project will be completed on time?",
+    "a": "We use efficient project management techniques and regular monitoring to ensure timely completion."
+  },
+  {
+    "q": "Do you do outdoor decking and patio construction?",
+    "a": "Yes, we design and construct outdoor decking and patios to enhance your outdoor living space."
+  },
+  {
+    "q": "Can you integrate sustainable water solutions?",
+    "a": "Yes, we can integrate water conservation solutions like rainwater harvesting systems and water-efficient fixtures."
+  },
+  {
+    "q": "How do you ensure the project meets all regulations?",
+    "a": "We have a thorough understanding of local regulations and ensure all our projects comply with them."
+  },
+  {
+    "q": "Do you offer custom carpentry and joinery services?",
+    "a": "Yes, our skilled carpenters provide custom carpentry and joinery to meet your specific requirements."
+  },
+  {
+    "q": "Can you install underfloor heating?",
+    "a": "Yes, we can install underfloor heating systems as part of our building services."
+  },
+  {
+    "q": "How do I track my project&#039;s budget and spending?",
+    "a": "We provide detailed budget reports and updates, ensuring you have a clear understanding of the project's financial aspects."
+  },
+  {
+    "q": "Do you provide roofing services?",
+    "a": "Yes, we offer a range of roofing services including new roof installations and roof repairs."
+  },
+  {
+    "q": "How can I make my older home more energy-efficient?",
+    "a": "We recommend retrofitting with better insulation, upgrading windows, and installing energy-efficient heating systems."
+  },
+  {
+    "q": "Do you offer design-build services?",
+    "a": "Yes, we offer comprehensive design-build services, handling both the design and construction phases."
+  },
+  {
+    "q": "Can you install solar panels on my property?",
+    "a": "Yes, we provide solar panel installation services as part of our commitment to sustainable building."
+  },
+  {
+    "q": "How do you guarantee the structural integrity of your projects?",
+    "a": "We adhere to stringent building codes and use quality materials, backed by structural warranties."
+  },
+  {
+    "q": "Do you handle all necessary inspections and approvals?",
+    "a": "We manage all necessary inspections and approvals to ensure compliance with local building regulations."
+  },
+  {
+    "q": "Can you provide custom window installations?",
+    "a": "Yes, we offer custom window installation services, including energy-efficient and stylistic options."
+  },
+  {
+    "q": "How can I ensure my new build is environmentally sustainable?",
+    "a": "We use sustainable materials, efficient insulation, renewable energy sources, and consider the building's orientation for natural lighting."
+  },
+  {
+    "q": "Do you offer historical building preservation services?",
+    "a": "Absolutely, we specialize in preserving and restoring historical buildings with respect to their original character."
+  },
+  {
+    "q": "Can BuilderCambridge.com assist with energy audits for my home?",
+    "a": "Yes, we can arrange for energy audits to assess your home's efficiency and recommend improvements."
+  },
+  {
+    "q": "Do you offer basement conversion services?",
+    "a": "Yes, we provide basement conversion services to turn your basement into a functional and comfortable space."
+  },
+  {
+    "q": "What steps do you take to minimize disruption during construction?",
+    "a": "We plan our work to minimize disruption, including careful scheduling and maintaining a tidy site."
+  },
+  {
+    "q": "How do I provide feedback during the construction process?",
+    "a": "We encourage open communication and welcome feedback at any stage through site meetings, calls, or emails."
+  },
+  {
+    "q": "How do you handle changes in design or scope during the project?",
+    "a": "We are flexible and can accommodate changes while keeping you informed of any implications on time and cost."
+  },
+  {
+    "q": "Do you offer custom cabinetry and woodworking?",
+    "a": "Yes, we offer custom cabinetry and woodworking services to add unique and personalized touches to your space."
+  },
+  {
+    "q": "Can you help with permits and zoning issues?",
+    "a": "Yes, we assist with all aspects of permits and zoning to ensure your project complies with local regulations."
+  },
+  {
+    "q": "How are construction timelines managed?",
+    "a": "We use project management tools and regular updates to ensure timelines are adhered to as closely as possible."
+  },
+  {
+    "q": "Do you have experience with green roofing systems?",
+    "a": "Yes, we have experience in installing green roofs, which provide excellent insulation and contribute to biodiversity."
+  },
+  {
+    "q": "Can you assist with building custom outdoor living spaces?",
+    "a": "Yes, we design and construct custom outdoor living spaces including patios, outdoor kitchens, and entertainment areas."
+  },
+  {
+    "q": "How do you ensure the safety and cleanliness of my home during renovations?",
+    "a": "We use protective coverings, maintain a clean work area, and adhere to safety protocols to minimize disruption and ensure cleanliness."
+  },
+  {
+    "q": "What kind of flooring options do you offer?",
+    "a": "We provide a range of flooring options including hardwood, laminate, tile, and eco-friendly materials."
+  },
+  {
+    "q": "Can you do attic conversions?",
+    "a": "Yes, we specialize in transforming attics into functional living spaces, taking care of insulation, ventilation, and access."
+  },
+  {
+    "q": "How do you approach building extensions in conservation areas?",
+    "a": "We carefully adhere to conservation guidelines and work closely with local authorities to ensure our extensions are compliant and sympathetic to the area."
+  },
+  {
+    "q": "Do you provide plastering and finishing services?",
+    "a": "Yes, we offer high-quality plastering and finishing services as part of our construction projects."
+  },
+  {
+    "q": "Can you assist with home automation systems?",
+    "a": "Yes, we can integrate home automation systems for security, comfort, and energy efficiency."
+  },
+  {
+    "q": "How long does it take to get a planning permission?",
+    "a": "The time frame varies, but we expedite the process by ensuring all documentation and plans meet local authority requirements."
+  },
+  {
+    "q": "Do you offer soundproofing solutions?",
+    "a": "Yes, we provide soundproofing solutions for homes and commercial buildings."
+  },
+  {
+    "q": "Can you convert a building into a multi-family home?",
+    "a": "Yes, we have experience in converting buildings into multi-family homes, ensuring optimal use of space and functionality."
+  },
+  {
+    "q": "How do you handle project budgeting?",
+    "a": "We provide a detailed budget breakdown and work closely with clients to manage and track expenses throughout the project."
+  },
+  {
+    "q": "Do you work with subcontractors?",
+    "a": "Yes, we work with a network of trusted and skilled subcontractors to ensure all aspects of your project are expertly handled."
+  },
+  {
+    "q": "How do you ensure my new home meets my family&#039;s needs?",
+    "a": "We work closely with you to understand your family's needs and design a home that meets these requirements in terms of space, functionality, and style."
+  },
+  {
+    "q": "Can you assist with converting commercial properties into residential units?",
+    "a": "Yes, we have experience in converting commercial properties into residential units, ensuring they meet all residential building standards."
+  },
+  {
+    "q": "Do you offer consultation for DIY builders?",
+    "a": "We offer consultation services for DIY builders, providing expert advice and guidance."
+  },
+  {
+    "q": "Can you construct buildings that are resistant to extreme weather?",
+    "a": "Yes, we use materials and techniques that ensure buildings are resilient to extreme weather conditions."
+  },
+  {
+    "q": "How do you handle project management for large-scale constructions?",
+    "a": "We use advanced project management techniques and software to ensure efficient and effective management of large-scale projects."
+  },
+  {
+    "q": "Do you offer painting and decorating services?",
+    "a": "Yes, we provide professional painting and decorating services as part of our comprehensive building solutions."
+  },
+  {
+    "q": "Can you retrofit older buildings with modern amenities?",
+    "a": "Yes, we specialize in retrofitting older buildings with modern amenities while preserving their historical character."
+  },
+  {
+    "q": "How do you ensure minimal disruption to my business during construction?",
+    "a": "We plan our construction schedule to minimize disruption and can work after hours or on weekends if necessary."
+  },
+  {
+    "q": "Do you have experience with constructing eco-friendly commercial buildings?",
+    "a": "Yes, we have experience in constructing eco-friendly commercial buildings with a focus on sustainability and energy efficiency."
+  },
+  {
+    "q": "Can you assist with designing an energy-efficient office space?",
+    "a": "Absolutely, we can design office spaces that are energy-efficient, comfortable, and conducive to productivity."
+  },
+  {
+    "q": "How do you manage energy efficiency in older buildings?",
+    "a": "We manage energy efficiency by upgrading insulation, windows, heating systems, and utilizing smart technology."
+  },
+  {
+    "q": "Do you provide asbestos removal services?",
+    "a": "Yes, we provide safe and compliant asbestos removal services as part of our renovation and demolition works."
+  },
+  {
+    "q": "How can I stay updated on the latest building regulations?",
+    "a": "We keep our clients informed about relevant building regulations and ensure all projects comply with the latest standards."
+  },
+  {
+    "q": "What warranty do you offer on new constructions?",
+    "a": "We offer a comprehensive warranty on new constructions, covering structural integrity, materials, and workmanship."
+  },
+  {
+    "q": "Can you build custom fireplaces or chimneys?",
+    "a": "Yes, we can design and build custom fireplaces and chimneys to suit your style and heating needs."
+  },
+  {
+    "q": "How do you approach sustainability in new constructions?",
+    "a": "Our approach includes using renewable resources, energy-efficient designs, and sustainable construction practices."
+  },
+  {
+    "q": "Can you provide guidance on maximizing property value through renovation?",
+    "a": "Yes, we offer consultations on renovations and additions that can significantly increase your property's market value."
+  },
+  {
+    "q": "Do you offer any post-construction services?",
+    "a": "Post-construction, we offer a walk-through to ensure your satisfaction and provide maintenance services as needed."
+  },
+  {
+    "q": "How do you ensure quality in materials and workmanship?",
+    "a": "We source high-quality materials from trusted suppliers and our skilled craftsmen adhere to the highest standards of workmanship."
+  },
+  {
+    "q": "Can you assist with adding accessibility features to a home?",
+    "a": "Certainly, we specialize in adding accessibility features like ramps, wider doorways, and accessible bathrooms."
+  },
+  {
+    "q": "Do you provide HVAC installation and maintenance?",
+    "a": "Yes, we offer HVAC services including installation, maintenance, and energy-efficient upgrades."
+  },
+  {
+    "q": "How do you approach building maintenance and repairs?",
+    "a": "We offer a proactive approach to maintenance and repairs, addressing issues promptly to prevent larger problems."
+  },
+  {
+    "q": "Can you assist with the selection of fixtures and fittings?",
+    "a": "Yes, we can assist in selecting the best fixtures and fittings that align with your style and budget."
+  },
+  {
+    "q": "Do you provide landscaping services as part of residential projects?",
+    "a": "Yes, we offer landscaping services to complement our residential projects, creating a cohesive outdoor and indoor living space."
+  },
+  {
+    "q": "How do you ensure quality control in subcontractor work?",
+    "a": "We closely monitor subcontractors' work, ensuring it meets our high standards and project specifications."
+  },
+  {
+    "q": "Do you offer custom lighting solutions for interiors and exteriors?",
+    "a": "Yes, we provide custom lighting solutions, including energy-efficient and smart lighting systems."
+  },
+  {
+    "q": "How do you approach environmentally friendly landscaping in building projects?",
+    "a": "We incorporate native plants, efficient irrigation systems, and sustainable landscaping techniques."
+  },
+  {
+    "q": "Can you assist with the installation of home security systems?",
+    "a": "Yes, we can integrate advanced home security systems into your building project for enhanced safety."
+  },
+  {
+    "q": "How do you handle building accessibility for people with disabilities?",
+    "a": "We ensure compliance with accessibility standards, including ramp installations, accessible bathrooms, and other modifications."
+  },
+  {
+    "q": "Do you provide exterior painting and finishing services?",
+    "a": "Yes, we offer exterior painting and finishing services, using high-quality materials for durability and aesthetics."
+  },
+  {
+    "q": "How do you ensure adherence to project timelines?",
+    "a": "We use effective project management strategies to monitor progress and adjust workflows to meet deadlines."
+  },
+  {
+    "q": "Can you integrate rainwater harvesting systems into building designs?",
+    "a": "Absolutely, we can incorporate rainwater harvesting systems for sustainable water usage."
+  },
+  {
+    "q": "Do you provide custom fencing solutions?",
+    "a": "Yes, we offer a variety of custom fencing options to suit your privacy and aesthetic requirements."
+  },
+  {
+    "q": "How do you approach small-scale residential projects?",
+    "a": "We give the same attention to detail and quality to small-scale projects as we do to larger ones."
+  },
+  {
+    "q": "Can you assist with energy-efficient window replacements?",
+    "a": "Yes, we can replace existing windows with energy-efficient models to enhance thermal performance."
+  },
+  {
+    "q": "How do you maintain communication with clients during a project?",
+    "a": "We maintain regular communication through project updates, meetings, and are always available to address any concerns."
+  },
+  {
+    "q": "Do you provide roofing repair and maintenance services?",
+    "a": "Yes, we offer a range of roofing services, including repair, maintenance, and replacement."
+  },
+  {
+    "q": "Can you handle the installation of specialized home appliances?",
+    "a": "Yes, we handle the installation of all types of specialized home appliances, ensuring they are correctly fitted and functional."
+  },
+  {
+    "q": "How do you ensure the historical accuracy in restoration projects?",
+    "a": "We conduct thorough research and work with historical experts to ensure accuracy in restoration projects."
+  },
+  {
+    "q": "Do you offer financing or payment plans for large projects?",
+    "a": "We can assist in arranging financing solutions or discuss payment plans for large-scale projects."
+  },
+  {
+    "q": "How do you address noise control in multi-unit buildings?",
+    "a": "We implement effective soundproofing measures in multi-unit buildings to ensure privacy and comfort."
+  },
+  {
+    "q": "Can you install bespoke staircases?",
+    "a": "Yes, we design and install bespoke staircases, considering both aesthetics and functionality."
+  },
+  {
+    "q": "Do you offer thermal imaging assessments for insulation efficiency?",
+    "a": "Yes, we offer thermal imaging assessments to evaluate insulation efficiency and recommend improvements."
+  },
+  {
+    "q": "How do you approach period property renovations?",
+    "a": "Our approach respects the property's historical aspects while updating it for modern comfort and efficiency."
+  },
+  {
+    "q": "Can BuilderCambridge.com assist with converting a property for commercial use?",
+    "a": "Yes, we can convert properties for commercial use, ensuring they meet all commercial standards and regulations."
+  },
+  {
+    "q": "How do you ensure client satisfaction upon project completion?",
+    "a": "We maintain open communication, adhere to project specifications, and conduct thorough final inspections to ensure complete client satisfaction."
+  },
+  {
+    "q": "Do you offer bespoke joinery services?",
+    "a": "Yes, we provide bespoke joinery services, creating custom woodwork tailored to your specific needs and preferences."
+  },
+  {
+    "q": "Can you manage multi-phase construction projects?",
+    "a": "Absolutely, we are experienced in managing multi-phase projects, ensuring smooth transitions and consistent quality throughout."
+  },
+  {
+    "q": "How do you handle construction in sensitive environmental areas?",
+    "a": "We follow strict environmental guidelines and use sustainable practices to minimize impact in sensitive areas."
+  },
+  {
+    "q": "Do you offer deck and patio construction services?",
+    "a": "Yes, we specialize in designing and constructing custom decks and patios to enhance your outdoor living space."
+  },
+  {
+    "q": "Can you handle repurposing of buildings for new uses?",
+    "a": "Absolutely, we specialize in repurposing buildings for new uses while retaining their structural integrity."
+  },
+  {
+    "q": "How do you handle the integration of new technologies in building projects?",
+    "a": "We stay updated with the latest technologies and seamlessly integrate them into our building projects."
+  },
+  {
+    "q": "Can you assist with building compliance and regulation issues?",
+    "a": "Yes, we ensure all projects are compliant with current building regulations and standards."
+  },
+  {
+    "q": "Do you offer custom bathroom remodeling?",
+    "a": "Yes, we specialize in custom bathroom remodeling, creating functional and stylish bathroom spaces."
+  },
+  {
+    "q": "How do you ensure environmental compliance in your projects?",
+    "a": "We adhere to all environmental regulations and strive to exceed compliance through sustainable practices."
+  },
+  {
+    "q": "Can you assist with outdoor entertainment areas?",
+    "a": "Yes, we design and build outdoor entertainment areas tailored to your lifestyle and preferences."
+  },
+  {
+    "q": "How do you approach building in tight urban spaces?",
+    "a": "We have experience in urban construction, maximizing space and minimizing disruption in tight environments."
+  },
+  {
+    "q": "Do you offer basement waterproofing services?",
+    "a": "Yes, we provide basement waterproofing to prevent moisture ingress and protect the structural integrity."
+  },
+  {
+    "q": "Can you provide energy-saving solutions for older buildings?",
+    "a": "Yes, we can implement a range of energy-saving solutions for older buildings, including insulation and heating system upgrades."
+  },
+  {
+    "q": "How do you handle unexpected challenges during construction?",
+    "a": "We address challenges promptly with effective solutions, maintaining open communication with our clients."
+  },
+  {
+    "q": "Do you offer maintenance services post-construction?",
+    "a": "We provide post-construction maintenance services to ensure the longevity and functionality of the build."
+  },
+  {
+    "q": "How can I ensure my renovation project is future-proof?",
+    "a": "We recommend using adaptable designs, energy-efficient systems, and smart home technologies for future-proofing."
+  },
+  {
+    "q": "Do you offer green building certifications?",
+    "a": "We can assist in obtaining green building certifications, ensuring your project meets specific environmental standards."
+  },
+  {
+    "q": "How do you ensure the safety of workers and residents during construction?",
+    "a": "We implement strict safety protocols, conduct regular safety training, and use protective measures on-site."
+  },
+  {
+    "q": "Can you build custom home offices?",
+    "a": "Yes, we design and construct custom home offices, considering functionality and ergonomics."
+  },
+  {
+    "q": "Do you offer high-efficiency heating and cooling system installations?",
+    "a": "Yes, we install high-efficiency heating and cooling systems for optimal energy usage and comfort."
+  },
+  {
+    "q": "How do you handle project budget overruns?",
+    "a": "We closely monitor budgets, communicate potential overruns early, and work to find cost-effective solutions."
+  },
+  {
+    "q": "Can you assist with the integration of renewable energy sources?",
+    "a": "We can integrate various renewable energy sources like solar and wind into your building design."
+  },
+  {
+    "q": "Do you provide services for acoustic improvements in buildings?",
+    "a": "Yes, we offer solutions for acoustic improvements to enhance sound quality and reduce noise levels."
+  },
+  {
+    "q": "How do you manage dust and debris during renovations?",
+    "a": "We use dust control measures and tidy up regularly to maintain a clean and safe environment."
+  },
+  {
+    "q": "Can you assist with building regulation applications?",
+    "a": "We manage the entire application process for building regulations, ensuring smooth project progression."
+  },
+  {
+    "q": "Can you provide custom tile work for kitchens and bathrooms?",
+    "a": "Yes, we offer custom tile work, providing unique designs and finishes for kitchens and bathrooms."
+  },
+  {
+    "q": "Do you offer sustainable material options for construction?",
+    "a": "We provide a range of sustainable material options, focusing on low environmental impact and durability."
+  }
+]

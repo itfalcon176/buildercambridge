@@ -1,16 +1,9 @@
-export interface FAQItem {
-  id: string;
-  category: string;
-  question: string;
-  answer: string;
-}
-
-export const faqsData: FAQItem[] = [
+[
   {
     "id": "faq-1",
     "category": "Extensions & Renovations",
     "question": "What services does BuilderCambridge.com offer?",
-    "answer": "We offer a range of building services, including new home construction, renovations, extensions, commercial building projects, and bespoke carpentry."
+    "answer": "We offer a range of building services, including new home construction, renovations, extensions, commercial building projects, and bespoke carpentry.Toggle content goes here, click edit button to change this text."
   },
   {
     "id": "faq-2",
@@ -882,4 +875,4 @@ export const faqsData: FAQItem[] = [
     "question": "Do you offer sustainable material options for construction?",
     "answer": "We provide a range of sustainable material options, focusing on low environmental impact and durability."
   }
-];
+]

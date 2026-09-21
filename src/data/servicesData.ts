@@ -77,7 +77,7 @@ export const servicesData: ServiceItem[] = [
     title: "House Extensions Cambridge",
     shortDesc: "Bespoke single and double-storey home extensions designed to maximize living space, light, and property value across Cambridge.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/House-Extension-London-1024x683.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
@@ -189,7 +189,7 @@ export const servicesData: ServiceItem[] = [
     title: "Loft Conversions Cambridge",
     shortDesc: "Transform unused attic space into luxury master bedrooms, ensuites, home offices, or studio spaces with custom dormer and Velux solutions.",
     category: "Residential",
-    heroImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/services-images/loft-conversion.jpg",
     galleryImages: [
       "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
@@ -1099,8 +1099,9 @@ export const servicesData: ServiceItem[] = [
   {
     id: "driveways",
     slug: "driveways",
-    title: "Driveways & Premium Paving",
-    shortDesc: "Bespoke block paving, resin bound stone, porcelain patios, natural sandstone, and tarmac driveways.",
+    title: "Driveways",
+    contentHeading: "Driveways",
+    shortDesc: "A driveway is much more than just a practical, off-street place to park your car. An attractive, modern driveway can create a strong first impression. It also has the potential to increase the value of your home – especially if parking space is at a premium where you live.",
     category: "Groundworks",
     heroImage: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
@@ -1115,7 +1116,8 @@ export const servicesData: ServiceItem[] = [
       "Brick retaining walls, integrated lighting, and kerb borders",
     ],
     fullDescription: [
-      "Create magnificent curb appeal and durable off-street parking with a custom driveway designed and installed by Builder Cambridge. We specialize in permeable resin bound, classic block paving, and contemporary porcelain surfaces engineered to withstand decades of vehicular traffic.",
+      "A driveway is much more than just a practical, off-street place to park your car. An attractive, modern driveway can create a strong first impression. It also has the potential to increase the value of your home – especially if parking space is at a premium where you live.",
+      "At BuilderCambridge.com, we offer a comprehensive range of driveway paving stones to help you achieve a premium, long-lasting look with your new drive. With multiple styles, finishes and colours from which to choose, you'll find the perfect paving products to shape the driveway of your dreams.",
     ],
     whyChooseUs: [
       "Extra deep excavations with geotextile weed suppression membrane",
@@ -1140,8 +1142,9 @@ export const servicesData: ServiceItem[] = [
   {
     id: "kerb-and-kerb-dropping",
     slug: "kerb-and-kerb-dropping",
-    title: "Kerbs & Drop Kerb Approved Works",
-    shortDesc: "Cambridgeshire County Council approved vehicle crossover installations and drop kerb civil works.",
+    title: "Kerbs and Drop Kerbs",
+    contentHeading: "Kerbs and Drop Kerbs",
+    shortDesc: "A dropped kerb provides access from the public highway to a domestic property. In order to have a dropped kerb installed to access the public highway, you must seek consent from the County Council.",
     category: "Groundworks",
     heroImage: "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
@@ -1156,7 +1159,12 @@ export const servicesData: ServiceItem[] = [
       "Utility ducting protection (gas, water, telecom cables)",
     ],
     fullDescription: [
-      "Driving across a public pavement without a legally approved drop kerb is illegal and can damage underground utility cables. As accredited Street Works contractors, Builder Cambridge assists with highway licence applications and installs council-compliant vehicle crossovers.",
+      "A dropped kerb provides access from the public highway to a domestic property. In order to have a dropped kerb installed to access the public highway, you must seek consent from the County Council. This consent is to ensure that any proposed crossing does not present a safety hazard to other users of the highway and to ensure that all works are carried out to the appropriate standard.",
+      "If you would like to apply for a new dropped kerb or extend an existing dropped kerb, you must first check whether the road is public highway maintained by Cambridgeshire County Council. Please see our map of all our maintained roads below to double check the status of your road. We will only assess dropped kerb applications on roads we maintain.",
+      "If Cambridgeshire County Council does maintain your road, planning permission may be required from your local District Council depending on the classification of the road:",
+      "For properties on classified roads (ie. ‘A’, ‘B’, or ‘C’ roads) – before applying to the County Council for a dropped kerb, you must first contact your relevant District Council to assess whether planning permission from them is required. Please note that some district Councils will charge for this. Once this has been done, you may then apply to the County Council.",
+      "For properties on unclassified roads (ie. Housing estates, etc) – you do not need permission from your District Council and can apply directly to the County Council for a dropped kerb.",
+      "If you're intending to drive a vehicle across the pavement into your driveway, then you need a dropped kerb. Before we can begin the installation, you need permission from Cambridge county council. We can help you with the paperwork for permission, as well as installation of dropped kerbs. Contact BuilderCambridge.com for a quote today 01223 782433",
     ],
     whyChooseUs: [
       "Fully qualified Street Works supervisors and operatives on site",

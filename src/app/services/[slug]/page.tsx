@@ -181,26 +181,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     </span>
                   </div>
                 </div>
-
-                {/* Additional Angle Previews */}
-                {service.galleryImages.length > 0 && (
-                  <div className="grid grid-cols-3 gap-3">
-                    {service.galleryImages.map((img, idx) => (
-                      <div
-                        key={idx}
-                        className="relative h-24 sm:h-32 rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 group"
-                      >
-                        <Image
-                          src={img}
-                          alt={`${service.title} architectural angle ${idx + 1}`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 33vw, 20vw"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
 
               {/* Main Heading & Content Exactly Matching Screenshot */}
